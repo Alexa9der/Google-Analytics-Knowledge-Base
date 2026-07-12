@@ -1,6 +1,6 @@
 ---
-current_phase: "Phase 3"
-project_status: "research_in_progress"
+current_phase: "Phase 3 Complete"
+project_status: "ready_for_next_service"
 completed:
   - "Google Play Console Store Performance research"
   - "Google Play Console Statistics research"
@@ -10,17 +10,12 @@ completed:
   - "Google Play Console Android Vitals research"
   - "Google Play Console Final Consolidation"
   - "Google Search Console Analytics Research"
-current_task: "Google AdMob Analytics, Reporting API, Integration and Revenue Boundary Research"
+  - "Google AdMob Analytics Research"
+current_task: "Prepare Phase 4 Firebase Research"
 next_tasks:
-  - "Complete Phase 3 Google AdMob Research"
-  - "Prepare Phase 4 Firebase Research"
+  - "Phase 4 Firebase Analytics, Events, Integrations and Export Research"
 blockers: []
-active_package_writers:
-  - "knowledge/evidence/google-admob-reporting.yaml"
-  - "knowledge/evidence/google-admob-api-integrations.yaml"
-  - "knowledge/facts/google-admob-analytics.yaml"
-  - "views/google-admob-analytics-flow.md"
-  - "reports/google-admob-analytics-phase-3.md"
+active_package_writers: []
 known_risks:
   - "financial report schemas and fee programs can change"
   - "merchant context affects currencies and payout timing"
@@ -36,5 +31,6 @@ known_risks:
   - "direct Search Console integration with Firebase, Google Play, or AdMob remains unconfirmed"
   - "AdMob metrics, report compatibility rules, mediation behavior, API resources, and payment boundaries can change"
   - "estimated earnings can differ from finalized earnings and payments"
+  - "exact finalized AdMob earnings schema, invalid-traffic adjustment methodology, and direct BigQuery export remain unconfirmed"
 last_updated: "2026-07-12"
 ---
