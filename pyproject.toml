@@ -1,6 +1,10 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "google-analytics-knowledge-base"
-version = "0.1.0"
+version = "0.2.0"
 description = "Evidence-based knowledge architecture for the Google analytics ecosystem"
 requires-python = ">=3.11"
 dependencies = [
@@ -13,7 +17,13 @@ dev = [
   "mypy>=1.8,<2",
   "pytest>=8,<9",
   "ruff>=0.5,<1",
+  "types-jsonschema>=4.20,<5",
+  "types-PyYAML>=6.0,<7",
 ]
+
+[tool.setuptools.packages.find]
+include = ["scripts*"]
+exclude = ["knowledge*", "reports*", "schemas*", "tests*", "views*"]
 
 [tool.pytest.ini_options]
 addopts = "-q"
@@ -37,7 +47,3 @@ select = ["E", "F", "I", "B", "UP"]
 python_version = "3.11"
 strict = true
 files = ["scripts"]
-
-[[tool.mypy.overrides]]
-module = ["yaml", "yaml.*"]
-ignore_missing_imports = true
