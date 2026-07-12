@@ -1,6 +1,6 @@
 ---
-current_phase: "Phase 4"
-project_status: "research_in_progress"
+current_phase: "Phase 4 Complete"
+project_status: "ready_for_next_service"
 completed:
   - "Google Play Console Store Performance research"
   - "Google Play Console Statistics research"
@@ -11,18 +11,12 @@ completed:
   - "Google Play Console Final Consolidation"
   - "Google Search Console Analytics Research"
   - "Google AdMob Analytics Research"
-current_task: "Firebase Analytics, Events, Integrations and Export Research"
+  - "Firebase Analytics, Events, Integrations and Export Research"
+current_task: "Prepare Phase 5 Google Analytics 4 Research"
 next_tasks:
-  - "Complete Phase 4 Firebase Research"
-  - "Prepare Phase 5 Google Analytics 4 Research"
+  - "Phase 5 Google Analytics 4 Property, Reporting, API, Attribution and Consent Research"
 blockers: []
-active_package_writers:
-  - "knowledge/evidence/firebase-analytics.yaml"
-  - "knowledge/evidence/firebase-integrations-export.yaml"
-  - "knowledge/facts/firebase-analytics.yaml"
-  - "knowledge/facts/firebase-integrations-export.yaml"
-  - "views/firebase-analytics-flow.md"
-  - "reports/firebase-analytics-phase-4.md"
+active_package_writers: []
 known_risks:
   - "financial report schemas and fee programs can change"
   - "merchant context affects currencies and payout timing"
@@ -42,5 +36,8 @@ known_risks:
   - "Firebase Analytics terminology overlaps with GA4 and must not be treated as a separate measurement model without evidence"
   - "event, user-property, audience, attribution, retention, and export limits can change"
   - "Firebase product integrations may require SDK, project, account, and billing prerequisites"
+  - "exact deferred deep-link attribution and source preservation from website through Google Play to first_open remain open"
+  - "consent-state effects on attribution and event completeness require GA4-level research"
+  - "impression-level AdMob revenue does not equal finalized AdMob earnings or payment"
 last_updated: "2026-07-12"
 ---
