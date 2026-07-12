@@ -3,6 +3,14 @@ entity_type: "evidence"
 domain: "google-admob"
 topic: "reporting-and-api"
 owner: "google-analytics-knowledge-project"
+source:
+  source_type: "official_documentation_collection"
+  publisher: "Google"
+  title: "Google AdMob API reporting documentation"
+  url: "https://developers.google.com/admob/api"
+  published_at: null
+  version: "v1"
+  language: "en"
 records:
   - id: "EVID-01KXBTRX58TCTDT9CSNVGQ8SVB"
     source_location: "https://developers.google.com/admob/api/v1/report-metrics-dimensions#dimension"
