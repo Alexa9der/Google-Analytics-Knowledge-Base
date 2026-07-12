@@ -1,0 +1,165 @@
+schema_version: "1.0"
+entity_type: "fact"
+domain: "google-analytics-4"
+topic: "foundation-property-streams"
+owner: "google-analytics-knowledge-project"
+records:
+  - id: "FACT-01KXC964K0AHF9YCB520XZF2FG"
+    title: "Analytics account contains properties"
+    statement: "A Google Analytics account is the administrative container in which Analytics properties are created."
+    type: "definition_claim"
+    subject: "Google Analytics account"
+    predicate: "contains"
+    object: "Analytics properties"
+    scope: {channel: "Admin", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXC964JYE64RGT5H8YT5WHXD"]
+    service_ids: ["SERVICE-01KXB0H9ZMT4ZVZPJ3X4B6DY9F"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXC964K10HR2E5KPQP0M806M"
+    title: "GA4 property reporting settings"
+    statement: "A Google Analytics property has a reporting time zone and reporting currency configured at property creation."
+    type: "availability"
+    subject: "Google Analytics property"
+    predicate: "has_settings"
+    object: ["reporting time zone", "reporting currency"]
+    scope: {channel: "Admin", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXC964JZ5RZHH29CG7DFBH0J"]
+    service_ids: ["SERVICE-01KXB0H9ZMT4ZVZPJ3X4B6DY9F"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXC964K12NTQJ23DABK8SWJ1"
+    title: "Account property limit"
+    statement: "A Google Analytics account can contain up to 2,000 properties unless Google raises the limit through support."
+    type: "constraint"
+    subject: "Google Analytics account"
+    predicate: "maximum_properties"
+    object: 2000
+    scope: {channel: "Admin", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXC964JZ5RZHH29CG7DFBH0J"]
+    service_ids: ["SERVICE-01KXB0H9ZMT4ZVZPJ3X4B6DY9F"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXC964K1MMC00NB3733ZTFP9"
+    title: "GA4 stream types"
+    statement: "A Google Analytics property can receive web, Android app, and iOS app data streams."
+    type: "availability"
+    subject: "Google Analytics property"
+    predicate: "supports_data_streams"
+    object: ["web", "Android app", "iOS app"]
+    scope: {channel: "Admin", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXC964K0G686CN5ZXCH60VHG"]
+    service_ids: ["SERVICE-01KXB0H9ZMT4ZVZPJ3X4B6DY9F"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXC964K1TMHGYE3X4N48Y0PK"
+    title: "App stream creates Firebase linkage"
+    statement: "Adding an app data stream to a Google Analytics property creates a corresponding Firebase project and app stream and links them when no prior link exists."
+    type: "relationship"
+    subject: "GA4 app data stream creation"
+    predicate: "creates_and_links"
+    object: "Firebase project and app stream"
+    scope: {channel: "Admin", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXC964K0QD8S0Z363S5NFD1K"]
+    service_ids: ["SERVICE-01KXB0H9ZMT4ZVZPJ3X4B6DY9F", "SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXC964K1HSNTM1VXHM3VH9TK"
+    title: "Existing Firebase project link direction"
+    statement: "Linking an existing Firebase project to an unlinked Google Analytics property is initiated from Firebase."
+    type: "relationship"
+    subject: "existing Firebase project linkage"
+    predicate: "is_initiated_from"
+    object: "Firebase"
+    scope: {channel: "Admin", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXC964K0QD8S0Z363S5NFD1K"]
+    service_ids: ["SERVICE-01KXB0H9ZMT4ZVZPJ3X4B6DY9F", "SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXC964K1GYK3Y8RJYMQ3T914"
+    title: "Web stream measurement identifier"
+    statement: "A GA4 web data stream exposes a Google tag or Measurement ID used to configure web data collection."
+    type: "definition_claim"
+    subject: "GA4 web data stream identifier"
+    predicate: "is_used_for"
+    object: "web data collection configuration"
+    scope: {channel: "Web stream", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXC964K0P0F11BFTAPTEACQF"]
+    service_ids: ["SERVICE-01KXB0H9ZMT4ZVZPJ3X4B6DY9F"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXC964K1VMWH3Z6SCBAJQAQ5"
+    title: "Enhanced measurement is web-stream specific"
+    statement: "Enhanced measurement is configured on a web data stream to collect supported interaction events without code changes."
+    type: "capability"
+    subject: "GA4 enhanced measurement"
+    predicate: "collects"
+    object: "supported web interaction events without code changes"
+    scope: {channel: "Web stream", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXC964K04TVSRWNBY45FR1HZ"]
+    service_ids: ["SERVICE-01KXB0H9ZMT4ZVZPJ3X4B6DY9F"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXC964K1HQ5SYMQVTWQVRZK1"
+    title: "Enhanced measurement can be selectively disabled"
+    statement: "Individual enhanced-measurement event types can be disabled in web-stream settings."
+    type: "capability"
+    subject: "enhanced measurement event type"
+    predicate: "can_be_disabled"
+    object: true
+    scope: {channel: "Web stream", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXC964K04TVSRWNBY45FR1HZ"]
+    service_ids: ["SERVICE-01KXB0H9ZMT4ZVZPJ3X4B6DY9F"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXC964K1VY6VJQQ247A7NCC3"
+    title: "Page view remains automatically collected"
+    statement: "The page_view event remains automatically collected for a web stream even when enhanced measurement options are configured."
+    type: "constraint"
+    subject: "page_view collection"
+    predicate: "remains_automatic"
+    object: true
+    scope: {channel: "Web stream", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXC964K04TVSRWNBY45FR1HZ"]
+    service_ids: ["SERVICE-01KXB0H9ZMT4ZVZPJ3X4B6DY9F"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
