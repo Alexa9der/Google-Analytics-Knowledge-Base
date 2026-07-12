@@ -38,12 +38,12 @@ def test_production_entity_counts_and_no_demo_ids() -> None:
         for entity_type in ("fact", "evidence", "concept", "service", "view", "report")
     }
     assert counts == {
-        "fact": 346,
-        "evidence": 127,
+        "fact": 403,
+        "evidence": 161,
         "concept": 41,
         "service": 7,
-        "view": 10,
-        "report": 9,
+        "view": 11,
+        "report": 10,
     }
     assert DEMO_IDS.isdisjoint({str(row["id"]) for row in rows})
 
