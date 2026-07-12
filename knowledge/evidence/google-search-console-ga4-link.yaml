@@ -1,0 +1,8 @@
+schema_version: "1.0"
+entity_type: "evidence"
+domain: "google-search-console"
+topic: "retention-and-ga4-link"
+owner: "google-analytics-knowledge-project"
+source: {source_type: "official_support_documentation", publisher: "Google", title: "Connect Search Console to Google Analytics", url: "https://support.google.com/analytics/answer/10737381?hl=en", published_at: null, version: "current as of 2026-07-12", language: "en"}
+records:
+  - {id: "EVID-01KXCN00000000000000000007", source_location: "Reports; Reporting caveats; Limits; Data availability", retrieved_at: "2026-07-12", summary: "Documents the GA4 Search Console link, two reports, 16-month maximum, 48-hour availability, compatible dimensions, one-to-one link limits, and prerequisite roles.", authority: "primary_authoritative", directness: "direct", status: "active", last_verified_at: "2026-07-12"}

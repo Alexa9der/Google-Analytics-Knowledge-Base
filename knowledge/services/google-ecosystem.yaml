@@ -1,0 +1,89 @@
+schema_version: "1.0"
+entity_type: "service"
+domain: "google-analytics-ecosystem"
+topic: "service-registry"
+owner: "google-analytics-knowledge-project"
+records:
+  - id: "SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"
+    name: "Google Play Console"
+    provider: "Google"
+    service_type: "app_distribution_console"
+    boundaries: "The named Google service as a research subject; product capabilities remain unasserted until researched."
+    status: "active"
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_reviewed_at: "2026-07-12"
+    aliases: ["Play Console"]
+    official_entry_points: ["https://play.google.com/console/about/"]
+
+  - id: "SERVICE-01KXB0H9ZMVPFDX90GE5ZQZWQQ"
+    name: "Google Search Console"
+    provider: "Google"
+    service_type: "search_presence_console"
+    boundaries: "The named Google service as a research subject; product capabilities remain unasserted until researched."
+    status: "active"
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_reviewed_at: "2026-07-12"
+    aliases: ["Search Console"]
+    official_entry_points: ["https://search.google.com/search-console/about"]
+
+  - id: "SERVICE-01KXB0H9ZMWZPRWF59R76WVCJN"
+    name: "Google AdMob"
+    provider: "Google"
+    service_type: "mobile_advertising_platform"
+    boundaries: "The named Google service as a research subject; product capabilities remain unasserted until researched."
+    status: "active"
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_reviewed_at: "2026-07-12"
+    aliases: ["AdMob"]
+    official_entry_points: ["https://admob.google.com/home/"]
+
+  - id: "SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"
+    name: "Firebase"
+    provider: "Google"
+    service_type: "application_development_platform"
+    boundaries: "The named Google service family as a research subject; product capabilities remain unasserted until researched."
+    status: "active"
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_reviewed_at: "2026-07-12"
+    aliases: []
+    official_entry_points: ["https://firebase.google.com/"]
+
+  - id: "SERVICE-01KXB0H9ZMT4ZVZPJ3X4B6DY9F"
+    name: "Google Analytics 4"
+    provider: "Google"
+    service_type: "digital_analytics_service"
+    boundaries: "The named Google analytics service as a research subject; product capabilities remain unasserted until researched."
+    status: "active"
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_reviewed_at: "2026-07-12"
+    aliases: ["GA4"]
+    official_entry_points: ["https://marketingplatform.google.com/about/analytics/"]
+
+  - id: "SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"
+    name: "BigQuery"
+    provider: "Google"
+    service_type: "cloud_data_warehouse"
+    boundaries: "The named Google Cloud service as a research subject; product capabilities remain unasserted until researched."
+    status: "active"
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_reviewed_at: "2026-07-12"
+    aliases: ["Google BigQuery"]
+    official_entry_points: ["https://cloud.google.com/bigquery"]
+
+  - id: "SERVICE-01KXB0H9ZMFN9JW1GNN614Q1BJ"
+    name: "Looker Studio"
+    provider: "Google"
+    service_type: "business_intelligence_visualization_service"
+    boundaries: "The named Google service as a research subject; product capabilities remain unasserted until researched."
+    status: "active"
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_reviewed_at: "2026-07-12"
+    aliases: ["Google Looker Studio"]
+    official_entry_points: ["https://cloud.google.com/looker-studio"]

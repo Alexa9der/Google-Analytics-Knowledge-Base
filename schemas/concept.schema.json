@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "concept.schema.json",
+  "title": "Concept",
+  "type": "object",
+  "required": ["id", "preferred_label", "definition", "boundaries", "status", "owner", "created_at", "last_reviewed_at"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^CONCEPT-[0-7][0-9A-HJKMNP-TV-Z]{25}$"},
+    "preferred_label": {"type": "string", "minLength": 1, "maxLength": 160},
+    "definition": {"type": "string", "minLength": 1, "maxLength": 1200},
+    "boundaries": {"type": "string", "minLength": 1, "maxLength": 1200},
+    "status": {"enum": ["proposal", "reviewed", "canonical", "deprecated", "superseded"]},
+    "owner": {"type": "string", "minLength": 1},
+    "created_at": {"type": "string", "format": "date"},
+    "last_reviewed_at": {"type": "string", "format": "date"},
+    "synonyms": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+    "ambiguous_terms": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+    "counterexamples": {"type": "array", "items": {"type": "string"}},
+    "broader_concept_ids": {"$ref": "#/$defs/conceptIds"},
+    "narrower_concept_ids": {"$ref": "#/$defs/conceptIds"},
+    "related_concept_ids": {"$ref": "#/$defs/conceptIds"},
+    "fact_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^FACT-[0-7][0-9A-HJKMNP-TV-Z]{25}$"}},
+    "implemented_by_service_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^SERVICE-[0-7][0-9A-HJKMNP-TV-Z]{25}$"}},
+    "notes": {"type": "string"}
+  },
+  "$defs": {
+    "conceptIds": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^CONCEPT-[0-7][0-9A-HJKMNP-TV-Z]{25}$"}}
+  },
+  "additionalProperties": false
+}
+

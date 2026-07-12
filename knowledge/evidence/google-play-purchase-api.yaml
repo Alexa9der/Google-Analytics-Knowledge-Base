@@ -1,0 +1,15 @@
+schema_version: "1.0"
+entity_type: "evidence"
+domain: "google-play-console"
+topic: "purchase-api-v3"
+owner: "google-analytics-knowledge-project"
+source: {source_type: "official_api_reference", publisher: "Google", title: "REST Resource: purchases.productsv2", url: "https://developers.google.com/android-publisher/api-ref/rest/v3/purchases.productsv2", published_at: null, version: "Android Publisher API v3", language: "en"}
+records:
+  - id: "EVID-01KXBBGJPAC427WX7FWN3HKEKE"
+    source_location: "ProductPurchaseV2 and ProductLineItem JSON representations"
+    retrieved_at: "2026-07-12"
+    summary: "Product purchase token lookup fields, product IDs, test context, quantity, refundable quantity, and consumption state."
+    authority: "primary_authoritative"
+    directness: "direct"
+    status: "active"
+    last_verified_at: "2026-07-12"

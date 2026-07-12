@@ -1,0 +1,8 @@
+schema_version: "1.0"
+entity_type: "evidence"
+domain: "google-search-console"
+topic: "bulk-export"
+owner: "google-analytics-knowledge-project"
+source: {source_type: "official_support_documentation", publisher: "Google", title: "About bulk data export of Search Console data to BigQuery", url: "https://support.google.com/webmasters/answer/12918484?hl=en", published_at: null, version: "current as of 2026-07-12", language: "en"}
+records:
+  - {id: "EVID-01KXCN00000000000000000012", source_location: "Overview", retrieved_at: "2026-07-12", summary: "Documents scheduled daily Performance export directly to BigQuery, including all available property performance data except anonymized queries.", authority: "primary_authoritative", directness: "direct", status: "active", last_verified_at: "2026-07-12"}

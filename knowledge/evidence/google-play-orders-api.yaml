@@ -1,0 +1,15 @@
+schema_version: "1.0"
+entity_type: "evidence"
+domain: "google-play-console"
+topic: "orders-api-v3"
+owner: "google-analytics-knowledge-project"
+source: {source_type: "official_api_reference", publisher: "Google", title: "REST Resource: orders", url: "https://developers.google.com/android-publisher/api-ref/rest/v3/orders", published_at: null, version: "Android Publisher API v3", language: "en"}
+records:
+  - id: "EVID-01KXBBXHHY7ARZNN52WKGRXACE"
+    source_location: "Order resource, State enum, Methods, and orders.refund authorization scope"
+    retrieved_at: "2026-07-12"
+    summary: "Order detail retrieval, batch retrieval, refund operation, order states, identifiers, and authorization."
+    authority: "primary_authoritative"
+    directness: "direct"
+    status: "active"
+    last_verified_at: "2026-07-12"

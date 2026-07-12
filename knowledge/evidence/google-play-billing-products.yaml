@@ -1,0 +1,15 @@
+schema_version: "1.0"
+entity_type: "evidence"
+domain: "google-play-console"
+topic: "one-time-products"
+owner: "google-analytics-knowledge-project"
+source: {source_type: "official_documentation", publisher: "Google", title: "One-time products", url: "https://developer.android.com/google/play/billing/one-time-products", published_at: null, version: "current as of 2026-07-12", language: "en"}
+records:
+  - id: "EVID-01KXBBGJPAVWM4WKZT4HRJHA5F"
+    source_location: "One-time products > overview and product types"
+    retrieved_at: "2026-07-12"
+    summary: "Definition and single-charge boundary of one-time products."
+    authority: "primary_authoritative"
+    directness: "direct"
+    status: "active"
+    last_verified_at: "2026-07-12"

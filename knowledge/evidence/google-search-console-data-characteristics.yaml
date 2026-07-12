@@ -1,0 +1,8 @@
+schema_version: "1.0"
+entity_type: "evidence"
+domain: "google-search-console"
+topic: "data-characteristics"
+owner: "google-analytics-knowledge-project"
+source: {source_type: "official_support_documentation", publisher: "Google", title: "About Search Console data", url: "https://support.google.com/webmasters/answer/96568?hl=en", published_at: null, version: "current as of 2026-07-12", language: "en"}
+records:
+  - {id: "EVID-01KXCN00000000000000000004", source_location: "Newly added websites; Discrepancies between Search Console data and data from other tools", retrieved_at: "2026-07-12", summary: "Documents possible initial delay, differences from Analytics, privacy omission, 1,000-row tables, rare-query omission, and conversion of unavailable values to zero in downloads.", authority: "primary_authoritative", directness: "direct", status: "active", last_verified_at: "2026-07-12"}

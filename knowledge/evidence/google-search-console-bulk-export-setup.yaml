@@ -1,0 +1,8 @@
+schema_version: "1.0"
+entity_type: "evidence"
+domain: "google-search-console"
+topic: "bulk-export-setup"
+owner: "google-analytics-knowledge-project"
+source: {source_type: "official_support_documentation", publisher: "Google", title: "Start a new bulk data export", url: "https://support.google.com/webmasters/answer/12917675?hl=en", published_at: null, version: "current as of 2026-07-12", language: "en"}
+records:
+  - {id: "EVID-01KXCN00000000000000000013", source_location: "Requirements; Set up; What happens after setup", retrieved_at: "2026-07-12", summary: "Documents property-owner and Cloud prerequisites, start within 48 hours, no historical backfill, and indefinite accumulation unless table partition expiration is configured.", authority: "primary_authoritative", directness: "direct", status: "active", last_verified_at: "2026-07-12"}

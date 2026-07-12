@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "evidence.schema.json",
+  "title": "Evidence",
+  "type": "object",
+  "required": ["id", "source_location", "retrieved_at", "summary", "authority", "directness", "status", "last_verified_at"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^EVID-[0-7][0-9A-HJKMNP-TV-Z]{25}$"},
+    "source_location": {"type": "string", "minLength": 1},
+    "retrieved_at": {"type": "string", "format": "date"},
+    "summary": {"type": "string", "minLength": 1, "maxLength": 800},
+    "excerpt": {"type": "string", "maxLength": 1000},
+    "authority": {"enum": ["unknown", "low", "medium", "high", "primary_authoritative"]},
+    "directness": {"enum": ["indirect", "secondary", "direct", "direct_reproducible"]},
+    "status": {"enum": ["captured", "verified", "active", "stale", "inaccessible", "superseded", "invalid"]},
+    "checksum": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "last_verified_at": {"type": "string", "format": "date"},
+    "notes": {"type": "string"},
+    "alternate_urls": {"type": "array", "uniqueItems": true, "items": {"type": "string", "format": "uri"}}
+  },
+  "additionalProperties": false
+}
+

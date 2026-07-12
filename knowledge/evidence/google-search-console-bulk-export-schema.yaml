@@ -1,0 +1,8 @@
+schema_version: "1.0"
+entity_type: "evidence"
+domain: "google-search-console"
+topic: "bulk-export-schema"
+owner: "google-analytics-knowledge-project"
+source: {source_type: "official_product_announcement", publisher: "Google", title: "Bulk data export: a new and powerful way to access your Search Console data", url: "https://developers.google.com/search/blog/2023/02/bulk-data-export?hl=en", published_at: "2023-02-21", version: "verified 2026-07-12", language: "en"}
+records:
+  - {id: "EVID-01KXCN00000000000000000015", source_location: "Data available on bulk data exports", retrieved_at: "2026-07-12", summary: "Documents property- and URL-grain impression tables plus ExportLog, no daily row limit, anonymized-query exclusion, and page-level joins to internal data.", authority: "primary_authoritative", directness: "direct", status: "active", last_verified_at: "2026-07-12"}

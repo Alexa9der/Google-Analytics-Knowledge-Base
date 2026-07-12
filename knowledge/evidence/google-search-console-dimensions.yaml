@@ -1,0 +1,8 @@
+schema_version: "1.0"
+entity_type: "evidence"
+domain: "google-search-console"
+topic: "dimensions"
+owner: "google-analytics-knowledge-project"
+source: {source_type: "official_support_documentation", publisher: "Google", title: "Performance report (Search results): Dimensions and data groupings", url: "https://support.google.com/webmasters/answer/17011259?hl=en", published_at: null, version: "current as of 2026-07-12", language: "en"}
+records:
+  - {id: "EVID-01KXCN00000000000000000005", source_location: "Queries; Pages; Countries; Devices; Search appearance", retrieved_at: "2026-07-12", summary: "Defines query, final linked page, search-origin country, device category, and search appearance dimensions; documents canonical aggregation, anonymized queries, truncation, and feature aggregation nuances.", authority: "primary_authoritative", directness: "direct", status: "active", last_verified_at: "2026-07-12"}

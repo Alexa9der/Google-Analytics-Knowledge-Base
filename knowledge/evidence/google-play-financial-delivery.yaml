@@ -1,0 +1,9 @@
+schema_version: "1.0"
+entity_type: "evidence"
+domain: "google-play-console"
+topic: "financial-report-delivery"
+owner: "google-analytics-knowledge-project"
+source: {source_type: "official_support_documentation", publisher: "Google", title: "Download sales and payout reports", url: "https://support.google.com/googleplay/android-developer/answer/2482017?hl=en-GB", published_at: null, version: "current as of 2026-07-12", language: "en"}
+records:
+  - {id: "EVID-01KXCG0000HM6F22NB6DRMM78G", source_location: "Download reports > Financial reports", retrieved_at: "2026-07-12", summary: "Documents financial report CSV download in Play Console and distinguishes Earnings from Estimated Sales report generation.", authority: "primary_authoritative", directness: "direct", status: "active", last_verified_at: "2026-07-12"}
+  - {id: "EVID-01KXCG0000702J94Q0V5461HEM", source_location: "Financial reports > Estimated Sales and Earnings generation notes", retrieved_at: "2026-07-12", summary: "States that Earnings reports are generated near the start of the month and Estimated Sales is updated daily with recent charged or refunded transactions, which may take several days to appear.", authority: "primary_authoritative", directness: "direct", status: "active", last_verified_at: "2026-07-12"}

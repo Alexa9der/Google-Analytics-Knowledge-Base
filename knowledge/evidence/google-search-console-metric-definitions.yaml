@@ -1,0 +1,8 @@
+schema_version: "1.0"
+entity_type: "evidence"
+domain: "google-search-console"
+topic: "search-performance"
+owner: "google-analytics-knowledge-project"
+source: {source_type: "official_support_documentation", publisher: "Google", title: "What are impressions, position, and clicks?", url: "https://support.google.com/webmasters/answer/7042828?hl=en", published_at: null, version: "current as of 2026-07-12", language: "en"}
+records:
+  - {id: "EVID-01KXCN00000000000000000001", source_location: "Overview; What is an impression?; What is search result position?; What is a click?", retrieved_at: "2026-07-12", summary: "Defines Search Console impressions, average position, and clicks, including result-type-specific counting and canonical-URL attribution.", authority: "primary_authoritative", directness: "direct", status: "active", last_verified_at: "2026-07-12"}

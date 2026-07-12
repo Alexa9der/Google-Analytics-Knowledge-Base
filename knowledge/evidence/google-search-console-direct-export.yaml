@@ -1,0 +1,8 @@
+schema_version: "1.0"
+entity_type: "evidence"
+domain: "google-search-console"
+topic: "direct-export"
+owner: "google-analytics-knowledge-project"
+source: {source_type: "official_support_documentation", publisher: "Google", title: "Export data directly from a Search Console report", url: "https://support.google.com/webmasters/answer/12919797?hl=en", published_at: null, version: "current as of 2026-07-12", language: "en"}
+records:
+  - {id: "EVID-01KXCN00000000000000000011", source_location: "Exporting; What is exported", retrieved_at: "2026-07-12", summary: "Documents Google Sheets, Excel, and CSV export of current filtered/grouped chart and table data, 1,000 representative table rows, actual totals, and zero substitution for unavailable values.", authority: "primary_authoritative", directness: "direct", status: "active", last_verified_at: "2026-07-12"}

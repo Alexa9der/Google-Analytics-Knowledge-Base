@@ -1,0 +1,15 @@
+schema_version: "1.0"
+entity_type: "evidence"
+domain: "google-play-console"
+topic: "orders-voided-purchases-api"
+owner: "google-analytics-knowledge-project"
+source: {source_type: "official_api_documentation", publisher: "Google", title: "Voided Purchases API", url: "https://developers.google.com/android-publisher/voided-purchases", published_at: null, version: "Android Publisher API v3", language: "en"}
+records:
+  - id: "EVID-01KXBBGJPA6SM3JMMPS74ZS7JT"
+    source_location: "Viewing Voided Purchases; startTime, type, and response fields"
+    retrieved_at: "2026-07-12"
+    summary: "Voided purchase reasons, refund/revoke inclusion, history window, pagination, and order identifiers."
+    authority: "primary_authoritative"
+    directness: "direct"
+    status: "active"
+    last_verified_at: "2026-07-12"

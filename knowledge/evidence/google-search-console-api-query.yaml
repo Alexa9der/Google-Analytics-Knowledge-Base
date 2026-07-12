@@ -1,0 +1,8 @@
+schema_version: "1.0"
+entity_type: "evidence"
+domain: "google-search-console"
+topic: "search-analytics-api"
+owner: "google-analytics-knowledge-project"
+source: {source_type: "official_api_reference", publisher: "Google", title: "Search Analytics: query", url: "https://developers.google.com/webmaster-tools/v1/searchanalytics/query", published_at: null, version: "current as of 2026-07-12", language: "en"}
+records:
+  - {id: "EVID-01KXCN00000000000000000008", source_location: "HTTP request; Request body; Response body; Authorization scopes", retrieved_at: "2026-07-12", summary: "Documents POST query method, inclusive dates, dimensions, filters, search type, aggregation, row pagination, data state, response metrics and keys, sort rules, authorization scopes, and top-row limitation.", authority: "primary_authoritative", directness: "direct", status: "active", last_verified_at: "2026-07-12"}

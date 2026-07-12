@@ -1,0 +1,8 @@
+schema_version: "1.0"
+entity_type: "evidence"
+domain: "google-search-console"
+topic: "api-limits"
+owner: "google-analytics-knowledge-project"
+source: {source_type: "official_api_documentation", publisher: "Google", title: "Usage Limits", url: "https://developers.google.com/webmaster-tools/limits?hl=en", published_at: null, version: "last updated 2025-08-28; verified 2026-07-12", language: "en"}
+records:
+  - {id: "EVID-01KXCN00000000000000000009", source_location: "Search Analytics; QPS quota", retrieved_at: "2026-07-12", summary: "Documents short- and long-term load quotas, date-range load behavior, and Search Analytics quotas of 1,200 QPM per site and user plus 40,000 QPM and 30,000,000 QPD per project.", authority: "primary_authoritative", directness: "direct", status: "active", last_verified_at: "2026-07-12"}

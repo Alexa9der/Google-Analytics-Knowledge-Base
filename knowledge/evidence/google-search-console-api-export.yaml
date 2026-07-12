@@ -1,0 +1,8 @@
+schema_version: "1.0"
+entity_type: "evidence"
+domain: "google-search-console"
+topic: "api-export"
+owner: "google-analytics-knowledge-project"
+source: {source_type: "official_support_documentation", publisher: "Google", title: "Export Search Console data using the Search Console API", url: "https://support.google.com/webmasters/answer/12919192?hl=en", published_at: null, version: "current as of 2026-07-12", language: "en"}
+records:
+  - {id: "EVID-01KXCN00000000000000000010", source_location: "Exporting data", retrieved_at: "2026-07-12", summary: "Documents 50,000 Performance rows per day, search type, and property, plus API filtering, sorting, aggregation, quota, and lack of freeform SQL.", authority: "primary_authoritative", directness: "direct", status: "active", last_verified_at: "2026-07-12"}

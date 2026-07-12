@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "view-frontmatter.schema.json",
+  "title": "View front matter",
+  "type": "object",
+  "required": ["id", "title", "question", "audience", "owner", "status", "entity_ids", "reading_order", "filters", "inclusion_criteria", "updated_at"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^VIEW-[0-7][0-9A-HJKMNP-TV-Z]{25}$"},
+    "title": {"type": "string", "minLength": 1, "maxLength": 200},
+    "question": {"type": "string", "minLength": 1},
+    "audience": {"type": "string", "minLength": 1},
+    "owner": {"type": "string", "minLength": 1},
+    "status": {"enum": ["draft", "published", "deprecated"]},
+    "entity_ids": {"$ref": "#/$defs/entityIds"},
+    "reading_order": {"$ref": "#/$defs/entityIds"},
+    "filters": {"type": "object"},
+    "inclusion_criteria": {"type": "string", "minLength": 1},
+    "updated_at": {"type": "string", "format": "date"}
+  },
+  "$defs": {
+    "entityIds": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^(FACT|EVID|CONCEPT|SERVICE)-[0-7][0-9A-HJKMNP-TV-Z]{25}$"}}
+  },
+  "additionalProperties": false
+}
+

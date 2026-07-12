@@ -1,0 +1,15 @@
+schema_version: "1.0"
+entity_type: "evidence"
+domain: "google-play-console"
+topic: "real-time-developer-notifications"
+owner: "google-analytics-knowledge-project"
+source: {source_type: "official_documentation", publisher: "Google", title: "Real-time developer notifications reference guide", url: "https://developer.android.com/google/play/billing/rtdn-reference", published_at: null, version: "current as of 2026-07-12", language: "en"}
+records:
+  - id: "EVID-01KXBBGJPA65Y1CN9BNRPX0V3Y"
+    source_location: "Overview, Encoding, DeveloperNotification and notification type sections"
+    retrieved_at: "2026-07-12"
+    summary: "Pub/Sub transport, notification payload boundary, test notification, duplicate handling, and API follow-up requirement."
+    authority: "primary_authoritative"
+    directness: "direct"
+    status: "active"
+    last_verified_at: "2026-07-12"

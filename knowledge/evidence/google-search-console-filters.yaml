@@ -1,0 +1,8 @@
+schema_version: "1.0"
+entity_type: "evidence"
+domain: "google-search-console"
+topic: "filters"
+owner: "google-analytics-knowledge-project"
+source: {source_type: "official_support_documentation", publisher: "Google", title: "Performance report (Search results): Advanced filtering and comparison", url: "https://support.google.com/webmasters/answer/17011165?hl=en", published_at: null, version: "current as of 2026-07-12", language: "en"}
+records:
+  - {id: "EVID-01KXCN00000000000000000006", source_location: "Add or remove filters; Regular expression; Compare groups", retrieved_at: "2026-07-12", summary: "Documents AND-combined filters, mandatory date and search type, multi-value limits, RE2 partial matching, case rules, single comparison, and rare-value approximation.", authority: "primary_authoritative", directness: "direct", status: "active", last_verified_at: "2026-07-12"}

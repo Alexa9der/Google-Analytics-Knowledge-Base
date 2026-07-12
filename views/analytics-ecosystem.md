@@ -1,0 +1,53 @@
+---
+id: "VIEW-01KXB0H9ZMPM53A3F1QEYCGS56"
+title: "Analytics ecosystem reading route"
+question: "How should future ecosystem knowledge be traversed from services to architecture?"
+audience: "Analytics architects, researchers, and AI agents"
+owner: "knowledge-architecture"
+status: "draft"
+entity_ids:
+  - "SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"
+  - "SERVICE-01KXB0H9ZMVPFDX90GE5ZQZWQQ"
+  - "SERVICE-01KXB0H9ZMWZPRWF59R76WVCJN"
+  - "SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"
+  - "SERVICE-01KXB0H9ZMT4ZVZPJ3X4B6DY9F"
+  - "SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"
+  - "SERVICE-01KXB0H9ZMFN9JW1GNN614Q1BJ"
+  - "CONCEPT-01KXB0H9ZM2J36209PV7RXPCD3"
+  - "CONCEPT-01KXB0H9ZMB53TZPK3Q8N6XDVB"
+  - "CONCEPT-01KXB0H9ZMY0Z31MBFPCDF5Y3Q"
+  - "CONCEPT-01KXB0H9ZMXPT1ZMXS689KRCTK"
+  - "CONCEPT-01KXB0H9ZMQ30G90BCGR86CB87"
+  - "CONCEPT-01KXB0H9ZMBYM231E33WXJADZ4"
+  - "CONCEPT-01KXB0H9ZMG7GCKKQ7WE2SHH6Z"
+  - "CONCEPT-01KXB0H9ZM4TWWPJV2A4NKBSTS"
+reading_order:
+  - "SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"
+  - "SERVICE-01KXB0H9ZMVPFDX90GE5ZQZWQQ"
+  - "SERVICE-01KXB0H9ZMWZPRWF59R76WVCJN"
+  - "SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"
+  - "SERVICE-01KXB0H9ZMT4ZVZPJ3X4B6DY9F"
+  - "SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"
+  - "SERVICE-01KXB0H9ZMFN9JW1GNN614Q1BJ"
+  - "CONCEPT-01KXB0H9ZM2J36209PV7RXPCD3"
+  - "CONCEPT-01KXB0H9ZMB53TZPK3Q8N6XDVB"
+  - "CONCEPT-01KXB0H9ZMY0Z31MBFPCDF5Y3Q"
+  - "CONCEPT-01KXB0H9ZMXPT1ZMXS689KRCTK"
+  - "CONCEPT-01KXB0H9ZMQ30G90BCGR86CB87"
+  - "CONCEPT-01KXB0H9ZMBYM231E33WXJADZ4"
+  - "CONCEPT-01KXB0H9ZMG7GCKKQ7WE2SHH6Z"
+  - "CONCEPT-01KXB0H9ZM4TWWPJV2A4NKBSTS"
+filters:
+  entity_types: ["service", "concept"]
+  concept_status: ["proposal", "reviewed", "canonical"]
+inclusion_criteria: "Use Services and neutral Concepts until researched Facts and Evidence exist."
+updated_at: "2026-07-12"
+---
+
+# Future route
+
+Services → Metrics → Events → Exports → Integrations → Privacy → Marketing funnel → Architecture
+options.
+
+The current route contains only Service and Concept identifiers. It will be extended with verified
+Facts and Evidence during later research phases.

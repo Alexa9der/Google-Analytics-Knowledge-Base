@@ -1,0 +1,9 @@
+schema_version: "1.0"
+entity_type: "evidence"
+domain: "google-play-console"
+topic: "payouts"
+owner: "google-analytics-knowledge-project"
+source: {source_type: "official_support_documentation", publisher: "Google", title: "Order processing and payouts", url: "https://support.google.com/googleplay/android-developer/answer/137997?hl=en", published_at: null, version: "current as of 2026-07-12", language: "en"}
+records:
+  - {id: "EVID-01KXCG0000SH0VH2A3J5243KZC", source_location: "Payout schedule", retrieved_at: "2026-07-12", summary: "Documents the approximate next-month payout schedule for processed, refunded, and charged-back orders, possible weekend or holiday delay, and subsequent bank processing time.", authority: "primary_authoritative", directness: "direct", status: "active", last_verified_at: "2026-07-12"}
+  - {id: "EVID-01KXCG00006EA2NKD4YNTKRKWF", source_location: "Track a payout; Minimum payout thresholds", retrieved_at: "2026-07-12", summary: "Documents Payments profile update timing and scoped minimum thresholds for local-currency payments and USD wire transfers.", authority: "primary_authoritative", directness: "direct", status: "active", last_verified_at: "2026-07-12"}

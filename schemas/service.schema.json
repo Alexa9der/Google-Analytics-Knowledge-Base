@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "service.schema.json",
+  "title": "Service",
+  "type": "object",
+  "required": ["id", "name", "provider", "service_type", "boundaries", "status", "owner", "created_at", "last_reviewed_at"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^SERVICE-[0-7][0-9A-HJKMNP-TV-Z]{25}$"},
+    "name": {"type": "string", "minLength": 1, "maxLength": 160},
+    "provider": {"type": "string", "minLength": 1},
+    "service_type": {"type": "string", "pattern": "^[a-z][a-z0-9_]*$"},
+    "boundaries": {"type": "string", "minLength": 1, "maxLength": 1200},
+    "status": {"enum": ["proposal", "active", "deprecated", "retired"]},
+    "owner": {"type": "string", "minLength": 1},
+    "created_at": {"type": "string", "format": "date"},
+    "last_reviewed_at": {"type": "string", "format": "date"},
+    "aliases": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+    "versions": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+    "official_entry_points": {"type": "array", "uniqueItems": true, "items": {"type": "string", "format": "uri"}},
+    "parent_service_id": {"type": "string", "pattern": "^SERVICE-[0-7][0-9A-HJKMNP-TV-Z]{25}$"},
+    "related_service_ids": {"$ref": "#/$defs/serviceIds"},
+    "fact_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^FACT-[0-7][0-9A-HJKMNP-TV-Z]{25}$"}},
+    "integration_service_ids": {"$ref": "#/$defs/serviceIds"},
+    "implemented_concept_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^CONCEPT-[0-7][0-9A-HJKMNP-TV-Z]{25}$"}}
+  },
+  "$defs": {
+    "serviceIds": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^SERVICE-[0-7][0-9A-HJKMNP-TV-Z]{25}$"}}
+  },
+  "additionalProperties": false
+}
+

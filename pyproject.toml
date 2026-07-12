@@ -1,0 +1,43 @@
+[project]
+name = "google-analytics-knowledge-base"
+version = "0.1.0"
+description = "Evidence-based knowledge architecture for the Google analytics ecosystem"
+requires-python = ">=3.11"
+dependencies = [
+  "jsonschema>=4.20,<5",
+  "PyYAML>=6.0,<7",
+]
+
+[project.optional-dependencies]
+dev = [
+  "mypy>=1.8,<2",
+  "pytest>=8,<9",
+  "ruff>=0.5,<1",
+]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.ruff.lint.per-file-ignores]
+"scripts/generate_index.py" = ["E402"]
+"scripts/validate_knowledge.py" = ["E402"]
+"scripts/validate_links.py" = ["E402"]
+"scripts/validate_markdown_frontmatter.py" = ["E402"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+files = ["scripts"]
+
+[[tool.mypy.overrides]]
+module = ["yaml", "yaml.*"]
+ignore_missing_imports = true

@@ -1,0 +1,9 @@
+schema_version: "1.0"
+entity_type: "evidence"
+domain: "google-play-console"
+topic: "testing-feedback-permissions"
+owner: "google-analytics-knowledge-project"
+source: {source_type: "official_support_documentation", publisher: "Google", title: "Set up an open, closed, or internal test", url: "https://support.google.com/googleplay/android-developer/answer/9845334?hl=en", published_at: null, version: "current as of 2026-07-12", language: "en"}
+records:
+  - {id: "EVID-01KXCH00007KBD7F3YTF0HZ7A3", source_location: "Before you start > Reviews; Step 4: Get feedback", retrieved_at: "2026-07-12", summary: "Documents that tester feedback does not affect public rating, test versions cannot receive public reviews, and open/closed testers can submit private feedback.", authority: "primary_authoritative", directness: "direct", status: "active", last_verified_at: "2026-07-12"}
+  - {id: "EVID-01KXCH0000PRY341YG40T0FBK8", source_location: "Play Console permissions > CAN_REPLY_TO_REVIEWS", retrieved_at: "2026-07-12", summary: "Documents that users may view ratings and reviews without reply permission, while reply/report/contact actions require the Reply to reviews permission.", authority: "primary_authoritative", directness: "direct", status: "active", last_verified_at: "2026-07-12", alternate_urls: ["https://support.google.com/googleplay/android-developer/answer/10019561?hl=en"]}

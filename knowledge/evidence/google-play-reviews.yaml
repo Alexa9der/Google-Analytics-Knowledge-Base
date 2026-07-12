@@ -1,0 +1,12 @@
+schema_version: "1.0"
+entity_type: "evidence"
+domain: "google-play-console"
+topic: "reviews-ui"
+owner: "google-analytics-knowledge-project"
+source: {source_type: "official_support_documentation", publisher: "Google", title: "View and analyze your app's ratings and reviews", url: "https://support.google.com/googleplay/android-developer/answer/138230?hl=en", published_at: null, version: "current as of 2026-07-12", language: "en"}
+records:
+  - {id: "EVID-01KXCH0000J6FEBPY9JBFY99BF", source_location: "Browse reviews > See reviews for production apps", retrieved_at: "2026-07-12", summary: "Documents Reviews UI filtering, sorting, and text search for production reviews.", authority: "primary_authoritative", directness: "direct", status: "active", last_verified_at: "2026-07-12"}
+  - {id: "EVID-01KXCH00003KZNXD7VXAXP0DKB", source_location: "Browse reviews > Review format", retrieved_at: "2026-07-12", summary: "Documents automatic translation, original-text display, required review UI metadata, optional title/device/version/helpfulness metadata, and reply/change history.", authority: "primary_authoritative", directness: "direct", status: "active", last_verified_at: "2026-07-12"}
+  - {id: "EVID-01KXCH00008W18B7CXV5816S1Z", source_location: "Reply to reviews > permission, public reply, editing, and notifications", retrieved_at: "2026-07-12", summary: "Documents reply permission, one public reply per review, reply editing, and push plus email notification to the reviewer.", authority: "primary_authoritative", directness: "direct", status: "active", last_verified_at: "2026-07-12"}
+  - {id: "EVID-01KXCH0000RSDT12MK2B6Q3C55", source_location: "Reply to reviews > Suggested replies and Play Console workflow", retrieved_at: "2026-07-12", summary: "Documents web and mobile reply workflow and the scope restrictions for suggested replies.", authority: "primary_authoritative", directness: "direct", status: "active", last_verified_at: "2026-07-12"}
+  - {id: "EVID-01KXCH00006X7Y45REP22REC5A", source_location: "Reply to reviews > Developer Comment Posting Policy", retrieved_at: "2026-07-12", summary: "Documents policy limits on developer replies and the public nature of the response feature.", authority: "primary_authoritative", directness: "direct", status: "active", last_verified_at: "2026-07-12"}

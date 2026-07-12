@@ -1,0 +1,10 @@
+schema_version: "1.0"
+entity_type: "evidence"
+domain: "google-play-console"
+topic: "android-vitals-thresholds"
+owner: "google-analytics-knowledge-project"
+source: {source_type: "official_android_documentation", publisher: "Google", title: "Android vitals", url: "https://developer.android.com/topic/performance/vitals/index.html", published_at: null, version: "current as of 2026-07-12", language: "en"}
+records:
+  - {id: "EVID-01KXCJ0000H15MSFJQKYRTE7JX", source_location: "Core vitals and bad behaviors > threshold table", retrieved_at: "2026-07-12", summary: "Documents overall and per-model thresholds for user-perceived crash, user-perceived ANR, watch-face battery usage, and excessive partial wake locks.", authority: "primary_authoritative", directness: "direct", status: "active", last_verified_at: "2026-07-12"}
+  - {id: "EVID-01KXCJ0000E8WN0WN7KQ6ASM5E", source_location: "Core vitals FAQs > visibility and assessment window", retrieved_at: "2026-07-12", summary: "Documents Play visibility effects, last-28-day assessment, store warnings, and emerging crash/ANR issues after more than seven days.", authority: "primary_authoritative", directness: "direct", status: "active", last_verified_at: "2026-07-12"}
+  - {id: "EVID-01KXCJ0000SRMRZ0650TPN8S89", source_location: "App startup time > Android vitals", retrieved_at: "2026-07-12", summary: "Documents TTID and startup excessive-time thresholds; the hot-start value differs from the Play Console help value and is retained as a conflict note.", authority: "primary_authoritative", directness: "direct", status: "active", last_verified_at: "2026-07-12", alternate_urls: ["https://developer.android.com/topic/performance/vitals/launch-time"]}

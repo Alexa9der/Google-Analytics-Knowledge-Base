@@ -1,0 +1,8 @@
+schema_version: "1.0"
+entity_type: "evidence"
+domain: "google-search-console"
+topic: "bulk-export-operations"
+owner: "google-analytics-knowledge-project"
+source: {source_type: "official_support_documentation", publisher: "Google", title: "Manage and monitor bulk data exports in Search Console", url: "https://support.google.com/webmasters/answer/12919198?hl=en", published_at: null, version: "current as of 2026-07-12", language: "en"}
+records:
+  - {id: "EVID-01KXCN00000000000000000014", source_location: "Export pipeline; Monitor status; Export history; Move a dataset location", retrieved_at: "2026-07-12", summary: "Documents daily cadence, variable timing, retry and drop windows, latest-attempt UI status, successful ExportLog entries, stop behavior, and non-portable dataset location.", authority: "primary_authoritative", directness: "direct", status: "active", last_verified_at: "2026-07-12"}

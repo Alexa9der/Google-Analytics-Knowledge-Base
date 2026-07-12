@@ -1,0 +1,8 @@
+schema_version: "1.0"
+entity_type: "evidence"
+domain: "google-play-console"
+topic: "financial-boundary"
+owner: "google-analytics-knowledge-project"
+source: {source_type: "official_support_documentation", publisher: "Google", title: "Billing, reporting, and order cancellation issues", url: "https://support.google.com/googleplay/android-developer/answer/9037917?hl=en", published_at: null, version: "current as of 2026-07-12", language: "en"}
+records:
+  - {id: "EVID-01KXCG0000XPXET83JPAFYDRQB", source_location: "Reporting issues > final amounts and adjustments", retrieved_at: "2026-07-12", summary: "Directs developers to Google Payments Center for final payment amounts including adjustments, establishing a boundary between Play reports and final payment data.", authority: "primary_authoritative", directness: "direct", status: "active", last_verified_at: "2026-07-12"}

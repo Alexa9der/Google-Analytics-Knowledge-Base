@@ -1,0 +1,8 @@
+schema_version: "1.0"
+entity_type: "evidence"
+domain: "google-search-console"
+topic: "looker-studio"
+owner: "google-analytics-knowledge-project"
+source: {source_type: "official_cloud_documentation", publisher: "Google", title: "Connect to Search Console", url: "https://cloud.google.com/looker/docs/studio/connect-to-search-console?hl=en", published_at: null, version: "current as of 2026-07-12", language: "en"}
+records:
+  - {id: "EVID-01KXCN00000000000000000016", source_location: "How to connect; Tables; Search types; Query field", retrieved_at: "2026-07-12", summary: "Documents the Looker Studio Search Console connector, Site Impression or URL Impression source choice, supported search types, credentials, and privacy omissions in Query.", authority: "primary_authoritative", directness: "direct", status: "active", last_verified_at: "2026-07-12"}

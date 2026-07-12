@@ -1,0 +1,10 @@
+schema_version: "1.0"
+entity_type: "evidence"
+domain: "google-play-console"
+topic: "reviews-api-limits"
+owner: "google-analytics-knowledge-project"
+source: {source_type: "official_developer_documentation", publisher: "Google", title: "Reply to Reviews", url: "https://developers.google.com/android-publisher/reply-to-reviews", published_at: null, version: "last updated 2025-12-18", language: "en"}
+records:
+  - {id: "EVID-01KXCH00002AZX6H0Y0ZKRX49D", source_location: "Page summary; Gaining Access", retrieved_at: "2026-07-12", summary: "Documents production-only access, exclusion of rating-only feedback, OAuth/service-account authorization, and Reply to reviews permission.", authority: "primary_authoritative", directness: "direct", status: "active", last_verified_at: "2026-07-12"}
+  - {id: "EVID-01KXCH00007KYQH2YK11G5TR96", source_location: "Retrieving Reviews > metadata, pagination, and history note", retrieved_at: "2026-07-12", summary: "Documents newest-modified-first results, default and maximum page sizes, pagination, one-week created-or-modified history window, and CSV route for lifetime reviews.", authority: "primary_authoritative", directness: "direct", status: "active", last_verified_at: "2026-07-12"}
+  - {id: "EVID-01KXCH0000A2R3RJ46BY2AEGJ5", source_location: "Translating Review Text; Replying to Reviews; Quotas", retrieved_at: "2026-07-12", summary: "Documents translated/original text behavior, notification rules, public replies, 350-character reply limit, and per-app GET/POST quotas.", authority: "primary_authoritative", directness: "direct", status: "active", last_verified_at: "2026-07-12"}

@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "fact.schema.json",
+  "title": "Fact",
+  "type": "object",
+  "required": ["id", "title", "statement", "type", "status", "confidence", "evidence_ids", "created_at"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^FACT-[0-7][0-9A-HJKMNP-TV-Z]{25}$"},
+    "title": {"type": "string", "minLength": 1, "maxLength": 160},
+    "statement": {"type": "string", "minLength": 1, "maxLength": 800},
+    "type": {"enum": ["definition_claim", "capability", "constraint", "measurement", "relationship", "temporal_state", "observation", "availability", "policy", "calculation_rule"]},
+    "subject": {"type": "string", "minLength": 1},
+    "predicate": {"type": "string", "pattern": "^[a-z][a-z0-9_]*$"},
+    "object": {"type": ["string", "number", "boolean", "object", "array"]},
+    "scope": {"type": "object"},
+    "status": {"enum": ["candidate", "under_review", "confirmed", "disputed", "stale", "superseded", "refuted", "archived"]},
+    "confidence": {"enum": ["unrated", "low", "medium", "high", "very_high"]},
+    "evidence_ids": {"$ref": "#/$defs/evidenceIds"},
+    "refuting_evidence_ids": {"$ref": "#/$defs/evidenceIds"},
+    "qualifying_evidence_ids": {"$ref": "#/$defs/evidenceIds"},
+    "concept_ids": {"$ref": "#/$defs/conceptIds"},
+    "service_ids": {"$ref": "#/$defs/serviceIds"},
+    "related_fact_ids": {"$ref": "#/$defs/factIds"},
+    "owner": {"type": "string", "minLength": 1},
+    "created_at": {"type": "string", "format": "date"},
+    "last_verified_at": {"type": "string", "format": "date"},
+    "next_review_at": {"type": "string", "format": "date"},
+    "valid_from": {"type": "string", "format": "date"},
+    "valid_to": {"type": "string", "format": "date"},
+    "supersedes": {"$ref": "#/$defs/factIds"},
+    "superseded_by": {"$ref": "#/$defs/factIds"},
+    "notes": {"type": "string"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"status": {"enum": ["candidate", "under_review"]}}, "required": ["status"]},
+      "then": {"properties": {"confidence": {"enum": ["unrated", "low", "medium"]}}},
+      "else": {"required": ["subject", "predicate", "object", "scope", "owner", "last_verified_at"]}
+    },
+    {
+      "if": {"properties": {"status": {"const": "confirmed"}}, "required": ["status"]},
+      "then": {"properties": {"evidence_ids": {"minItems": 1}}}
+    },
+    {
+      "if": {"properties": {"status": {"const": "disputed"}}, "required": ["status"]},
+      "then": {"anyOf": [
+        {"properties": {"evidence_ids": {"minItems": 1}}},
+        {"required": ["refuting_evidence_ids"], "properties": {"refuting_evidence_ids": {"minItems": 1}}}
+      ]}
+    },
+    {
+      "if": {"properties": {"status": {"const": "refuted"}}, "required": ["status"]},
+      "then": {"required": ["refuting_evidence_ids"], "properties": {"refuting_evidence_ids": {"minItems": 1}}}
+    },
+    {
+      "if": {"properties": {"status": {"const": "superseded"}}, "required": ["status"]},
+      "then": {"required": ["superseded_by"], "properties": {"superseded_by": {"minItems": 1}}}
+    }
+  ],
+  "$defs": {
+    "evidenceIds": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^EVID-[0-7][0-9A-HJKMNP-TV-Z]{25}$"}},
+    "conceptIds": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^CONCEPT-[0-7][0-9A-HJKMNP-TV-Z]{25}$"}},
+    "serviceIds": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^SERVICE-[0-7][0-9A-HJKMNP-TV-Z]{25}$"}},
+    "factIds": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^FACT-[0-7][0-9A-HJKMNP-TV-Z]{25}$"}}
+  },
+  "additionalProperties": false
+}
+

@@ -1,0 +1,50 @@
+schema_version: "1.0"
+entity_type: "fact"
+domain: "fixture"
+topic: "validation"
+owner: "tests"
+records:
+  - id: "FACT-01J00000000000000000000004"
+    title: "Candidate fixture behavior"
+    statement: "The fixture service may support another input form."
+    type: "capability"
+    status: "candidate"
+    confidence: "unrated"
+    evidence_ids: []
+    service_ids: ["SERVICE-01J00000000000000000000003"]
+    created_at: "2026-07-12"
+  - id: "FACT-01J00000000000000000000005"
+    title: "One fixture input"
+    statement: "The fixture service accepts exactly one fixture input."
+    type: "constraint"
+    subject: "SERVICE-01J00000000000000000000003"
+    predicate: "accepts_input_count"
+    object: {value: 1, unit: "input"}
+    scope: {version: "1.0"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01J00000000000000000000007"]
+    concept_ids: ["CONCEPT-01J00000000000000000000001"]
+    service_ids: ["SERVICE-01J00000000000000000000003"]
+    owner: "tests"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01J00000000000000000000006"
+    title: "Fixture response relationship"
+    statement: "The fixture service returns a fixture response."
+    type: "relationship"
+    subject: "SERVICE-01J00000000000000000000003"
+    predicate: "returns_as"
+    object: "CONCEPT-01J00000000000000000000002"
+    scope: {version: "1.0"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01J00000000000000000000008"]
+    concept_ids:
+      - "CONCEPT-01J00000000000000000000001"
+      - "CONCEPT-01J00000000000000000000002"
+    service_ids: ["SERVICE-01J00000000000000000000003"]
+    related_fact_ids: ["FACT-01J00000000000000000000005"]
+    owner: "tests"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"

@@ -1,0 +1,867 @@
+schema_version: "1.0"
+entity_type: "fact"
+domain: "google-play-console"
+topic: "statistics-installs-users-devices"
+owner: "google-analytics-knowledge-project"
+records:
+  - id: "FACT-01KXB8RT717CVN07FCD0T1D3JD"
+    title: "Statistics customizable reports"
+    statement: "The Statistics page provides customizable detailed reports."
+    type: "capability"
+    subject: "SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"
+    predicate: "provides_report_type"
+    object: "customizable detailed report"
+    scope: {surface: "Statistics web UI", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB8P28ES4MWKKG9V34H0R8Q"]
+    concept_ids: ["CONCEPT-01KXB0H9ZM2J36209PV7RXPCD3", "CONCEPT-01KXB0H9ZMB53TZPK3Q8N6XDVB"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB8RT716B1MMF1481SXA4HF"
+    title: "App statistics absolute data"
+    statement: "The App statistics tab presents absolute app data."
+    type: "capability"
+    subject: "App statistics tab"
+    predicate: "presents_data_form"
+    object: "absolute app data"
+    scope: {surface: "Statistics web UI", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB8P28ES4MWKKG9V34H0R8Q"]
+    concept_ids: ["CONCEPT-01KXB0H9ZM2J36209PV7RXPCD3"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB8RT71B9NVV0YGNKEN8866"
+    title: "Peer comparison normalized data"
+    statement: "The Compare to peers tab presents scale-normalized relative performance data."
+    type: "capability"
+    subject: "Compare to peers tab"
+    predicate: "presents_data_form"
+    object: "scale-normalized relative performance"
+    scope: {surface: "Statistics web UI", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB8P28ES4MWKKG9V34H0R8Q"]
+    concept_ids: ["CONCEPT-01KXB0H9ZM2J36209PV7RXPCD3"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB8RT713WMWPS1S9XKMH70A"
+    title: "Custom date range"
+    statement: "A Statistics report supports a selected custom date range."
+    type: "availability"
+    subject: "Statistics report"
+    predicate: "supports_date_range"
+    object: "custom"
+    scope: {surface: "Statistics web UI", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB8P28ES4MWKKG9V34H0R8Q"]
+    concept_ids: ["CONCEPT-01KXB0H9ZMB53TZPK3Q8N6XDVB"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB8RT71B3JM28JWV5PZY7D6"
+    title: "Two date-range comparison"
+    statement: "A Statistics report can compare two selected date ranges."
+    type: "capability"
+    subject: "Statistics report"
+    predicate: "compares_date_range_count"
+    object: 2
+    scope: {surface: "Statistics web UI", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB8P28ES4MWKKG9V34H0R8Q"]
+    concept_ids: ["CONCEPT-01KXB0H9ZMB53TZPK3Q8N6XDVB"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB8RT7168XAFT7A5EKN31Z9"
+    title: "Metric calculation modes"
+    statement: "Statistics documents two metric calculation modes."
+    type: "availability"
+    subject: "Statistics metric calculation"
+    predicate: "supports_mode_set"
+    object: ["per interval", "30-day rolling average"]
+    scope: {surface: "Statistics web UI", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB8P28ES4MWKKG9V34H0R8Q"]
+    concept_ids: ["CONCEPT-01KXB0H9ZM2J36209PV7RXPCD3"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB8RT71X42CNYVK87B60EVG"
+    title: "Statistics time intervals"
+    statement: "Statistics documents five report aggregation intervals."
+    type: "availability"
+    subject: "Statistics report"
+    predicate: "supports_interval_set"
+    object: ["hourly", "daily", "calendar weekly", "calendar monthly", "quarterly"]
+    scope: {surface: "Statistics web UI", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB8P28ES4MWKKG9V34H0R8Q"]
+    concept_ids: ["CONCEPT-01KXB0H9ZM2J36209PV7RXPCD3"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB8RT71KR3QJ44PD476QPBZ"
+    title: "Hourly interval limit"
+    statement: "The hourly interval is available only for date ranges of 30 days or fewer."
+    type: "constraint"
+    subject: "hourly Statistics interval"
+    predicate: "limits_date_range_days_to"
+    object: 30
+    scope: {surface: "Statistics web UI", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB8P28ES4MWKKG9V34H0R8Q"]
+    concept_ids: ["CONCEPT-01KXB0H9ZM2J36209PV7RXPCD3"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB8RT71X9SGBAGPXDRZF4QW"
+    title: "Second metric comparison"
+    statement: "A Statistics report can plot a second metric for comparison."
+    type: "capability"
+    subject: "Statistics report"
+    predicate: "supports_second_metric"
+    object: true
+    scope: {surface: "Statistics web UI", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB8P28ES4MWKKG9V34H0R8Q"]
+    concept_ids: ["CONCEPT-01KXB0H9ZM2J36209PV7RXPCD3"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB8RT71ZXVB5H3R6Z3XRMTC"
+    title: "Configured report outputs"
+    statement: "A configured Statistics report displays a chart plus a table."
+    type: "capability"
+    subject: "configured Statistics report"
+    predicate: "displays_output_set"
+    object: ["chart", "table"]
+    scope: {surface: "Statistics web UI", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB8P28ES4MWKKG9V34H0R8Q"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB8RT71V68SYADNE99WXYM4"
+    title: "Statistics UI CSV export"
+    statement: "A configured Statistics report can be exported as CSV."
+    type: "availability"
+    subject: "configured Statistics report"
+    predicate: "supports_export_format"
+    object: "CSV"
+    scope: {surface: "Statistics web UI", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB8P28ES4MWKKG9V34H0R8Q"]
+    concept_ids: ["CONCEPT-01KXB0H9ZMXPT1ZMXS689KRCTK"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB8RT71CR4V1DHN4SVTTK44"
+    title: "Statistics dimensions set"
+    statement: "The Statistics page documents seven general dimensions."
+    type: "availability"
+    subject: "Statistics page"
+    predicate: "supports_dimension_set"
+    object: ["Android version", "device", "country/region", "language", "carrier", "form factor", "app version"]
+    scope: {surface: "Statistics web UI", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB8P28EBC0C80EJVZWBMY4K"]
+    concept_ids: ["CONCEPT-01KXB0H9ZMB53TZPK3Q8N6XDVB"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB8RT71TJ405CNRCW3K88JT"
+    title: "Dimension subset filter"
+    statement: "A Statistics report can plot a selected subset of a dimension."
+    type: "capability"
+    subject: "Statistics dimension"
+    predicate: "supports_subset_selection"
+    object: true
+    scope: {surface: "Statistics web UI", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB8P28ES4MWKKG9V34H0R8Q"]
+    concept_ids: ["CONCEPT-01KXB0H9ZMB53TZPK3Q8N6XDVB"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB8RT712M3QGSAM75HJX9Y5"
+    title: "User grain"
+    statement: "The Users category contains metrics counted at user grain."
+    type: "definition_claim"
+    subject: "Users metric category"
+    predicate: "uses_counting_grain"
+    object: "user"
+    scope: {surface: "Statistics", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB8P28EVPX3D6H511GGKRCG"]
+    concept_ids: ["CONCEPT-01KXB0H9ZMX4S975N077EGM94N", "CONCEPT-01KXB0H9ZM2J36209PV7RXPCD3"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB8RT71DD20FY7Y5RXWKCWZ"
+    title: "One user multiple devices"
+    statement: "One Google Play user may have multiple devices."
+    type: "relationship"
+    subject: "Google Play user"
+    predicate: "may_have_multiple"
+    object: "devices"
+    scope: {surface: "Statistics", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB8P28EVPX3D6H511GGKRCG"]
+    concept_ids: ["CONCEPT-01KXB0H9ZMX4S975N077EGM94N", "CONCEPT-01KXB0H9ZM410EY10Q7A190K5X"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB8RT71HMCQP17QZTDDVND3"
+    title: "Installed audience definition"
+    statement: "Installed Audience counts users with the app installed on an eligible recently used device."
+    type: "definition_claim"
+    subject: "Installed Audience"
+    predicate: "counts"
+    object: "users with an installation on a device used in the past 30 days"
+    scope: {activity_window_days: 30, surface: "Statistics", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB8P28EVPX3D6H511GGKRCG"]
+    concept_ids: ["CONCEPT-01KXB0H9ZMX4S975N077EGM94N", "CONCEPT-01KXB0H9ZMBPTYGA7SHR0K94VE"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB8RT71S8JB2WCRR7NACD9Q"
+    title: "User acquisition definition"
+    statement: "User acquisition counts users installing while having no installation on another device."
+    type: "definition_claim"
+    subject: "User acquisitions"
+    predicate: "counts"
+    object: "users without another-device installation at install time"
+    scope: {surface: "Statistics", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB8P28EVPX3D6H511GGKRCG"]
+    concept_ids: ["CONCEPT-01KXB0H9ZM80395EP8SM7W6T0Z", "CONCEPT-01KXB0H9ZMX4S975N077EGM94N", "CONCEPT-01KXB0H9ZMBPTYGA7SHR0K94VE"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB8RT71F9CJ4M7A7VM749G6"
+    title: "Preinstalled activation acquisition"
+    statement: "User acquisitions include activation of a device where the app is preinstalled."
+    type: "constraint"
+    subject: "User acquisitions"
+    predicate: "includes_mechanism"
+    object: "preinstalled-device activation"
+    scope: {surface: "Statistics", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB8P28EVPX3D6H511GGKRCG"]
+    concept_ids: ["CONCEPT-01KXB0H9ZM80395EP8SM7W6T0Z", "CONCEPT-01KXB0H9ZM410EY10Q7A190K5X"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB8RT71A1Z6JABMR3FAWJP8"
+    title: "Device reactivation acquisition"
+    statement: "User acquisitions include device reactivation."
+    type: "constraint"
+    subject: "User acquisitions"
+    predicate: "includes_mechanism"
+    object: "device reactivation"
+    scope: {surface: "Statistics", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB8P28EVPX3D6H511GGKRCG"]
+    concept_ids: ["CONCEPT-01KXB0H9ZM80395EP8SM7W6T0Z", "CONCEPT-01KXB0H9ZM410EY10Q7A190K5X"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB8RT71KW1NX0QZ9F2RMYZ6"
+    title: "User loss uninstall condition"
+    statement: "User loss includes uninstalling the app from every device of a user."
+    type: "definition_claim"
+    subject: "User loss"
+    predicate: "includes_condition"
+    object: "uninstalled from all user devices"
+    scope: {surface: "Statistics", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB8P28EVPX3D6H511GGKRCG"]
+    concept_ids: ["CONCEPT-01KXB0H9ZMX4S975N077EGM94N", "CONCEPT-01KXB0H9ZM410EY10Q7A190K5X"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB8RT71WDWFF70XPY7CKD75"
+    title: "User loss inactivity condition"
+    statement: "User loss includes device inactivity exceeding 30 days across every installed device of a user."
+    type: "definition_claim"
+    subject: "User loss"
+    predicate: "includes_condition"
+    object: "all installed devices inactive over 30 days"
+    scope: {activity_window_days: 30, surface: "Statistics", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB8P28EVPX3D6H511GGKRCG"]
+    concept_ids: ["CONCEPT-01KXB0H9ZMX4S975N077EGM94N", "CONCEPT-01KXB0H9ZM410EY10Q7A190K5X"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB8RT71KVDQYJP73G4MFQ5S"
+    title: "New user definition"
+    statement: "New users are users installing the app for the first time."
+    type: "definition_claim"
+    subject: "New users"
+    predicate: "counts"
+    object: "first-time user installations"
+    scope: {surface: "Statistics", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB8P28EVPX3D6H511GGKRCG"]
+    concept_ids: ["CONCEPT-01KXB0H9ZMX4S975N077EGM94N", "CONCEPT-01KXB0H9ZMBPTYGA7SHR0K94VE"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB8RT71A3NRBJRNMVVJ04RZ"
+    title: "Returning user definition"
+    statement: "Returning users are users installing after previously uninstalling from every device."
+    type: "definition_claim"
+    subject: "Returning users"
+    predicate: "counts"
+    object: "users reinstalling after complete uninstall"
+    scope: {surface: "Statistics", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB8P28EVPX3D6H511GGKRCG"]
+    concept_ids: ["CONCEPT-01KXB0H9ZMX4S975N077EGM94N", "CONCEPT-01KXB0H9ZMBPTYGA7SHR0K94VE"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB8RT71FAR8H0WAHBMRFCZ0"
+    title: "Device grain"
+    statement: "The Devices category contains metrics counted at device grain."
+    type: "definition_claim"
+    subject: "Devices metric category"
+    predicate: "uses_counting_grain"
+    object: "device"
+    scope: {surface: "Statistics", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB8P28EKVCXQSGE1SW20RHC"]
+    concept_ids: ["CONCEPT-01KXB0H9ZM410EY10Q7A190K5X", "CONCEPT-01KXB0H9ZM2J36209PV7RXPCD3"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB8RT71VK7BMEVBED5XWSM9"
+    title: "Reset device identity"
+    statement: "A reset device is counted as a new device in Statistics."
+    type: "calculation_rule"
+    subject: "Statistics device identity"
+    predicate: "treats_reset_device_as"
+    object: "new device"
+    scope: {surface: "Statistics", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB8P28EKVCXQSGE1SW20RHC"]
+    concept_ids: ["CONCEPT-01KXB0H9ZM410EY10Q7A190K5X"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB8RT715RNJFQBE3S2GFMZ1"
+    title: "Install base definition"
+    statement: "Install base counts active devices where the app is installed."
+    type: "definition_claim"
+    subject: "Install base"
+    predicate: "counts"
+    object: "active devices with app installed"
+    scope: {surface: "Statistics", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB8P28EKVCXQSGE1SW20RHC"]
+    concept_ids: ["CONCEPT-01KXB0H9ZM410EY10Q7A190K5X", "CONCEPT-01KXB0H9ZMBPTYGA7SHR0K94VE"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB8RT71X3BRGJ689JS2VXGP"
+    title: "Active device criterion"
+    statement: "An active device has been turned on at least once during the preceding 30 days."
+    type: "definition_claim"
+    subject: "active device"
+    predicate: "requires_activity_within_days"
+    object: 30
+    scope: {surface: "Statistics", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB8P28EKVCXQSGE1SW20RHC"]
+    concept_ids: ["CONCEPT-01KXB0H9ZM410EY10Q7A190K5X"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB8RT71HHRM5XYS34JKSHW5"
+    title: "Device acquisition definition"
+    statement: "Device acquisition counts devices where users installed the app."
+    type: "definition_claim"
+    subject: "Device acquisition"
+    predicate: "counts"
+    object: "devices receiving an app installation"
+    scope: {surface: "Statistics", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB8P28EKVCXQSGE1SW20RHC"]
+    concept_ids: ["CONCEPT-01KXB0H9ZM410EY10Q7A190K5X", "CONCEPT-01KXB0H9ZMBPTYGA7SHR0K94VE", "CONCEPT-01KXB0H9ZM80395EP8SM7W6T0Z"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB8RT71S0W34AQW8PS7GKN5"
+    title: "Device loss uninstall"
+    statement: "Device loss includes app removal from a device."
+    type: "definition_claim"
+    subject: "Device loss"
+    predicate: "includes_condition"
+    object: "app uninstalled from device"
+    scope: {surface: "Statistics", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB8P28EKVCXQSGE1SW20RHC"]
+    concept_ids: ["CONCEPT-01KXB0H9ZM410EY10Q7A190K5X"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB8RT71YBG49QEZ014W65B2"
+    title: "Device loss inactivity"
+    statement: "Device loss includes device inactivity exceeding 30 days."
+    type: "definition_claim"
+    subject: "Device loss"
+    predicate: "includes_condition"
+    object: "device inactive over 30 days"
+    scope: {activity_window_days: 30, surface: "Statistics", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB8P28EKVCXQSGE1SW20RHC"]
+    concept_ids: ["CONCEPT-01KXB0H9ZM410EY10Q7A190K5X"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB8RT71REHMDCAT3D5PG65E"
+    title: "New device definition"
+    statement: "New devices are devices receiving the app for the first time."
+    type: "definition_claim"
+    subject: "New devices"
+    predicate: "counts"
+    object: "first-time device installations"
+    scope: {surface: "Statistics", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB8P28EKVCXQSGE1SW20RHC"]
+    concept_ids: ["CONCEPT-01KXB0H9ZM410EY10Q7A190K5X", "CONCEPT-01KXB0H9ZMBPTYGA7SHR0K94VE"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB8RT717GWGARR2C3DX5DFD"
+    title: "Returning device definition"
+    statement: "Returning devices are devices receiving an app that had been installed previously."
+    type: "definition_claim"
+    subject: "Returning devices"
+    predicate: "counts"
+    object: "devices with a previous app installation"
+    scope: {surface: "Statistics", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB8P28EKVCXQSGE1SW20RHC"]
+    concept_ids: ["CONCEPT-01KXB0H9ZM410EY10Q7A190K5X", "CONCEPT-01KXB0H9ZMBPTYGA7SHR0K94VE"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB8RT71VWMQT73HDS2SNATY"
+    title: "Device updates definition"
+    statement: "Device updates count devices where the app was updated."
+    type: "definition_claim"
+    subject: "Device updates"
+    predicate: "counts"
+    object: "devices with app update"
+    scope: {surface: "Statistics", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB8P28EKVCXQSGE1SW20RHC"]
+    concept_ids: ["CONCEPT-01KXB0H9ZM410EY10Q7A190K5X", "CONCEPT-01KXB0H9ZMY0Z31MBFPCDF5Y3Q"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB8RT71ZWV587X5ZR8FV9FQ"
+    title: "Install event definition"
+    statement: "Install events count occurrences of app installation."
+    type: "definition_claim"
+    subject: "Install events"
+    predicate: "counts"
+    object: "app installation occurrences"
+    scope: {surface: "Statistics", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB8P28E5H5YNYD68GQ7EH8H"]
+    concept_ids: ["CONCEPT-01KXB0H9ZMY0Z31MBFPCDF5Y3Q", "CONCEPT-01KXB0H9ZMBPTYGA7SHR0K94VE"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB8RT71731E37VDC164BDEP"
+    title: "Install event exclusions"
+    statement: "Install events exclude two documented non-install mechanisms."
+    type: "constraint"
+    subject: "Install events"
+    predicate: "excludes_mechanism_set"
+    object: ["preinstall", "device reactivation"]
+    scope: {surface: "Statistics", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB8P28E5H5YNYD68GQ7EH8H"]
+    concept_ids: ["CONCEPT-01KXB0H9ZMY0Z31MBFPCDF5Y3Q", "CONCEPT-01KXB0H9ZMBPTYGA7SHR0K94VE"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB8RT71PQEA7HYS6D3MTEEQ"
+    title: "First opens definition"
+    statement: "First opens count devices opening the app for the first time after installation."
+    type: "definition_claim"
+    subject: "First opens"
+    predicate: "counts"
+    object: "devices with first post-install app open"
+    scope: {surface: "Statistics", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB8P28E5H5YNYD68GQ7EH8H"]
+    concept_ids: ["CONCEPT-01KXB0H9ZMYRQ1M9SS0TJR22Z6", "CONCEPT-01KXB0H9ZM410EY10Q7A190K5X"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB8RT71TC707RS8XS06B98N"
+    title: "First opens attribution window"
+    statement: "First opens include only openings within 180 days after installation."
+    type: "constraint"
+    subject: "First opens"
+    predicate: "limits_post_install_days_to"
+    object: 180
+    scope: {surface: "Statistics", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB8P28E5H5YNYD68GQ7EH8H"]
+    concept_ids: ["CONCEPT-01KXB0H9ZMYRQ1M9SS0TJR22Z6", "CONCEPT-01KXB0H9ZMBPTYGA7SHR0K94VE"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB8RT719RRXZPZWKAYT7ADQ"
+    title: "Daily Active Users definition"
+    statement: "Daily Active Users count users opening the app on a given day."
+    type: "definition_claim"
+    subject: "Daily Active Users"
+    predicate: "counts"
+    object: "users with an app open on a day"
+    scope: {aggregation: "daily", surface: "Statistics", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB8P28E5H5YNYD68GQ7EH8H"]
+    concept_ids: ["CONCEPT-01KXB0H9ZMX4S975N077EGM94N", "CONCEPT-01KXB0H9ZMY0Z31MBFPCDF5Y3Q"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB8RT7110NJ7ZS3JN3RKTBK"
+    title: "Monthly Active Users definition"
+    statement: "Monthly Active Users count users opening the app within a rolling 28-day period."
+    type: "definition_claim"
+    subject: "Monthly Active Users"
+    predicate: "counts"
+    object: "users with an app open in rolling period"
+    scope: {rolling_window_days: 28, surface: "Statistics", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB8P28E5H5YNYD68GQ7EH8H"]
+    concept_ids: ["CONCEPT-01KXB0H9ZMX4S975N077EGM94N", "CONCEPT-01KXB0H9ZMY0Z31MBFPCDF5Y3Q"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB8RT71Z2Y5BX6CP77VAHHE"
+    title: "Uninstall events metric path"
+    statement: "The metric model maps Uninstall events to the Devices category."
+    type: "availability"
+    subject: "Uninstall events"
+    predicate: "belongs_to_metric_category"
+    object: "Devices"
+    scope: {documented_model: "July 2019 metric mapping", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB8P28EMTVKWMCB22YRMQNP"]
+    concept_ids: ["CONCEPT-01KXB0H9ZMY0Z31MBFPCDF5Y3Q", "CONCEPT-01KXB0H9ZM410EY10Q7A190K5X"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB8SE2V2RCPA9ZPCQMXSTGJ"
+    title: "Installation statistics time zone"
+    statement: "Google Play Console installation statistics use Pacific Time."
+    type: "constraint"
+    subject: "installation statistics"
+    predicate: "uses_time_zone"
+    object: "Pacific Time"
+    scope: {surface: "Statistics", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB8P28EN6EYSHKFQ5FSEK08"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB8SE2VWPHRNGKME92ACFE6"
+    title: "Total installs cumulative"
+    statement: "The Total installs KPI is cumulative across app installations."
+    type: "calculation_rule"
+    subject: "Total installs KPI"
+    predicate: "uses_aggregation"
+    object: "cumulative"
+    scope: {surface: "Play Console Android app KPI", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB8P28EA6T0DMA6EGK100WC"]
+    concept_ids: ["CONCEPT-01KXB0H9ZMBPTYGA7SHR0K94VE", "CONCEPT-01KXB0H9ZM2J36209PV7RXPCD3"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB8SE2VBAX0WBKD15JGC330"
+    title: "Statistics GCS monthly files"
+    statement: "Statistics reports are delivered through Google Cloud Storage as monthly CSV files."
+    type: "availability"
+    subject: "Statistics reports"
+    predicate: "supports_delivery_form"
+    object: "monthly CSV in Google Cloud Storage"
+    scope: {surface: "aggregated report export", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB8P28EDE2HE9FZV99CB7FW"]
+    concept_ids: ["CONCEPT-01KXB0H9ZMXPT1ZMXS689KRCTK"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB8SE2VDMCKDP410XFDYTR7"
+    title: "Statistics export posting delay"
+    statement: "Google Cloud Storage Statistics exports are posted within 3 to 7 days."
+    type: "constraint"
+    subject: "Statistics GCS export"
+    predicate: "has_posting_delay_days"
+    object: {minimum: 3, maximum: 7}
+    scope: {surface: "aggregated report export", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB8P28EDE2HE9FZV99CB7FW"]
+    concept_ids: ["CONCEPT-01KXB0H9ZMXPT1ZMXS689KRCTK"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB8SE2VW3KN6ESP7SFH3HD8"
+    title: "Install export metric fields"
+    statement: "The aggregated installs export documents nine install-related metric fields."
+    type: "availability"
+    subject: "aggregated installs export"
+    predicate: "contains_metric_field_set"
+    object: ["Current Device Installs", "Installs on active devices", "Daily Device Installs", "Daily Device Uninstalls", "Daily Device Upgrades", "Current User Installs", "Total User Installs", "Daily User Installs", "Daily User Uninstalls"]
+    scope: {surface: "GCS installs CSV", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB8P28EZJK01D04W8SY0D1D"]
+    concept_ids: ["CONCEPT-01KXB0H9ZM2J36209PV7RXPCD3", "CONCEPT-01KXB0H9ZMXPT1ZMXS689KRCTK"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB8SE2VS9052D611C6NWVD9"
+    title: "Install export dimensions"
+    statement: "The aggregated installs export documents six supported dimensions."
+    type: "availability"
+    subject: "aggregated installs export"
+    predicate: "supports_dimension_set"
+    object: ["app version code", "carrier", "country", "device", "language", "Android OS version"]
+    scope: {surface: "GCS installs CSV", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB8P28EWNTYA3VSVB4WRG09"]
+    concept_ids: ["CONCEPT-01KXB0H9ZMB53TZPK3Q8N6XDVB", "CONCEPT-01KXB0H9ZMXPT1ZMXS689KRCTK"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB8SE2V2P28QAYZ1K7ZFE1F"
+    title: "2019 historical values preserved"
+    statement: "The July 2019 metric migration did not recalculate older data."
+    type: "temporal_state"
+    subject: "pre-migration Statistics data"
+    predicate: "was_recalculated_at_migration"
+    object: false
+    scope: {migration: "July 2019 metric changes", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB8P28E8CNPS7BD0A67DBG1"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB8SE2V7XRBKQFJZJ6CDDA7"
+    title: "Weekly metric initial availability"
+    statement: "Weekly unique-device or user metrics begin appearing two weeks after launch."
+    type: "availability"
+    subject: "weekly unique metrics"
+    predicate: "starts_after_launch_days"
+    object: 14
+    scope: {aggregation: "weekly", documented_model: "July 2019 changes", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB8P28E8CNPS7BD0A67DBG1"]
+    concept_ids: ["CONCEPT-01KXB0H9ZM2J36209PV7RXPCD3"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB8SE2VEZJHCWJS62GM1D6N"
+    title: "Monthly metric initial availability"
+    statement: "Monthly unique-device or user metrics require one full month of data."
+    type: "availability"
+    subject: "monthly unique metrics"
+    predicate: "requires_full_period_count"
+    object: 1
+    scope: {aggregation: "monthly", documented_model: "July 2019 changes", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB8P28E8CNPS7BD0A67DBG1"]
+    concept_ids: ["CONCEPT-01KXB0H9ZM2J36209PV7RXPCD3"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB8SE2VNJWCZKPN2CAAQ4KY"
+    title: "Quarterly metric initial availability"
+    statement: "Quarterly unique-device or user metrics require one full quarter of data."
+    type: "availability"
+    subject: "quarterly unique metrics"
+    predicate: "requires_full_period_count"
+    object: 1
+    scope: {aggregation: "quarterly", documented_model: "July 2019 changes", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB8P28E8CNPS7BD0A67DBG1"]
+    concept_ids: ["CONCEPT-01KXB0H9ZM2J36209PV7RXPCD3"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB8SE2VH5DSRBE6GJH120GJ"
+    title: "Events and uniques distinction"
+    statement: "An event count can exceed the unique users or devices experiencing that event."
+    type: "relationship"
+    subject: "event count"
+    predicate: "may_exceed"
+    object: "unique entity count"
+    scope: {surface: "Statistics metric model", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB8P28E35C1KVSDRMJNEGYC"]
+    concept_ids: ["CONCEPT-01KXB0H9ZMY0Z31MBFPCDF5Y3Q", "CONCEPT-01KXB0H9ZMX4S975N077EGM94N", "CONCEPT-01KXB0H9ZM410EY10Q7A190K5X"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB8SE2V52GYNZRJ0EYMD6VN"
+    title: "Acquisition versus install event"
+    statement: "Device reactivation may count as user acquisition but is excluded from install events."
+    type: "relationship"
+    subject: "device reactivation"
+    predicate: "has_different_inclusion_between"
+    object: ["User acquisitions", "Install events"]
+    scope: {surface: "Statistics", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "medium"
+    evidence_ids: ["EVID-01KXB8P28EVPX3D6H511GGKRCG", "EVID-01KXB8P28E5H5YNYD68GQ7EH8H"]
+    concept_ids: ["CONCEPT-01KXB0H9ZM80395EP8SM7W6T0Z", "CONCEPT-01KXB0H9ZMBPTYGA7SHR0K94VE", "CONCEPT-01KXB0H9ZMY0Z31MBFPCDF5Y3Q"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB8SE2VH92PWGWRQNXAVTH8"
+    title: "Install versus first open"
+    statement: "Statistics counts installation occurrence separately from first post-install opening."
+    type: "relationship"
+    subject: "Install events"
+    predicate: "is_distinct_from"
+    object: "First opens"
+    scope: {surface: "Statistics", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "medium"
+    evidence_ids: ["EVID-01KXB8P28E5H5YNYD68GQ7EH8H"]
+    concept_ids: ["CONCEPT-01KXB0H9ZMBPTYGA7SHR0K94VE", "CONCEPT-01KXB0H9ZMYRQ1M9SS0TJR22Z6"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB98FWKBNYAXSPMJPGVMJVY"
+    title: "Install state dimension availability"
+    statement: "The Android Statistics view lists Install state as an available dimension."
+    type: "availability"
+    subject: "Android Statistics view"
+    predicate: "supports_dimension"
+    object: "Install state"
+    scope: {surface: "Play Console Android app", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB98FWK5Y2Z84MVRVW4DMT5"]
+    concept_ids: ["CONCEPT-01KXB0H9ZMB53TZPK3Q8N6XDVB", "CONCEPT-01KXB0H9ZMBPTYGA7SHR0K94VE"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"

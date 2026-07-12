@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "package.schema.json",
+  "title": "Knowledge package",
+  "type": "object",
+  "required": ["schema_version", "entity_type", "domain", "topic", "owner", "records"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "entity_type": {"enum": ["fact", "evidence", "concept", "service"]},
+    "domain": {"type": "string", "minLength": 1},
+    "topic": {"type": "string", "minLength": 1},
+    "owner": {"type": "string", "minLength": 1},
+    "source": {
+      "type": "object",
+      "required": ["source_type", "publisher", "title", "url", "published_at", "version", "language"],
+      "properties": {
+        "source_type": {"type": "string", "minLength": 1},
+        "publisher": {"type": "string", "minLength": 1},
+        "title": {"type": "string", "minLength": 1},
+        "url": {"type": ["string", "null"], "format": "uri"},
+        "published_at": {"type": ["string", "null"], "format": "date"},
+        "version": {"type": ["string", "null"]},
+        "language": {"type": "string", "minLength": 2}
+      },
+      "additionalProperties": false
+    },
+    "records": {"type": "array"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"entity_type": {"const": "evidence"}}},
+      "then": {"required": ["source"]},
+      "else": {"not": {"required": ["source"]}}
+    },
+    {
+      "if": {"properties": {"entity_type": {"const": "fact"}}},
+      "then": {"properties": {"records": {"items": {"properties": {"id": {"pattern": "^FACT-"}}}}}}
+    },
+    {
+      "if": {"properties": {"entity_type": {"const": "evidence"}}},
+      "then": {"properties": {"records": {"items": {"properties": {"id": {"pattern": "^EVID-"}}}}}}
+    },
+    {
+      "if": {"properties": {"entity_type": {"const": "concept"}}},
+      "then": {"properties": {"records": {"items": {"properties": {"id": {"pattern": "^CONCEPT-"}}}}}}
+    },
+    {
+      "if": {"properties": {"entity_type": {"const": "service"}}},
+      "then": {"properties": {"records": {"items": {"properties": {"id": {"pattern": "^SERVICE-"}}}}}}
+    }
+  ],
+  "additionalProperties": false
+}

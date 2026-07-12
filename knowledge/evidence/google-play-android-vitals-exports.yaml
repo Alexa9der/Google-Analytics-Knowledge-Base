@@ -1,0 +1,9 @@
+schema_version: "1.0"
+entity_type: "evidence"
+domain: "google-play-console"
+topic: "android-vitals-exports"
+owner: "google-analytics-knowledge-project"
+source: {source_type: "official_support_documentation", publisher: "Google", title: "Download and export monthly reports", url: "https://support.google.com/googleplay/android-developer/answer/6135870?hl=en", published_at: null, version: "current as of 2026-07-12", language: "en"}
+records:
+  - {id: "EVID-01KXCJ0000TP2NRZDHBN3KKQHD", source_location: "Commands and file formats for detailed reports > Crashes and ANRs", retrieved_at: "2026-07-12", summary: "States that detailed crash and ANR report downloads have been unavailable since May 2018.", authority: "primary_authoritative", directness: "direct", status: "active", last_verified_at: "2026-07-12"}
+  - {id: "EVID-01KXCJ0000N62WVPG32V4P5JG1", source_location: "Android Vitals access methods versus bulk-report inventory", retrieved_at: "2026-07-12", summary: "Official documentation establishes Play Console and Reporting API access but does not document a dedicated Android Vitals GCS or direct BigQuery export.", authority: "primary_authoritative", directness: "secondary", status: "active", last_verified_at: "2026-07-12", notes: "Negative availability boundary is limited to the reviewed official export inventory."}

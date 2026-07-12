@@ -1,0 +1,10 @@
+schema_version: "1.0"
+entity_type: "evidence"
+domain: "google-play-console"
+topic: "ratings-reviews-exports"
+owner: "google-analytics-knowledge-project"
+source: {source_type: "official_support_documentation", publisher: "Google", title: "Download and export monthly reports", url: "https://support.google.com/googleplay/android-developer/answer/6135870?hl=en", published_at: null, version: "current as of 2026-07-12", language: "en"}
+records:
+  - {id: "EVID-01KXCH0000XZHA1AWD5G9GH4TX", source_location: "Types of reports; Download reports; Google Cloud Storage delivery", retrieved_at: "2026-07-12", summary: "Classifies reviews as detailed reports and ratings as aggregated statistics reports; documents UI download, private GCS, monthly CSV, and three-to-seven-day posting lag.", authority: "primary_authoritative", directness: "direct", status: "active", last_verified_at: "2026-07-12"}
+  - {id: "EVID-01KXCH00002Q5X83HCRVNCG6HH", source_location: "Commands and file formats for detailed reports > Reviews", retrieved_at: "2026-07-12", summary: "Documents Reviews CSV path and fields for package/version, reviewer language, device, submit/update times, star rating, title/text, developer reply, and review link.", authority: "primary_authoritative", directness: "direct", status: "active", last_verified_at: "2026-07-12"}
+  - {id: "EVID-01KXCH0000ZJEAN63NJSN4CXAG", source_location: "Commands and file formats for aggregated reports > Statistics > Ratings", retrieved_at: "2026-07-12", summary: "Documents ratings CSV path, date, package, dimension, daily and total average fields, plus supported app-version, carrier, country, device, language, and Android-version dimensions.", authority: "primary_authoritative", directness: "direct", status: "active", last_verified_at: "2026-07-12"}

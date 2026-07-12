@@ -1,0 +1,636 @@
+schema_version: "1.0"
+entity_type: "fact"
+domain: "google-play-console"
+topic: "store-performance-user-acquisition"
+owner: "google-analytics-knowledge-project"
+records:
+  - id: "FACT-01KXB1T830R82CVP8DJE1P9M83"
+    title: "Store analysis navigation"
+    statement: "The Store analysis page is located at Grow users > Store performance > Store analysis in Play Console."
+    type: "availability"
+    subject: "SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"
+    predicate: "provides_ui_path"
+    object: "Grow users > Store performance > Store analysis"
+    scope: {verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB1T8303F1W1W8JDR77XEAJ"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB1T8308GVDQCG9VR1ECRE0"
+    title: "Store analysis purpose"
+    statement: "The Store analysis page provides a high-level overview of acquisition performance."
+    type: "capability"
+    subject: "SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"
+    predicate: "provides_overview_of"
+    object: "acquisition performance"
+    scope: {page: "Store analysis", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB1T8303F1W1W8JDR77XEAJ"]
+    concept_ids: ["CONCEPT-01KXB0H9ZM80395EP8SM7W6T0Z"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB1T830R24VY4W4QEF7RHKY"
+    title: "Store listing acquisitions chart scope"
+    statement: "The store listing acquisitions chart covers acquisitions from store listings only."
+    type: "constraint"
+    subject: "SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"
+    predicate: "limits_chart_scope_to"
+    object: "store listing acquisitions"
+    scope: {page: "Store analysis", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB1T8303F1W1W8JDR77XEAJ"]
+    concept_ids: ["CONCEPT-01KXB0H9ZM80395EP8SM7W6T0Z"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB1T8300MW0RP866QVMXEYB"
+    title: "UTM source filter condition"
+    statement: "The UTM source dimension is available only for the combined ads/referrals traffic category."
+    type: "constraint"
+    subject: "UTM source dimension"
+    predicate: "requires_filter"
+    object: "ads and referrals"
+    scope: {service: "Google Play Console", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB3HJ6PAQ82T7M762E751ST"]
+    concept_ids: ["CONCEPT-01KXB0H9ZMB53TZPK3Q8N6XDVB"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB1T830XEE99DNRNF1VBFGW"
+    title: "Store listing visitors metric availability"
+    statement: "Store analysis reports store listing visitors."
+    type: "availability"
+    subject: "SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"
+    predicate: "reports_metric"
+    object: "store listing visitors"
+    scope: {page: "Store analysis", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB1T8303F1W1W8JDR77XEAJ"]
+    concept_ids: ["CONCEPT-01KXB0H9ZM2J36209PV7RXPCD3", "CONCEPT-01KXB0H9ZMR0V5MR51TCWN4AAP"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB1T830JPNRDJPBSCP4PVQX"
+    title: "Store listing acquisitions metric availability"
+    statement: "Store analysis reports store listing acquisitions."
+    type: "availability"
+    subject: "SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"
+    predicate: "reports_metric"
+    object: "store listing acquisitions"
+    scope: {page: "Store analysis", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB1T8303F1W1W8JDR77XEAJ"]
+    concept_ids: ["CONCEPT-01KXB0H9ZM2J36209PV7RXPCD3", "CONCEPT-01KXB0H9ZM80395EP8SM7W6T0Z"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB1T8305PA6X4CT67YQ2QSK"
+    title: "Store listing conversion rate availability"
+    statement: "Store analysis reports store listing conversion rate."
+    type: "availability"
+    subject: "SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"
+    predicate: "reports_metric"
+    object: "store listing conversion rate"
+    scope: {page: "Store analysis", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB1T8303F1W1W8JDR77XEAJ"]
+    concept_ids: ["CONCEPT-01KXB0H9ZM2J36209PV7RXPCD3", "CONCEPT-01KXB0H9ZM7K68XC5GGFPJZPEQ"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB1T8306C9TVPSX8G2WCX0J"
+    title: "Country filter availability"
+    statement: "Store analysis data can be configured with a country filter."
+    type: "availability"
+    subject: "SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"
+    predicate: "supports_filter"
+    object: "country"
+    scope: {page: "Store analysis", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB1T8303F1W1W8JDR77XEAJ"]
+    concept_ids: ["CONCEPT-01KXB0H9ZMB53TZPK3Q8N6XDVB"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB1T83001GHMGCRK6TMZRX9"
+    title: "Language filter availability"
+    statement: "Store analysis data can be configured with a language filter."
+    type: "availability"
+    subject: "SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"
+    predicate: "supports_filter"
+    object: "language"
+    scope: {page: "Store analysis", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB1T8303F1W1W8JDR77XEAJ"]
+    concept_ids: ["CONCEPT-01KXB0H9ZMB53TZPK3Q8N6XDVB"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB1T830X7MMW5GVG4Y82PKA"
+    title: "Install state filter availability"
+    statement: "Store analysis data can be configured with an app install state filter."
+    type: "availability"
+    subject: "SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"
+    predicate: "supports_filter"
+    object: "app install state"
+    scope: {page: "Store analysis", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB1T8303F1W1W8JDR77XEAJ"]
+    concept_ids: ["CONCEPT-01KXB0H9ZMB53TZPK3Q8N6XDVB"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB1T83092ZVRCTF5EJ7893R"
+    title: "Time-period filter availability"
+    statement: "Store analysis data can be configured with a time-period filter."
+    type: "availability"
+    subject: "SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"
+    predicate: "supports_filter"
+    object: "time period"
+    scope: {page: "Store analysis", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB1T8303F1W1W8JDR77XEAJ"]
+    concept_ids: ["CONCEPT-01KXB0H9ZMB53TZPK3Q8N6XDVB"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB1T830PV71Q10CAG3YFNVV"
+    title: "UTM campaign filter condition"
+    statement: "The UTM campaign dimension is available only for the combined ads/referrals traffic category."
+    type: "constraint"
+    subject: "UTM campaign dimension"
+    predicate: "requires_filter"
+    object: "ads and referrals"
+    scope: {service: "Google Play Console", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB3HJ6PAQ82T7M762E751ST"]
+    concept_ids: ["CONCEPT-01KXB0H9ZMB53TZPK3Q8N6XDVB"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB1T830NTWS8G9DJW3ABC4D"
+    title: "Custom listing default language requirement"
+    statement: "A default language must be selected for each custom store listing."
+    type: "constraint"
+    subject: "custom store listings"
+    predicate: "requires_default_language"
+    object: true
+    scope: {feature: "custom store listings", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB3HJ6QM7YMQRJGAG54VC4T"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB1T83043MF8KKN840RFFB2"
+    title: "Store listing page acquisitions included"
+    statement: "Conversion analysis includes acquisitions from the store listing page."
+    type: "constraint"
+    subject: "SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"
+    predicate: "includes_acquisitions_from"
+    object: "store listing page"
+    scope: {page: "Conversion analysis", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB3HJ6PJPZX938Z5MFMCAR6"]
+    concept_ids: ["CONCEPT-01KXB0H9ZM80395EP8SM7W6T0Z"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB1T830RFNA8KBP5DKHJC3R"
+    title: "Inline install overlay acquisitions included"
+    statement: "Conversion analysis includes acquisitions from the inline install overlay sometimes shown for ads."
+    type: "constraint"
+    subject: "SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"
+    predicate: "includes_acquisitions_from"
+    object: "inline install overlay"
+    scope: {page: "Conversion analysis", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB3HJ6PJPZX938Z5MFMCAR6"]
+    concept_ids: ["CONCEPT-01KXB0H9ZM80395EP8SM7W6T0Z"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB1T830TDNZY2XGCB6QJY9Y"
+    title: "Other Play surfaces excluded"
+    statement: "Conversion analysis excludes activity from other Google Play surfaces such as editorial content."
+    type: "constraint"
+    subject: "SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"
+    predicate: "excludes_from_conversion_analysis"
+    object: "other Google Play surfaces"
+    scope: {page: "Conversion analysis", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "medium"
+    evidence_ids: ["EVID-01KXB3HJ6PJPZX938Z5MFMCAR6"]
+    concept_ids: ["CONCEPT-01KXB0H9ZM80395EP8SM7W6T0Z"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB1T830E5J801VN4E5A55VA"
+    title: "Backup and restore acquisitions excluded"
+    statement: "Conversion analysis excludes acquisitions from device restoration mechanisms such as backup/restore."
+    type: "constraint"
+    subject: "SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"
+    predicate: "excludes_from_conversion_analysis"
+    object: "backup and restore acquisitions"
+    scope: {page: "Conversion analysis", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB3HJ6PJPZX938Z5MFMCAR6"]
+    concept_ids: ["CONCEPT-01KXB0H9ZM80395EP8SM7W6T0Z"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB1T830Q3D0XKXTE0CRMWPE"
+    title: "Acquisition reporting time zone"
+    statement: "Play Console acquisition data is based on Pacific Time."
+    type: "constraint"
+    subject: "SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"
+    predicate: "uses_time_zone"
+    object: "Pacific Time"
+    scope: {report: "acquisition data", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB3HJ6PXTN343ANG3S8KNWX"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB1T8301Z5Z1ED1W70NJ3WC"
+    title: "Acquisition data history start"
+    statement: "Play Console acquisition data history is available from February 25, 2020."
+    type: "availability"
+    subject: "SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"
+    predicate: "has_history_from"
+    object: "2020-02-25"
+    scope: {report: "acquisition data", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB3HJ6PXTN343ANG3S8KNWX"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB1T830W2V9604Y3BQXC8VQ"
+    title: "Store listing acquisitions definition"
+    statement: "Store listing acquisitions count eligible installing visitors without an existing installation on another device."
+    type: "definition_claim"
+    subject: "store listing acquisitions"
+    predicate: "counts"
+    object: "eligible users who visit and install"
+    scope: {service: "Google Play Console", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB3HJ6PXTN343ANG3S8KNWX"]
+    concept_ids: ["CONCEPT-01KXB0H9ZM80395EP8SM7W6T0Z", "CONCEPT-01KXB0H9ZMX4S975N077EGM94N"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB1T830G58R2GC21G593MVP"
+    title: "Acquisitions and installs differ"
+    statement: "Store listing acquisitions are lower than installs when one user installs the app on multiple devices because the user is counted once."
+    type: "calculation_rule"
+    subject: "store listing acquisitions"
+    predicate: "deduplicates_by"
+    object: "user across devices"
+    scope: {service: "Google Play Console", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB3HJ6PXTN343ANG3S8KNWX"]
+    concept_ids: ["CONCEPT-01KXB0H9ZMX4S975N077EGM94N", "CONCEPT-01KXB0H9ZM410EY10Q7A190K5X", "CONCEPT-01KXB0H9ZM80395EP8SM7W6T0Z"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB1T830GB26CD0TE0DWY5VZ"
+    title: "Store listing conversion rate definition"
+    statement: "Store listing conversion rate is the percentage of eligible store listing visitors that resulted in acquisitions."
+    type: "definition_claim"
+    subject: "store listing conversion rate"
+    predicate: "is_percentage_of"
+    object: "eligible visitors resulting in acquisitions"
+    scope: {service: "Google Play Console", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB3HJ6PXTN343ANG3S8KNWX"]
+    concept_ids: ["CONCEPT-01KXB0H9ZM7K68XC5GGFPJZPEQ", "CONCEPT-01KXB0H9ZM2J36209PV7RXPCD3"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB1T830AEXHPFMNKPVTG48X"
+    title: "Store listing visitors definition"
+    statement: "Store listing visitors count users who visited the store listing while not having the app installed on any device."
+    type: "definition_claim"
+    subject: "store listing visitors"
+    predicate: "counts"
+    object: "eligible users visiting a store listing"
+    scope: {service: "Google Play Console", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB3HJ6PXTN343ANG3S8KNWX"]
+    concept_ids: ["CONCEPT-01KXB0H9ZMR0V5MR51TCWN4AAP", "CONCEPT-01KXB0H9ZMX4S975N077EGM94N"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB1T830ESYNK125MNMBPV91"
+    title: "Visitor daily dimension deduplication"
+    statement: "A store listing visitor is counted once per day within each dimension."
+    type: "calculation_rule"
+    subject: "store listing visitors"
+    predicate: "deduplicates_by"
+    object: "day and dimension"
+    scope: {service: "Google Play Console", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB3HJ6PXTN343ANG3S8KNWX"]
+    concept_ids: ["CONCEPT-01KXB0H9ZMR0V5MR51TCWN4AAP", "CONCEPT-01KXB0H9ZMB53TZPK3Q8N6XDVB"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB1T830G1B8FY75XP9GTQJK"
+    title: "Country dimension meaning"
+    statement: "The Country/Region dimension uses the country or region where the user's Google account is registered."
+    type: "definition_claim"
+    subject: "Country/Region dimension"
+    predicate: "uses_value_from"
+    object: "Google account registration country or region"
+    scope: {service: "Google Play Console", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB3HJ6PAQ82T7M762E751ST"]
+    concept_ids: ["CONCEPT-01KXB0H9ZMB53TZPK3Q8N6XDVB"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB1T8302EJ3BK4ZA8N8YBD6"
+    title: "Language dimension meaning"
+    statement: "The Language dimension uses the language setting on the user's device."
+    type: "definition_claim"
+    subject: "Language dimension"
+    predicate: "uses_value_from"
+    object: "device language setting"
+    scope: {service: "Google Play Console", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB3HJ6PAQ82T7M762E751ST"]
+    concept_ids: ["CONCEPT-01KXB0H9ZMB53TZPK3Q8N6XDVB", "CONCEPT-01KXB0H9ZM410EY10Q7A190K5X"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB1T8308FYN6KA0W2HWQ5P0"
+    title: "Search term dimension condition"
+    statement: "The Search term dimension is available only when traffic source is filtered to Google Play search."
+    type: "constraint"
+    subject: "Search term dimension"
+    predicate: "requires_filter"
+    object: "Google Play search"
+    scope: {service: "Google Play Console", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB3HJ6PAQ82T7M762E751ST"]
+    concept_ids: ["CONCEPT-01KXB0H9ZMB53TZPK3Q8N6XDVB"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB1T830JQ0NEZ4M93SSAEAY"
+    title: "UTM source dimension"
+    statement: "The UTM source dimension reports the value of the utm_source URL parameter."
+    type: "definition_claim"
+    subject: "UTM source dimension"
+    predicate: "reports_parameter"
+    object: "utm_source"
+    scope: {parameter: "utm_source", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB3HJ6PAQ82T7M762E751ST"]
+    concept_ids: ["CONCEPT-01KXB0H9ZMB53TZPK3Q8N6XDVB"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB1T830D0H9B9BZGYNCKZ78"
+    title: "UTM campaign dimension"
+    statement: "The UTM campaign dimension reports the value of the utm_campaign URL parameter."
+    type: "definition_claim"
+    subject: "UTM campaign dimension"
+    predicate: "reports_parameter"
+    object: "utm_campaign"
+    scope: {parameter: "utm_campaign", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB3HJ6PAQ82T7M762E751ST"]
+    concept_ids: ["CONCEPT-01KXB0H9ZMB53TZPK3Q8N6XDVB"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB1T83049FG201YXYNFQ71P"
+    title: "Store listing dimension values"
+    statement: "The Store listing dimension distinguishes the default store listing from custom store listings."
+    type: "definition_claim"
+    subject: "Store listing dimension"
+    predicate: "distinguishes"
+    object: ["default store listing", "custom store listing"]
+    scope: {service: "Google Play Console", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB3HJ6PAQ82T7M762E751ST"]
+    concept_ids: ["CONCEPT-01KXB0H9ZMB53TZPK3Q8N6XDVB"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB1T830DM72C35KCGWTQ8BA"
+    title: "Google Play search traffic"
+    statement: "Google Play search traffic includes eligible users who reached a listing after searching for the app name or a closely associated brand."
+    type: "definition_claim"
+    subject: "Google Play search traffic"
+    predicate: "includes"
+    object: "eligible branded-search listing visits"
+    scope: {analysis: "Store listings", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB3HJ6PF9YD5ED74KJRK2ZX"]
+    concept_ids: ["CONCEPT-01KXB0H9ZMB53TZPK3Q8N6XDVB", "CONCEPT-01KXB0H9ZMR0V5MR51TCWN4AAP"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB1T8305V7X9MHQTW6JJTFP"
+    title: "Google Play explore traffic"
+    statement: "Google Play explore traffic includes eligible users who browsed Google Play before visiting the store listing."
+    type: "definition_claim"
+    subject: "Google Play explore traffic"
+    predicate: "includes"
+    object: "eligible browsing-origin listing visits"
+    scope: {analysis: "Store listings", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB3HJ6PF9YD5ED74KJRK2ZX"]
+    concept_ids: ["CONCEPT-01KXB0H9ZMB53TZPK3Q8N6XDVB", "CONCEPT-01KXB0H9ZMR0V5MR51TCWN4AAP"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB1T830WS20FMB4ZJ57Q090"
+    title: "Ads and referrals traffic"
+    statement: "Ads/referrals traffic includes eligible store-listing visits originating from either source type."
+    type: "definition_claim"
+    subject: "Ads and referrals traffic"
+    predicate: "includes"
+    object: "eligible ad-origin or referral-origin listing visits"
+    scope: {analysis: "Store listings", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB3HJ6PF9YD5ED74KJRK2ZX"]
+    concept_ids: ["CONCEPT-01KXB0H9ZMB53TZPK3Q8N6XDVB", "CONCEPT-01KXB0H9ZMR0V5MR51TCWN4AAP"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB1T830WPSKKX6JX4WTC68W"
+    title: "Other breakdown threshold"
+    statement: "The Other breakdown groups search terms, UTM sources, or UTM campaigns without enough visitors or acquisitions for individual reporting."
+    type: "constraint"
+    subject: "Other breakdown"
+    predicate: "groups_values_below"
+    object: "individual reporting threshold"
+    scope: {service: "Google Play Console", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB3HJ6P4WPB5ZM7K90W5GC2"]
+    concept_ids: ["CONCEPT-01KXB0H9ZMB53TZPK3Q8N6XDVB"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB1T8305RPEQJX7T0B37WE2"
+    title: "Custom store listing limit"
+    statement: "An app can have up to 50 custom store listing pages."
+    type: "constraint"
+    subject: "SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"
+    predicate: "limits_custom_store_listings_to"
+    object: 50
+    scope: {feature: "custom store listings", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB1T830R9Y70CFRPDKCVVMW"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB1T8302YJ7GF2RRSA0PHJE"
+    title: "Custom store listing customizable fields"
+    statement: "A custom store listing supports customization of its presentation fields."
+    type: "capability"
+    subject: "SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"
+    predicate: "customizes_store_listing_fields"
+    object: ["app name", "icon", "descriptions", "graphic assets"]
+    scope: {feature: "custom store listings", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "medium"
+    evidence_ids: ["EVID-01KXB1T830R9Y70CFRPDKCVVMW"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB1T8308EAR06255S1M47RT"
+    title: "Custom listing country exclusivity"
+    statement: "A country can be targeted by only one custom store listing at a time."
+    type: "constraint"
+    subject: "custom store listing country targeting"
+    predicate: "limits_country_to_listing_count"
+    object: 1
+    scope: {feature: "custom store listings", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB3HJ6QJ6QAWJT9VWQBCJGQ"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB1T83040V5SGJNXEG516J0"
+    title: "Custom listings are not automatically translated"
+    statement: "Custom store listings are not automatically translated."
+    type: "constraint"
+    subject: "custom store listings"
+    predicate: "supports_automatic_translation"
+    object: false
+    scope: {feature: "custom store listings", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB3HJ6QM7YMQRJGAG54VC4T"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB21PSCHPF356W87TXDX451"
+    title: "Custom listing multi-country targeting"
+    statement: "A custom store listing can target multiple countries."
+    type: "capability"
+    subject: "custom store listings"
+    predicate: "supports_multiple_country_targets"
+    object: true
+    scope: {feature: "custom store listings", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB3HJ6QJ6QAWJT9VWQBCJGQ"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+  - id: "FACT-01KXB21PSC33BPDM6HSV4QD2H1"
+    title: "Custom listing URL targeting"
+    statement: "A custom store listing can be targeted through a unique custom store listing URL."
+    type: "capability"
+    subject: "custom store listings"
+    predicate: "supports_unique_url_targeting"
+    object: true
+    scope: {feature: "custom store listings", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXB3HJ6QYHV1YZC3ABDCGK5E"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"

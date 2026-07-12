@@ -1,0 +1,12 @@
+schema_version: "1.0"
+entity_type: "evidence"
+domain: "google-play-console"
+topic: "ratings"
+owner: "google-analytics-knowledge-project"
+source: {source_type: "official_support_documentation", publisher: "Google", title: "View and analyze your app's ratings and reviews", url: "https://support.google.com/googleplay/android-developer/answer/138230?hl=en", published_at: null, version: "current as of 2026-07-12", language: "en"}
+records:
+  - {id: "EVID-01KXCH0000AZ5ZGR1E9H3JNMC4", source_location: "Intro; Ratings delay and pauses", retrieved_at: "2026-07-12", summary: "Documents one rating per user, update ability, roughly 24-hour public delay, suspicious-activity pauses, and public-status indicators.", authority: "primary_authoritative", directness: "direct", status: "active", last_verified_at: "2026-07-12"}
+  - {id: "EVID-01KXCH0000KYQ3XJ75PV2FAGQW", source_location: "Browse ratings > Overview", retrieved_at: "2026-07-12", summary: "Defines Google Play rating, lifetime average, users, total ratings availability threshold, and rating-versus-peers UI.", authority: "primary_authoritative", directness: "direct", status: "active", last_verified_at: "2026-07-12"}
+  - {id: "EVID-01KXCH0000VATP8PP83G9W6M5C", source_location: "Browse ratings > Performance over time", retrieved_at: "2026-07-12", summary: "Documents date ranges, daily/7-day/28-day periods, period versus rolling-lifetime averages, distribution counts or percentages, and chart CSV download.", authority: "primary_authoritative", directness: "direct", status: "active", last_verified_at: "2026-07-12"}
+  - {id: "EVID-01KXCH0000EC026TA35RQ27QQV", source_location: "Browse ratings > Ratings breakdown", retrieved_at: "2026-07-12", summary: "Documents rating breakdown dimensions and per-row average, count, share, peer median, and difference from peer median.", authority: "primary_authoritative", directness: "direct", status: "active", last_verified_at: "2026-07-12"}
+  - {id: "EVID-01KXCH00007WS2TM3KN963DNX8", source_location: "Updated ratings", retrieved_at: "2026-07-12", summary: "Documents returning-user rating updates, with-reply versus without-reply groups, direction of rating changes, and average rating change.", authority: "primary_authoritative", directness: "direct", status: "active", last_verified_at: "2026-07-12"}
