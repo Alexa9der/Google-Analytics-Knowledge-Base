@@ -1,0 +1,27 @@
+name: Build generated index
+
+on:
+  push:
+    branches:
+      - research/phase-3-google-admob
+
+permissions:
+  contents: read
+
+jobs:
+  build-index:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: |
+          python -m pip install --quiet -e ".[dev]"
+          python scripts/generate_index.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: generated-index
+          path: INDEX.jsonl
+          retention-days: 3
