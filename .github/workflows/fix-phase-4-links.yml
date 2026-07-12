@@ -1,0 +1,30 @@
+name: Fix Phase 4 service references
+
+on:
+  pull_request:
+
+permissions:
+  contents: write
+
+jobs:
+  fix-references:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+      - name: Replace invalid Google Play service ID
+        shell: bash
+        run: |
+          sed -i 's/SERVICE-01KXB0H9ZM47QHGWXARX1FQRE1/SERVICE-01KXB0H9ZM3Z8V674FKJP8T657/g' knowledge/facts/firebase-events-identity-consent.yaml
+          if git diff --quiet; then
+            echo "No reference changes required"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add knowledge/facts/firebase-events-identity-consent.yaml
+          git commit -m "fix: correct Google Play service references"
+          git push origin HEAD:${{ github.head_ref }}
