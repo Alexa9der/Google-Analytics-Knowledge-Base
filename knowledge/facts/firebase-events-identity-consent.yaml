@@ -1,0 +1,309 @@
+schema_version: "1.0"
+entity_type: "fact"
+domain: "firebase"
+topic: "events-identity-consent"
+owner: "google-analytics-knowledge-project"
+records:
+  - id: "FACT-01KXBZYE665N5XWCRWHA9VY7FY"
+    title: "First open definition"
+    statement: "The first_open event is triggered the first time a user launches an app after installing or reinstalling it."
+    type: "definition_claim"
+    subject: "first_open"
+    predicate: "is_triggered_by"
+    object: "first launch after install or reinstall"
+    scope: {channel: "automatically collected app event", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXBZYE62QDGXNCBTTH828WJG"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+
+  - id: "FACT-01KXBZYE66AWZAMQ7FBYHA3HMV"
+    title: "Download does not trigger first open"
+    statement: "Downloading an app onto a device does not by itself trigger first_open."
+    type: "constraint"
+    subject: "app download"
+    predicate: "does_not_trigger"
+    object: "first_open"
+    scope: {channel: "automatically collected app event", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXBZYE62QDGXNCBTTH828WJG"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+
+  - id: "FACT-01KXBZYE66JVQWR43HQ6VX5H9C"
+    title: "Session start definition"
+    statement: "The session_start event is triggered when a user engages an app or website."
+    type: "definition_claim"
+    subject: "session_start"
+    predicate: "is_triggered_by"
+    object: "user engagement with app or website"
+    scope: {channel: "automatically collected event", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXBZYE64XG8DDKP3EFFJATD5"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+
+  - id: "FACT-01KXBZYE66VCX1W7JY6XR72HK8"
+    title: "Session identifiers are generated automatically"
+    statement: "Analytics automatically generates ga_session_id and ga_session_number for each session and associates them with events in that session."
+    type: "calculation_rule"
+    subject: "Analytics session"
+    predicate: "automatically_generates"
+    object: ["ga_session_id", "ga_session_number"]
+    scope: {channel: "event model", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXBZYE64XG8DDKP3EFFJATD5"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+
+  - id: "FACT-01KXBZYE67Q8GBVX6Q3PC2CPFS"
+    title: "User engagement definition"
+    statement: "The user_engagement event is triggered when an app is in the foreground or a webpage is in focus for at least one second."
+    type: "definition_claim"
+    subject: "user_engagement"
+    predicate: "is_triggered_when"
+    object: "foreground or focus duration reaches at least one second"
+    scope: {channel: "automatically collected event", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXBZYE64HFCT8KSCJH3XBHQ4"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+
+  - id: "FACT-01KXBZYE67D5GB8GM5YSAN599C"
+    title: "Screen view transition rule"
+    statement: "The screen_view event can be triggered when the screen name, screen class, or screen ID changes, or when no screen was previously set."
+    type: "calculation_rule"
+    subject: "screen_view"
+    predicate: "trigger_conditions"
+    object: ["no previous screen", "screen name changed", "screen class changed", "screen ID changed"]
+    scope: {channel: "automatically collected app event", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXBZYE64AT5BW252FGF69VEZ"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+
+  - id: "FACT-01KXBZYE6779Z72AW1R8BZGE70"
+    title: "In-app purchase event definition"
+    statement: "The in_app_purchase event is triggered when a user completes an in-app purchase, including an initial subscription, processed by Google Play or the Apple App Store."
+    type: "definition_claim"
+    subject: "in_app_purchase"
+    predicate: "is_triggered_by"
+    object: "completed store-processed in-app purchase or initial subscription"
+    scope: {channel: "automatically collected app event", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXBZYE65V0B5RT4TCKZB3KBQ"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN", "SERVICE-01KXB0H9ZM47QHGWXARX1FQRE1"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+
+  - id: "FACT-01KXBZYE67K0Z8XSXSAHV2E06R"
+    title: "Google Play linkage required for Android purchase data"
+    statement: "Android in-app purchase data in Analytics requires the Analytics property to be linked to Google Play."
+    type: "relationship"
+    subject: "Android in-app purchase data in Analytics"
+    predicate: "requires"
+    object: "Google Play link"
+    scope: {channel: "integration", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXBZYE65V0B5RT4TCKZB3KBQ"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN", "SERVICE-01KXB0H9ZM47QHGWXARX1FQRE1"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+
+  - id: "FACT-01KXBZYE67AWR53FQYX68QQSMG"
+    title: "Analytics purchase revenue can differ from Play Console"
+    statement: "Reported in-app purchase revenue in Analytics can differ from values in Google Play Console."
+    type: "relationship"
+    subject: "Analytics in-app purchase revenue"
+    predicate: "may_differ_from"
+    object: "Google Play Console values"
+    scope: {channel: "cross-service reporting", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXBZYE65V0B5RT4TCKZB3KBQ"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN", "SERVICE-01KXB0H9ZM47QHGWXARX1FQRE1"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+
+  - id: "FACT-01KXBZYE67M8PZ5ATY8YAC5H5G"
+    title: "Manual and automatic purchase events can duplicate"
+    statement: "Sending manual in_app_purchase events while automatic purchase tracking is active can produce duplicate reported events."
+    type: "constraint"
+    subject: "manual and automatic in_app_purchase tracking"
+    predicate: "can_produce"
+    object: "duplicate events"
+    scope: {channel: "SDK and Measurement Protocol", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXBZYE65V0B5RT4TCKZB3KBQ"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+
+  - id: "FACT-01KXBZYE686Q8D8K4667WKBX6X"
+    title: "User ID is optional"
+    statement: "Setting user_id is optional for Firebase Analytics."
+    type: "constraint"
+    subject: "Firebase Analytics user_id"
+    predicate: "is_required"
+    object: false
+    scope: {channel: "SDK identity", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXBZYE65YY16TMWCJXM1KQMT", "EVID-01KXBZYE65V9T948H306RD1YPY"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+
+  - id: "FACT-01KXBZYE68R3Q9W348MBVRBK1K"
+    title: "User ID applies prospectively"
+    statement: "After user_id is set, future events are tagged with it, while previously recorded events are not changed."
+    type: "temporal_state"
+    subject: "Firebase Analytics user_id"
+    predicate: "applies_to"
+    object: "future events only"
+    scope: {channel: "SDK and BigQuery", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXBZYE65YY16TMWCJXM1KQMT"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+
+  - id: "FACT-01KXBZYE68M91M8A396JAJSZPY"
+    title: "User pseudo ID is automatically generated"
+    statement: "Analytics automatically generates user_pseudo_id for events belonging to the same app user on a single device and stores it in BigQuery for each event."
+    type: "definition_claim"
+    subject: "user_pseudo_id"
+    predicate: "is"
+    object: "automatically generated app-on-device event identifier"
+    scope: {channel: "BigQuery export", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXBZYE65V9T948H306RD1YPY"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN", "SERVICE-01KXB0H9ZMFN9JW1GNN614Q1BJ"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+
+  - id: "FACT-01KXBZYE68GVMR739JA3XASB07"
+    title: "User ID must exclude directly identifying information"
+    statement: "Firebase Analytics user_id must not contain information that a third party could use to determine an individual's identity."
+    type: "constraint"
+    subject: "Firebase Analytics user_id"
+    predicate: "must_not_contain"
+    object: "third-party-identifying information"
+    scope: {channel: "identity and privacy", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXBZYE65V9T948H306RD1YPY"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+
+  - id: "FACT-01KXBZYE68D137TBAMC30492A2"
+    title: "Custom user property limit"
+    statement: "Firebase Analytics allows up to 25 custom user properties per project."
+    type: "constraint"
+    subject: "custom user properties"
+    predicate: "maximum_per_project"
+    object: 25
+    scope: {channel: "SDK and Firebase console", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXBZYE65VXZQ6NSKGMSKYVX8"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+
+  - id: "FACT-01KXBZYE69A37JY8BSQH2FZC1M"
+    title: "User property names are case-sensitive"
+    statement: "Firebase Analytics custom user property names are case-sensitive."
+    type: "constraint"
+    subject: "custom user property name"
+    predicate: "is_case_sensitive"
+    object: true
+    scope: {channel: "SDK", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXBZYE65VXZQ6NSKGMSKYVX8"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+
+  - id: "FACT-01KXBZYE69B8P6TQ2W3X4Y5Z6A"
+    title: "Analytics collection can be disabled temporarily"
+    statement: "Firebase Analytics collection can be disabled temporarily and later re-enabled programmatically."
+    type: "capability"
+    subject: "Firebase Analytics collection"
+    predicate: "can_be"
+    object: "temporarily disabled and re-enabled"
+    scope: {channel: "SDK configuration", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXBZYE65VP5EPDHGGVTGMBX0"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+
+  - id: "FACT-01KXBZYE69C9Q7V3X4Y5Z6A7B8"
+    title: "Runtime collection state persists"
+    statement: "The runtime Analytics collection setting persists across app executions until changed again."
+    type: "temporal_state"
+    subject: "runtime Analytics collection setting"
+    predicate: "persists_across"
+    object: "app executions"
+    scope: {channel: "SDK configuration", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXBZYE65VP5EPDHGGVTGMBX0"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+
+  - id: "FACT-01KXBZYE69D0R8W4Y5Z6A7B8C9"
+    title: "Measurement and ad personalization are separate controls"
+    statement: "Disabling personalized advertising for Firebase Analytics data does not by itself disable use of the data for measurement, reporting, or attribution."
+    type: "relationship"
+    subject: "ad personalization control"
+    predicate: "differs_from"
+    object: "measurement collection and use"
+    scope: {channel: "privacy configuration", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXBZYE660WD5MZ2WDA0GJ7XY"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
