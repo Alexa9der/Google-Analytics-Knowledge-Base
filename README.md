@@ -10,10 +10,12 @@ Completed research blocks:
 
 - Google Play Console — researched and consolidated.
 - Google Search Console analytics — researched and consolidated.
+- Google AdMob — researched and consolidated.
+- Firebase Analytics — researched and consolidated for the attribution objective.
 
 Next service:
 
-- Google AdMob.
+- Google Analytics 4.
 
 The current phase and active task are always defined in `STATE.md`.
 

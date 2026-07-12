@@ -1,0 +1,245 @@
+schema_version: "1.0"
+entity_type: "fact"
+domain: "firebase"
+topic: "key-events-attribution"
+owner: "google-analytics-knowledge-project"
+records:
+  - id: "FACT-01KXC0J7P9B2Q5S9V3W6X1Y4Z7"
+    title: "Key event definition"
+    statement: "A key event is an event that measures an action particularly important to business success."
+    type: "definition_claim"
+    subject: "key event"
+    predicate: "is"
+    object: "event measuring an action important to business success"
+    scope: {channel: "Google Analytics reporting", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXC0J7P8B2Q5S9V3W6X1Y4Z7"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+
+  - id: "FACT-01KXC0J7P9C3R6T0W4X7Y2Z5A8"
+    title: "Any collected event can become a key event"
+    statement: "Any event collected by Analytics can be marked as a key event."
+    type: "capability"
+    subject: "collected Analytics event"
+    predicate: "can_be_marked_as"
+    object: "key event"
+    scope: {channel: "Google Analytics configuration", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXC0J7P8B2Q5S9V3W6X1Y4Z7"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+
+  - id: "FACT-01KXC0J7P9D4S7V1X5Y8Z3A6B9"
+    title: "Standard property key-event limit"
+    statement: "A standard Google Analytics property can mark up to 30 events as key events."
+    type: "constraint"
+    subject: "standard Google Analytics property"
+    predicate: "maximum_key_events"
+    object: 30
+    scope: {channel: "Google Analytics configuration", plan: "standard", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXC0J7P8C3R6T0W4X7Y2Z5A8"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+
+  - id: "FACT-01KXC0J7P9E5T8W2Y6Z9A4B7C0"
+    title: "Analytics 360 key-event limit"
+    statement: "A Google Analytics 360 property can mark up to 50 events as key events."
+    type: "constraint"
+    subject: "Google Analytics 360 property"
+    predicate: "maximum_key_events"
+    object: 50
+    scope: {channel: "Google Analytics configuration", plan: "Analytics 360", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXC0J7P8C3R6T0W4X7Y2Z5A8"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+
+  - id: "FACT-01KXC0J7P9F6V9X3Z7A0B5C8D1"
+    title: "Default app key events"
+    statement: "For applicable app streams, first_open and in_app_purchase are marked as key events by default."
+    type: "availability"
+    subject: "app-stream default key events"
+    predicate: "include"
+    object: ["first_open", "in_app_purchase"]
+    scope: {channel: "Google Analytics app property", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXC0J7P8D4S7V1X5Y8Z3A6B9"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+
+  - id: "FACT-01KXC0J7P9G7W0Y4A8B1C6D9E2"
+    title: "Subscription lifecycle default key events"
+    statement: "For applicable app streams, app_store_subscription_convert and app_store_subscription_renew are marked as key events by default."
+    type: "availability"
+    subject: "app subscription default key events"
+    predicate: "include"
+    object: ["app_store_subscription_convert", "app_store_subscription_renew"]
+    scope: {channel: "Google Analytics app property", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXC0J7P8D4S7V1X5Y8Z3A6B9"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+
+  - id: "FACT-01KXC0J7P9H8X1Z5B9C2D7E0F3"
+    title: "Key-event marking is prospective"
+    statement: "Marking an event as a key event affects reporting from the time of configuration and does not change historical data."
+    type: "temporal_state"
+    subject: "key-event configuration"
+    predicate: "applies_to"
+    object: "future reporting only"
+    scope: {channel: "Google Analytics reporting", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXC0J7P8E5T8W2Y6Z9A4B7C0"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+
+  - id: "FACT-01KXC0J7P9J9Y2A6C0D3E8F1G4"
+    title: "Key-event standard-report delay"
+    statement: "A newly marked key event can take up to 24 hours to appear in standard reports."
+    type: "temporal_state"
+    subject: "newly marked key event"
+    predicate: "maximum_standard_report_delay"
+    object: "24 hours"
+    scope: {channel: "standard reports", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXC0J7P8E5T8W2Y6Z9A4B7C0"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+
+  - id: "FACT-01KXC0J7P9K0Z3B7D1E4F9G2H5"
+    title: "Key-event attribution role"
+    statement: "Analytics can attribute credit for key events to touchpoints along a user's path."
+    type: "capability"
+    subject: "Analytics attribution"
+    predicate: "assigns_credit_for"
+    object: "key events across user-path touchpoints"
+    scope: {channel: "Advertising and attribution reports", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXC0J7P8F6V9X3Z7A0B5C8D1", "EVID-01KXC0J7P8K0Z3B7D1E4F9G2H5"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+
+  - id: "FACT-01KXC0J7P9M1A4C8E2F5G0H3J6"
+    title: "Campaign fields are collected through SDKs or tracking code"
+    statement: "Campaign source, medium, name, content, term, and ID values are sent to Analytics through SDKs or tracking code."
+    type: "capability"
+    subject: "Analytics campaign fields"
+    predicate: "are_collected_through"
+    object: "SDKs or tracking code"
+    scope: {channel: "collection", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXC0J7P8G7W0Y4A8B1C6D9E2"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+
+  - id: "FACT-01KXC0J7P9N2B5D9F3G6H1J4K7"
+    title: "One traffic source per session"
+    statement: "Each Analytics session is associated with one campaign or traffic source."
+    type: "calculation_rule"
+    subject: "Analytics session"
+    predicate: "has"
+    object: "one campaign or traffic source"
+    scope: {channel: "session attribution", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXC0J7P8H8X1Z5B9C2D7E0F3"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+
+  - id: "FACT-01KXC0J7P9P3C6E0G4H7J2K5M8"
+    title: "Mid-session source does not start a new session"
+    statement: "A new campaign or traffic source encountered during an existing session does not start a new session."
+    type: "calculation_rule"
+    subject: "mid-session campaign or traffic source"
+    predicate: "does_not_start"
+    object: "new session"
+    scope: {channel: "session attribution", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXC0J7P8H8X1Z5B9C2D7E0F3"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+
+  - id: "FACT-01KXC0J7P9Q4D7F1H5J8K3M6N9"
+    title: "Traffic-source scopes are distinct"
+    statement: "Analytics reports source, medium, and campaign dimensions at user, session, and event scopes."
+    type: "availability"
+    subject: "Analytics traffic-source dimensions"
+    predicate: "support_scopes"
+    object: ["user", "session", "event"]
+    scope: {channel: "reports and Reporting API", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXC0J7P8J9Y2A6C0D3E8F1G4"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+
+  - id: "FACT-01KXC0J7P9R5E8G2J6K9M4N7P0"
+    title: "Attribution definition"
+    statement: "Attribution is the process of assigning credit for key events to ads, clicks, and other factors along a user's path."
+    type: "definition_claim"
+    subject: "attribution"
+    predicate: "is"
+    object: "credit assignment for key events across user-path factors"
+    scope: {channel: "Google Analytics attribution", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXC0J7P8K0Z3B7D1E4F9G2H5"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+
+  - id: "FACT-01KXC0J7P9S6F9H3K7M0N5P8Q1"
+    title: "Attribution uses a lookback window"
+    statement: "The campaign key-event lookback window determines how far back a touchpoint remains eligible for attribution credit."
+    type: "calculation_rule"
+    subject: "campaign key-event lookback window"
+    predicate: "determines"
+    object: "touchpoint eligibility period for attribution credit"
+    scope: {channel: "Google Analytics attribution settings", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXC0J7P8K0Z3B7D1E4F9G2H5"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
