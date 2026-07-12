@@ -1,5 +1,5 @@
 ---
-current_phase: "Phase 2 Complete"
+current_phase: "Phase 3 Complete"
 project_status: "ready_for_next_service"
 completed:
   - "Google Play Console Store Performance research"
@@ -10,9 +10,10 @@ completed:
   - "Google Play Console Android Vitals research"
   - "Google Play Console Final Consolidation"
   - "Google Search Console Analytics Research"
-current_task: "Prepare Phase 3 Google AdMob Research"
+  - "Google AdMob Analytics Research"
+current_task: "Prepare Phase 4 Firebase Research"
 next_tasks:
-  - "Phase 3 Google AdMob Research"
+  - "Phase 4 Firebase Analytics, Events, Integrations and Export Research"
 blockers: []
 active_package_writers: []
 known_risks:
@@ -28,5 +29,8 @@ known_risks:
   - "Search Console metric definitions, result types, search appearance inventory, quotas, and interfaces can change"
   - "Search Console query rows are privacy-filtered and performance tables or API results can be truncated"
   - "direct Search Console integration with Firebase, Google Play, or AdMob remains unconfirmed"
+  - "AdMob metrics, report compatibility rules, mediation behavior, API resources, and payment boundaries can change"
+  - "estimated earnings can differ from finalized earnings and payments"
+  - "exact finalized AdMob earnings schema, invalid-traffic adjustment methodology, and direct BigQuery export remain unconfirmed"
 last_updated: "2026-07-12"
 ---

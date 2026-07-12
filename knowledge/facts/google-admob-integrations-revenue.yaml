@@ -1,0 +1,261 @@
+schema_version: "1.0"
+entity_type: "fact"
+domain: "google-admob"
+topic: "integrations-revenue-retention"
+owner: "google-analytics-knowledge-project"
+records:
+  - id: "FACT-01KXBVE318EKJ7RMCMAMM653K2"
+    title: "Firebase link enables AdMob user metrics"
+    statement: "Linking an AdMob app to Firebase and integrating Google Analytics for Firebase enables AdMob user metrics."
+    type: "relationship"
+    subject: "AdMob user metrics"
+    predicate: "requires"
+    object: "Firebase app link and Google Analytics for Firebase SDK integration"
+    scope: {channel: "UI", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXBVE317PJ52HGV4C6TG90V1"]
+    service_ids: ["SERVICE-01KXB0H9ZMWZPRWF59R76WVCJN", "SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+
+  - id: "FACT-01KXBVE3187DP1JVDSTS2FX54M"
+    title: "AdMob user metric inventory"
+    statement: "AdMob user metrics include sessions, average session duration, ad exposure per session, and active users."
+    type: "availability"
+    subject: "AdMob user metrics"
+    predicate: "include"
+    object: ["sessions", "average session duration", "ad exposure per session", "active users"]
+    scope: {channel: "UI", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXBVE317PJ52HGV4C6TG90V1"]
+    service_ids: ["SERVICE-01KXB0H9ZMWZPRWF59R76WVCJN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+
+  - id: "FACT-01KXBVE318WSX8S3PQZMJCS13A"
+    title: "Ad unit definition"
+    statement: "An AdMob ad unit is a container placed in an app that sends ad requests and displays returned ads."
+    type: "definition_claim"
+    subject: "AdMob ad unit"
+    predicate: "is"
+    object: "in-app container that requests and displays ads"
+    scope: {channel: "SDK and UI", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXBVE317Q439T05ZESFGF7JR"]
+    service_ids: ["SERVICE-01KXB0H9ZMWZPRWF59R76WVCJN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+
+  - id: "FACT-01KXBVE3191DC3JP1FYKZ51FBN"
+    title: "AdMob ad format inventory"
+    statement: "AdMob supports banner, interstitial, rewarded, rewarded interstitial, native, and app open ad formats."
+    type: "availability"
+    subject: "AdMob"
+    predicate: "supports_ad_formats"
+    object: ["banner", "interstitial", "rewarded", "rewarded interstitial", "native", "app open"]
+    scope: {channel: "UI and SDK", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXBVE317Q439T05ZESFGF7JR"]
+    service_ids: ["SERVICE-01KXB0H9ZMWZPRWF59R76WVCJN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+
+  - id: "FACT-01KXBVE319Y123F05C3EVEV3X8"
+    title: "Impression-level ad revenue callback"
+    statement: "The Google Mobile Ads SDK can provide an impression-level ad revenue callback when an ad impression occurs."
+    type: "capability"
+    subject: "Google Mobile Ads SDK"
+    predicate: "provides"
+    object: "impression-level ad revenue callback"
+    scope: {channel: "SDK", grain: "ad impression", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXBVE317XQ6W0Z9SWF2FRB5N"]
+    service_ids: ["SERVICE-01KXB0H9ZMWZPRWF59R76WVCJN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+
+  - id: "FACT-01KXBVE3198EXN7GPPBVDM9YYW"
+    title: "Impression revenue currency"
+    statement: "AdMob impression-level ad revenue callback values are provided in US dollars."
+    type: "measurement"
+    subject: "impression-level ad revenue value"
+    predicate: "currency"
+    object: "USD"
+    scope: {channel: "SDK", grain: "ad impression", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXBVE317XQ6W0Z9SWF2FRB5N"]
+    service_ids: ["SERVICE-01KXB0H9ZMWZPRWF59R76WVCJN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+
+  - id: "FACT-01KXBVE31915MHVEW3ME7X84PD"
+    title: "Impression revenue precision is explicit"
+    statement: "AdMob impression-level ad revenue includes a precision classification that can be precise, estimated, publisher-provided, or unknown."
+    type: "availability"
+    subject: "impression-level ad revenue"
+    predicate: "includes_precision"
+    object: ["precise", "estimated", "publisher-provided", "unknown"]
+    scope: {channel: "SDK", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXBVE317XQ6W0Z9SWF2FRB5N"]
+    service_ids: ["SERVICE-01KXB0H9ZMWZPRWF59R76WVCJN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+
+  - id: "FACT-01KXBVE319D0BP3NE3NQRG4X8W"
+    title: "Firebase can receive impression revenue"
+    statement: "AdMob impression-level ad revenue can be sent to Google Analytics for Firebase when the AdMob app is linked to Firebase and the required SDK integration is present."
+    type: "relationship"
+    subject: "AdMob impression-level ad revenue"
+    predicate: "can_flow_to"
+    object: "Google Analytics for Firebase"
+    scope: {channel: "SDK integration", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXBVE317BH9F6ZA4FMSJH21D"]
+    service_ids: ["SERVICE-01KXB0H9ZMWZPRWF59R76WVCJN", "SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+
+  - id: "FACT-01KXBVE319XKR911APSDS8BGJB"
+    title: "Estimated earnings are mutable"
+    statement: "AdMob estimated earnings can change before payment because Google may apply adjustments."
+    type: "temporal_state"
+    subject: "AdMob estimated earnings"
+    predicate: "may_change_before"
+    object: "payment"
+    scope: {channel: "UI reports", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXBVE31863MJYJXKNR7NEYT1"]
+    service_ids: ["SERVICE-01KXB0H9ZMWZPRWF59R76WVCJN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+
+  - id: "FACT-01KXBVE319HVDK3EM6ZVQJW2EE"
+    title: "Estimated earnings differ from payment"
+    statement: "AdMob estimated earnings are not the same financial state as finalized payment amounts."
+    type: "relationship"
+    subject: "AdMob estimated earnings"
+    predicate: "differs_from"
+    object: "finalized payment amount"
+    scope: {channel: "reporting and payment boundary", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXBVE31863MJYJXKNR7NEYT1"]
+    service_ids: ["SERVICE-01KXB0H9ZMWZPRWF59R76WVCJN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+
+  - id: "FACT-01KXBVE319MZFN5YJKYF7YAC8Z"
+    title: "AdMob reporting is delayed"
+    statement: "AdMob reporting data is not instantaneous."
+    type: "temporal_state"
+    subject: "AdMob reporting data"
+    predicate: "has_state"
+    object: "delayed availability"
+    scope: {channel: "UI reports", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXBVE318F0N3NNZP73YXVQ72"]
+    service_ids: ["SERVICE-01KXB0H9ZMWZPRWF59R76WVCJN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+
+  - id: "FACT-01KXBVE319CBH3ZZY1ZBC3G8FH"
+    title: "Recent AdMob data can change"
+    statement: "Recent AdMob report values can change after invalid-traffic and other reporting adjustments."
+    type: "temporal_state"
+    subject: "recent AdMob report values"
+    predicate: "may_be_revised_by"
+    object: "invalid-traffic and reporting adjustments"
+    scope: {channel: "UI reports", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXBVE318F0N3NNZP73YXVQ72"]
+    service_ids: ["SERVICE-01KXB0H9ZMWZPRWF59R76WVCJN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+
+  - id: "FACT-01KXBVE319YXP6V231KXVGKS2J"
+    title: "User Activity retention"
+    statement: "AdMob retains User Activity report data for 90 days."
+    type: "availability"
+    subject: "AdMob User Activity report data"
+    predicate: "retention_window"
+    object: "90 days"
+    scope: {channel: "reporting", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXBVE318TJ1VXBZ6133MJ12F"]
+    service_ids: ["SERVICE-01KXB0H9ZMWZPRWF59R76WVCJN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+
+  - id: "FACT-01KXBVE319QBH7DKG7JYEP9MRM"
+    title: "Ads Activity retention"
+    statement: "AdMob retains Ads Activity report data for 2,555 days."
+    type: "availability"
+    subject: "AdMob Ads Activity report data"
+    predicate: "retention_window"
+    object: "2555 days"
+    scope: {channel: "reporting", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXBVE318TJ1VXBZ6133MJ12F"]
+    service_ids: ["SERVICE-01KXB0H9ZMWZPRWF59R76WVCJN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+
+  - id: "FACT-01KXBVE319MMG4GRCHS739QB3B"
+    title: "AdMob CSV export availability"
+    statement: "AdMob report data can be exported as CSV within the applicable retention window."
+    type: "capability"
+    subject: "AdMob report data"
+    predicate: "can_be_exported_as"
+    object: "CSV"
+    scope: {channel: "UI export", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXBVE318TJ1VXBZ6133MJ12F"]
+    service_ids: ["SERVICE-01KXB0H9ZMWZPRWF59R76WVCJN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
+
+  - id: "FACT-01KXBVE3199027110RBQ4AACHR"
+    title: "Active user definition boundary"
+    statement: "AdMob active-user reporting is a user metric derived through the linked analytics integration rather than an ad impression count."
+    type: "relationship"
+    subject: "AdMob active users"
+    predicate: "differs_from"
+    object: "ad impression count"
+    scope: {channel: "UI user metrics", verified_on: "2026-07-12"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXBVE318J8YWAJ34RCWNVBJ6", "EVID-01KXBVE317PJ52HGV4C6TG90V1"]
+    service_ids: ["SERVICE-01KXB0H9ZMWZPRWF59R76WVCJN", "SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-12"
+    last_verified_at: "2026-07-12"
