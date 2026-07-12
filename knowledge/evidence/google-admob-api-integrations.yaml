@@ -3,6 +3,14 @@ entity_type: "evidence"
 domain: "google-admob"
 topic: "integrations-revenue-retention"
 owner: "google-analytics-knowledge-project"
+source:
+  source_type: "official_support_collection"
+  publisher: "Google"
+  title: "Google AdMob Help documentation"
+  url: "https://support.google.com/admob/"
+  published_at: null
+  version: null
+  language: "en"
 records:
   - id: "EVID-01KXBVE317PJ52HGV4C6TG90V1"
     source_location: "https://support.google.com/admob/answer/9263723?hl=en#user_metrics"
