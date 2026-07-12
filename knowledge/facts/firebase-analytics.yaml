@@ -4,7 +4,7 @@ domain: "firebase"
 topic: "analytics-events-audiences"
 owner: "google-analytics-knowledge-project"
 records:
-  - id: "FACT-01KXC0F4V1C2S8K3N5Q7R9T1A2"
+  - id: "FACT-01KXBYPZMEVR8ZNV789KPTASPP"
     title: "Firebase Analytics measurement role"
     statement: "Google Analytics in Firebase is an app measurement solution for app usage and user engagement."
     type: "definition_claim"
@@ -14,13 +14,13 @@ records:
     scope: {channel: "Firebase Analytics", verified_on: "2026-07-12"}
     status: "confirmed"
     confidence: "high"
-    evidence_ids: ["EVID-01KXC0F4V0C2S8K3N5Q7R9T1A2"]
+    evidence_ids: ["EVID-01KXBYPZMD2QW925F3CB17ZFXG"]
     service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
     owner: "google-analytics-knowledge-project"
     created_at: "2026-07-12"
     last_verified_at: "2026-07-12"
 
-  - id: "FACT-01KXC0F4V1D3T9L4P6R8S0U2B3"
+  - id: "FACT-01KXBYPZME9GXQMH56ZD2E4HJ2"
     title: "Distinct event type limit"
     statement: "Firebase Analytics supports reporting for up to 500 distinct event types defined through the SDK."
     type: "constraint"
@@ -30,13 +30,13 @@ records:
     scope: {channel: "SDK and reporting", verified_on: "2026-07-12"}
     status: "confirmed"
     confidence: "high"
-    evidence_ids: ["EVID-01KXC0F4V0D3T9L4P6R8S0U2B3"]
+    evidence_ids: ["EVID-01KXBYPZMD5T4PCEG3SZZPRHAJ"]
     service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
     owner: "google-analytics-knowledge-project"
     created_at: "2026-07-12"
     last_verified_at: "2026-07-12"
 
-  - id: "FACT-01KXC0F4V1E4U0M5Q7S9T1V3C4"
+  - id: "FACT-01KXBYPZMEY844K6S8558Z7AAC"
     title: "Automatic event collection"
     statement: "The Firebase Analytics SDK automatically collects some events without custom logging code."
     type: "capability"
@@ -46,13 +46,13 @@ records:
     scope: {channel: "SDK", verified_on: "2026-07-12"}
     status: "confirmed"
     confidence: "high"
-    evidence_ids: ["EVID-01KXC0F4V0E4U0M5Q7S9T1V3C4", "EVID-01KXC0F4V0H7X3Q8T0V2W4Y6F7"]
+    evidence_ids: ["EVID-01KXBYPZMDBAJCF4EZ3XZBXBKW", "EVID-01KXBYPZMD671SR7E4VYBRNQJ2"]
     service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
     owner: "google-analytics-knowledge-project"
     created_at: "2026-07-12"
     last_verified_at: "2026-07-12"
 
-  - id: "FACT-01KXC0F4V1F5V1N6R8T0U2W4D5"
+  - id: "FACT-01KXBYPZMEFD9FE0MWK8Z7A1WD"
     title: "Automatic user-property collection"
     statement: "The Firebase Analytics SDK automatically collects some user properties."
     type: "capability"
@@ -62,13 +62,13 @@ records:
     scope: {channel: "SDK", verified_on: "2026-07-12"}
     status: "confirmed"
     confidence: "high"
-    evidence_ids: ["EVID-01KXC0F4V0E4U0M5Q7S9T1V3C4"]
+    evidence_ids: ["EVID-01KXBYPZMDBAJCF4EZ3XZBXBKW"]
     service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
     owner: "google-analytics-knowledge-project"
     created_at: "2026-07-12"
     last_verified_at: "2026-07-12"
 
-  - id: "FACT-01KXC0F4V1G6W2P7S9U1V3X5E6"
+  - id: "FACT-01KXBYPZMER68M1VYXZF4T7D0D"
     title: "Custom event capability"
     statement: "Firebase Analytics allows applications to log custom events for business-specific measurement."
     type: "capability"
@@ -78,13 +78,13 @@ records:
     scope: {channel: "SDK", verified_on: "2026-07-12"}
     status: "confirmed"
     confidence: "high"
-    evidence_ids: ["EVID-01KXC0F4V0E4U0M5Q7S9T1V3C4"]
+    evidence_ids: ["EVID-01KXBYPZMDBAJCF4EZ3XZBXBKW"]
     service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
     owner: "google-analytics-knowledge-project"
     created_at: "2026-07-12"
     last_verified_at: "2026-07-12"
 
-  - id: "FACT-01KXC0F4V1H7X3Q8T0V2W4Y6F7"
+  - id: "FACT-01KXBYPZMESACJQD3TSFMPZBM9"
     title: "Event definition boundary"
     statement: "A Firebase Analytics event represents an occurrence in an app, such as a user action, system event, or error."
     type: "definition_claim"
@@ -94,13 +94,13 @@ records:
     scope: {channel: "Analytics event model", verified_on: "2026-07-12"}
     status: "confirmed"
     confidence: "high"
-    evidence_ids: ["EVID-01KXC0F4V0H7X3Q8T0V2W4Y6F7"]
+    evidence_ids: ["EVID-01KXBYPZMD671SR7E4VYBRNQJ2"]
     service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
     owner: "google-analytics-knowledge-project"
     created_at: "2026-07-12"
     last_verified_at: "2026-07-12"
 
-  - id: "FACT-01KXC0F4V1J8Y4R9U1W3X5Z7G8"
+  - id: "FACT-01KXBYPZMEV4ZJN1RQVDXVPAV7"
     title: "Event names are case-sensitive"
     statement: "Firebase Analytics event names are case-sensitive."
     type: "constraint"
@@ -110,13 +110,13 @@ records:
     scope: {channel: "SDK", verified_on: "2026-07-12"}
     status: "confirmed"
     confidence: "high"
-    evidence_ids: ["EVID-01KXC0F4V0J8Y4R9U1W3X5Z7G8"]
+    evidence_ids: ["EVID-01KXBYPZMDMXJ207ZT28EAM6PQ"]
     service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
     owner: "google-analytics-knowledge-project"
     created_at: "2026-07-12"
     last_verified_at: "2026-07-12"
 
-  - id: "FACT-01KXC0F4V1K9Z5S0V2X4Y6A8H9"
+  - id: "FACT-01KXBYPZMET21X6BX2CDMP897R"
     title: "Differently cased names are distinct"
     statement: "Firebase Analytics treats event names that differ only by letter case as distinct event types."
     type: "calculation_rule"
@@ -126,13 +126,13 @@ records:
     scope: {channel: "SDK and reporting", verified_on: "2026-07-12"}
     status: "confirmed"
     confidence: "high"
-    evidence_ids: ["EVID-01KXC0F4V0J8Y4R9U1W3X5Z7G8"]
+    evidence_ids: ["EVID-01KXBYPZMDMXJ207ZT28EAM6PQ"]
     service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
     owner: "google-analytics-knowledge-project"
     created_at: "2026-07-12"
     last_verified_at: "2026-07-12"
 
-  - id: "FACT-01KXC0F4V1M0A6T1W3Y5Z7B9J0"
+  - id: "FACT-01KXBYPZMET0F2D5Z4Y8H0Q5HS"
     title: "Audience source attributes"
     statement: "Firebase Analytics audiences can be defined from device data, custom events, or user properties."
     type: "capability"
@@ -142,13 +142,13 @@ records:
     scope: {channel: "Firebase console", verified_on: "2026-07-12"}
     status: "confirmed"
     confidence: "high"
-    evidence_ids: ["EVID-01KXC0F4V0F5V1N6R8T0U2W4D5"]
+    evidence_ids: ["EVID-01KXBYPZMDDE5CST3QN1WSDTV2"]
     service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
     owner: "google-analytics-knowledge-project"
     created_at: "2026-07-12"
     last_verified_at: "2026-07-12"
 
-  - id: "FACT-01KXC0F4V1N1B7U2X4Z6A8C0K1"
+  - id: "FACT-01KXBYPZME1JEPWV14B0NTYJHK"
     title: "Custom parameter report registration"
     statement: "A logged custom event parameter must be registered as a custom dimension or custom metric to appear in Analytics reports."
     type: "constraint"
@@ -158,13 +158,13 @@ records:
     scope: {channel: "Firebase console reports", verified_on: "2026-07-12"}
     status: "confirmed"
     confidence: "high"
-    evidence_ids: ["EVID-01KXC0F4V0K9Z5S0V2X4Y6A8H9"]
+    evidence_ids: ["EVID-01KXBYPZMDNAPA8P3TKH1C1GBP"]
     service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
     owner: "google-analytics-knowledge-project"
     created_at: "2026-07-12"
     last_verified_at: "2026-07-12"
 
-  - id: "FACT-01KXC0F4V1P2C8V3Y5A7B9D1M2"
+  - id: "FACT-01KXBYPZMEX2VAS02DC7FCTD28"
     title: "Custom parameters in BigQuery export"
     statement: "When Firebase Analytics is linked to BigQuery, logged custom event parameters are included in the exported data."
     type: "relationship"
@@ -174,13 +174,13 @@ records:
     scope: {channel: "BigQuery export", verified_on: "2026-07-12"}
     status: "confirmed"
     confidence: "high"
-    evidence_ids: ["EVID-01KXC0F4V0K9Z5S0V2X4Y6A8H9"]
+    evidence_ids: ["EVID-01KXBYPZMDNAPA8P3TKH1C1GBP"]
     service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN", "SERVICE-01KXB0H9ZMFN9JW1GNN614Q1BJ"]
     owner: "google-analytics-knowledge-project"
     created_at: "2026-07-12"
     last_verified_at: "2026-07-12"
 
-  - id: "FACT-01KXC0F4V1Q3D9W4Z6B8C0E2N3"
+  - id: "FACT-01KXBYPZME8GJ96CN78FVX932Q"
     title: "Firebase Analytics BigQuery link"
     statement: "Firebase Analytics data can be linked to BigQuery for custom analysis and joins with other data sources."
     type: "relationship"
@@ -190,13 +190,13 @@ records:
     scope: {channel: "integration", verified_on: "2026-07-12"}
     status: "confirmed"
     confidence: "high"
-    evidence_ids: ["EVID-01KXC0F4V0G6W2P7S9U1V3X5E6"]
+    evidence_ids: ["EVID-01KXBYPZMDD43XAVYY7M569TQ2"]
     service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN", "SERVICE-01KXB0H9ZMFN9JW1GNN614Q1BJ"]
     owner: "google-analytics-knowledge-project"
     created_at: "2026-07-12"
     last_verified_at: "2026-07-12"
 
-  - id: "FACT-01KXC0F4V1R4E0X5A7C9D1F3P4"
+  - id: "FACT-01KXBYPZME3K5ZPW1T4RFVCW56"
     title: "Events dashboard is aggregated"
     statement: "The Firebase Analytics Events dashboard presents aggregated event statistics."
     type: "availability"
@@ -206,13 +206,13 @@ records:
     scope: {channel: "Firebase console", verified_on: "2026-07-12"}
     status: "confirmed"
     confidence: "high"
-    evidence_ids: ["EVID-01KXC0F4V0M0A6T1W3Y5Z7B9J0"]
+    evidence_ids: ["EVID-01KXBYPZMDVSZAMNQ7KFFJB2SA"]
     service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
     owner: "google-analytics-knowledge-project"
     created_at: "2026-07-12"
     last_verified_at: "2026-07-12"
 
-  - id: "FACT-01KXC0F4V1S5F1Y6B8D0E2G4Q5"
+  - id: "FACT-01KXBYPZMECCJ7Y6K6W8Q7Y1KP"
     title: "Events dashboard update cadence"
     statement: "The Firebase Analytics Events dashboard updates periodically throughout the day rather than continuously in real time."
     type: "temporal_state"
@@ -222,7 +222,7 @@ records:
     scope: {channel: "Firebase console", verified_on: "2026-07-12"}
     status: "confirmed"
     confidence: "high"
-    evidence_ids: ["EVID-01KXC0F4V0M0A6T1W3Y5Z7B9J0"]
+    evidence_ids: ["EVID-01KXBYPZMDVSZAMNQ7KFFJB2SA"]
     service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
     owner: "google-analytics-knowledge-project"
     created_at: "2026-07-12"
