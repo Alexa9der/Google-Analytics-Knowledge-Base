@@ -1,6 +1,7 @@
 name: Build generated index
 
 on:
+  pull_request:
   push:
     branches:
       - research/phase-3-google-admob
