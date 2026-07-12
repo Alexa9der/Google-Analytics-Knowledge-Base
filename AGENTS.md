@@ -21,17 +21,19 @@ analytics ecosystem. Start every session here, then read `STATE.md` before writi
 ## Context loading workflow
 
 1. Read this file and `STATE.md`.
-2. Search `INDEX.jsonl` for an ID or term; do not scan the repository by default.
-3. Load only the located record using `path` and `record_locator`.
-4. Load Evidence only for verification, conflict resolution, or updates.
-5. Keep graph depth at 1–2 normally, 3 for comparisons, and 4 for conflict investigation.
+2. Use `STATE.md` to identify the current phase, service, task, and active package writers.
+3. Search `INDEX.jsonl` for an ID or term; do not scan the repository by default.
+4. Load only the located record using `path` and `record_locator`.
+5. Load Evidence only for verification, conflict resolution, or updates.
+6. Keep graph depth at 1–2 normally, 3 for comparisons, and 4 for conflict investigation.
 
 Routes:
 
 - Definition: INDEX → Concept → related Facts.
 - Verification: INDEX → Fact → Evidence.
-- Service research: INDEX → Service → related Facts → required Evidence.
-- Current research start: INDEX → Google Play Console Service → research-roadmap View.
+- Service research: STATE → current Service → relevant View → related Facts → required Evidence.
+- Cross-service analysis: relevant Views → selected Facts → Evidence only where verification is needed.
+- Report preparation: View → selected Facts → Evidence → Report.
 
 ## Research source policy
 
@@ -45,7 +47,7 @@ text is never Evidence.
 
 Research services in this fixed order: Google Play Console, Google Search Console, Google AdMob,
 Firebase, Google Analytics 4, BigQuery, and Looker Studio. Do not start the next service until the
-current service phase is complete.
+current service phase is complete or `STATE.md` explicitly changes the order.
 
 ## Service isolation
 
@@ -66,10 +68,20 @@ date and applicable scope. Re-check mutable claims before reuse.
 ## Write workflow
 
 - Respect `active_package_writers` in `STATE.md` and search for duplicates first.
+- Generate new IDs with `scripts.common.generate_id()`; do not handcraft sequential-looking IDs.
 - Use `<TYPE>-<ULID>` IDs; paths and slugs are not identifiers.
 - Do not copy `Fact.statement` into Services, Views, Reports, Concepts, or the Index.
 - Keep Fact packages at 20–80 records when practical, with a hard maximum of 100.
 - Keep packages under 96 KiB when practical and never above 128 KiB.
+- Prefer readable multi-line YAML for new production packages.
+
+## Git workflow
+
+- Create a dedicated branch from `main` for each coherent maintenance task or research phase.
+- Do not push research changes directly to `main`.
+- Keep unrelated refactors out of research Pull Requests.
+- Run the full validation suite before opening or updating a Pull Request.
+- Merge only after automated checks pass and the diff is reviewed.
 
 ## Validation workflow
 
@@ -82,11 +94,16 @@ After canonical changes run, in order:
 5. `python scripts/generate_index.py --check`
 6. `pytest`, `ruff check .`, and `mypy scripts`
 
+For documentation-only changes that do not affect indexed Markdown front matter, the Index should
+remain unchanged, but all automated checks should still pass.
+
 ## Prohibited actions
 
 - Do not create confirmed Facts without official Evidence or fictional Evidence.
-- Do not use real accounts, credentials, OAuth, service accounts, live APIs, or user data.
-- Do not add ETL, databases, API servers, dashboards, deployment, Docker, or CI/CD in this phase.
+- Do not use real accounts, credentials, OAuth, service accounts, live APIs, or user data unless a
+  future phase explicitly authorizes them.
+- Do not add production ETL, databases, API servers, dashboards, deployment, or Docker unless the
+  approved phase requires them.
 - Do not add arbitrary entity types, statuses, Fact types, or relation names.
 - Do not use unsafe YAML loading, anchors, aliases, merge keys, or custom tags.
 - Do not modify `universal-ai-knowledge-base` from this domain project.
@@ -99,3 +116,4 @@ After canonical changes run, in order:
 - `knowledge/`: canonical YAML packages.
 - `views/`: reading routes; `reports/`: dated analyses.
 - `schemas/`, `scripts/`, `tests/`: portable validation framework.
+- `.github/workflows/`: automated repository checks.
