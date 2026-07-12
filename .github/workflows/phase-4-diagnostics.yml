@@ -1,0 +1,40 @@
+name: Phase 4 diagnostics
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  diagnostics:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: python -m pip install --quiet -e ".[dev]"
+      - name: Capture validation output
+        shell: bash
+        run: |
+          set +e
+          {
+            echo '=== PYTEST ==='
+            pytest -vv
+            echo '=== KNOWLEDGE ==='
+            python scripts/validate_knowledge.py
+            echo '=== LINKS ==='
+            python scripts/validate_links.py
+            echo '=== FRONTMATTER ==='
+            python scripts/validate_markdown_frontmatter.py
+            echo '=== INDEX ==='
+            python scripts/generate_index.py --check
+          } 2>&1 | tee phase-4-diagnostics.txt
+          exit 0
+      - uses: actions/upload-artifact@v4
+        with:
+          name: phase-4-diagnostics
+          path: phase-4-diagnostics.txt
+          retention-days: 3
