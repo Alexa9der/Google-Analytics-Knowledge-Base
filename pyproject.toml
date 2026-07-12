@@ -1,6 +1,6 @@
 [project]
 name = "google-analytics-knowledge-base"
-version = "0.1.0"
+version = "0.2.0"
 description = "Evidence-based knowledge architecture for the Google analytics ecosystem"
 requires-python = ">=3.11"
 dependencies = [
