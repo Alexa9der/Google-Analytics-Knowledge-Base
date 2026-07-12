@@ -1,6 +1,6 @@
 ---
-current_phase: "Phase 3 Complete"
-project_status: "ready_for_next_service"
+current_phase: "Phase 4"
+project_status: "research_in_progress"
 completed:
   - "Google Play Console Store Performance research"
   - "Google Play Console Statistics research"
@@ -11,11 +11,18 @@ completed:
   - "Google Play Console Final Consolidation"
   - "Google Search Console Analytics Research"
   - "Google AdMob Analytics Research"
-current_task: "Prepare Phase 4 Firebase Research"
+current_task: "Firebase Analytics, Events, Integrations and Export Research"
 next_tasks:
-  - "Phase 4 Firebase Analytics, Events, Integrations and Export Research"
+  - "Complete Phase 4 Firebase Research"
+  - "Prepare Phase 5 Google Analytics 4 Research"
 blockers: []
-active_package_writers: []
+active_package_writers:
+  - "knowledge/evidence/firebase-analytics.yaml"
+  - "knowledge/evidence/firebase-integrations-export.yaml"
+  - "knowledge/facts/firebase-analytics.yaml"
+  - "knowledge/facts/firebase-integrations-export.yaml"
+  - "views/firebase-analytics-flow.md"
+  - "reports/firebase-analytics-phase-4.md"
 known_risks:
   - "financial report schemas and fee programs can change"
   - "merchant context affects currencies and payout timing"
@@ -32,5 +39,8 @@ known_risks:
   - "AdMob metrics, report compatibility rules, mediation behavior, API resources, and payment boundaries can change"
   - "estimated earnings can differ from finalized earnings and payments"
   - "exact finalized AdMob earnings schema, invalid-traffic adjustment methodology, and direct BigQuery export remain unconfirmed"
+  - "Firebase Analytics terminology overlaps with GA4 and must not be treated as a separate measurement model without evidence"
+  - "event, user-property, audience, attribution, retention, and export limits can change"
+  - "Firebase product integrations may require SDK, project, account, and billing prerequisites"
 last_updated: "2026-07-12"
 ---
