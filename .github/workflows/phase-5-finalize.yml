@@ -1,0 +1,56 @@
+name: Phase 5 finalization
+
+on:
+  push:
+    branches:
+      - agent/phase-5-ga4-research
+
+permissions:
+  contents: write
+
+jobs:
+  regenerate-and-validate:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v4
+        with:
+          ref: agent/phase-5-ga4-research
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Install project
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+
+      - name: Regenerate index
+        run: python scripts/generate_index.py
+
+      - name: Validate repository
+        run: |
+          pytest -vv --tb=long
+          ruff check .
+          mypy scripts
+          python scripts/validate_knowledge.py
+          python scripts/validate_links.py
+          python scripts/validate_markdown_frontmatter.py
+          python scripts/generate_index.py --check
+
+      - name: Commit generated index
+        run: |
+          if git diff --quiet -- INDEX.jsonl; then
+            echo "INDEX.jsonl is already current."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add INDEX.jsonl
+          git commit -m "Regenerate index for Phase 5 GA4"
+          git push
