@@ -1,6 +1,6 @@
 ---
-current_phase: "Phase 5 Active"
-project_status: "final_validation"
+current_phase: "Phase 5 Complete"
+project_status: "ready_for_next_service"
 completed:
   - "Google Play Console Store Performance research"
   - "Google Play Console Statistics research"
@@ -19,27 +19,16 @@ completed:
   - "GA4 Firebase, Google Ads, Search Console and BigQuery integration research"
   - "GA4 Reports, Explorations, Data API and BigQuery reporting-surface comparison research"
   - "GA4 View and Phase 5 final report"
-current_task: "Regenerate INDEX.jsonl and complete the Phase 5 validation suite"
+  - "GA4 INDEX.jsonl regeneration and final validation"
+current_task: "Prepare Phase 6 BigQuery research"
 next_tasks:
-  - "Resolve final validation findings"
-  - "Remove temporary diagnostics workflow and files"
-  - "Mark PR #6 ready and merge after green CI"
+  - "Research BigQuery service architecture, billing, datasets and permissions"
+  - "Research GA4 export schema, daily, intraday and streaming tables"
+  - "Research SQL reconstruction of events, users, sessions and ecommerce metrics"
+  - "Research retention, governance, cost controls and downstream transformations"
+  - "Create BigQuery Evidence, Facts, View and Phase 6 report"
 blockers: []
-active_package_writers:
-  - "knowledge/evidence/ga4-property-reporting-apis.yaml"
-  - "knowledge/facts/ga4-property-reporting-apis.yaml"
-  - "knowledge/evidence/ga4-reports-explorations-identity.yaml"
-  - "knowledge/facts/ga4-reports-explorations-identity.yaml"
-  - "knowledge/evidence/ga4-attribution-consent-retention.yaml"
-  - "knowledge/facts/ga4-attribution-consent-retention.yaml"
-  - "knowledge/evidence/ga4-measurement-protocol.yaml"
-  - "knowledge/facts/ga4-measurement-protocol.yaml"
-  - "knowledge/evidence/ga4-product-integrations.yaml"
-  - "knowledge/facts/ga4-product-integrations.yaml"
-  - "knowledge/evidence/ga4-reporting-surfaces.yaml"
-  - "knowledge/facts/ga4-reporting-surfaces.yaml"
-  - "views/google-analytics-4-flow.md"
-  - "reports/google-analytics-4-phase-5.md"
+active_package_writers: []
 known_risks:
   - "financial report schemas and fee programs can change"
   - "merchant context affects currencies and payout timing"
@@ -60,7 +49,7 @@ known_risks:
   - "event, user-property, audience, attribution, retention, and export limits can change"
   - "Firebase product integrations may require SDK, project, account, and billing prerequisites"
   - "exact deferred deep-link attribution and source preservation from website through Google Play to first_open remain open"
-  - "consent-state effects on attribution and event completeness require GA4-level research"
+  - "consent-state effects on attribution and event completeness require property-specific implementation verification"
   - "impression-level AdMob revenue does not equal finalized AdMob earnings or payment"
   - "GA4 API Alpha and Beta surfaces can change or introduce breaking changes"
   - "reporting identity, modeled data, thresholding and retention settings can materially change report outputs"
