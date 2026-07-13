@@ -1,0 +1,229 @@
+schema_version: "1.0"
+entity_type: "fact"
+domain: "google-analytics-4"
+topic: "measurement-protocol"
+owner: "google-analytics-knowledge-project"
+records:
+  - id: "FACT-01KXDKQ91SBE0Z2T97BQ0YVS4Q"
+    title: "Measurement Protocol sends events by HTTP"
+    statement: "Google Analytics Measurement Protocol sends events directly to Google Analytics servers through HTTP requests."
+    type: "capability"
+    subject: "Google Analytics Measurement Protocol"
+    predicate: "sends"
+    object: "events through HTTP requests"
+    scope: {channel: "Web and app streams", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXDKQ91S4B3G3P6R65B3PBGA"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXDKQ91S3Z7FG2J44RV07RDB"
+    title: "Measurement Protocol supplements automatic collection"
+    statement: "Measurement Protocol is intended to augment automatic collection through gtag, Google Tag Manager or Google Analytics for Firebase rather than replace it."
+    type: "constraint"
+    subject: "Google Analytics Measurement Protocol"
+    predicate: "supplements"
+    object: "automatic client-side collection"
+    scope: {channel: "Measurement Protocol", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXDKQ91S4B3G3P6R65B3PBGA"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXDKQ91SFBA4YFNEX3DDBV0C"
+    title: "Measurement Protocol supports offline interactions"
+    statement: "Measurement Protocol can record server-side, offline and other interactions that automatic collection cannot directly capture."
+    type: "capability"
+    subject: "Google Analytics Measurement Protocol"
+    predicate: "can_record"
+    object: ["server-side interactions", "offline interactions", "interactions outside automatic collection"]
+    scope: {channel: "Measurement Protocol", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXDKQ91S4B3G3P6R65B3PBGA"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXDKQ91SMNJPDAFS3ZJFF1F1"
+    title: "Measurement Protocol may provide partial reporting alone"
+    statement: "An implementation that sends events only through Measurement Protocol may have only partial reporting available."
+    type: "constraint"
+    subject: "Measurement Protocol-only collection"
+    predicate: "may_produce"
+    object: "partial reporting"
+    scope: {channel: "Google Analytics reporting", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXDKQ91S4B3G3P6R65B3PBGA"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXDKQ91SHH17JYRQDQPY7387"
+    title: "Measurement Protocol requires a stream identifier"
+    statement: "A Measurement Protocol request uses measurement_id for a web stream or firebase_app_id for an app stream."
+    type: "constraint"
+    subject: "Measurement Protocol request"
+    predicate: "requires_stream_identifier"
+    object: ["measurement_id for web", "firebase_app_id for app"]
+    scope: {channel: "Measurement Protocol request URL", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXDKQ91SC05P9433RFNR8KTV"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXDKQ91SPYKTCNRYD7JCCD4C"
+    title: "Measurement Protocol requires an API secret"
+    statement: "Measurement Protocol requests require an api_secret that must remain confidential and should be used only in server-side or trusted environments."
+    type: "constraint"
+    subject: "Measurement Protocol API secret"
+    predicate: "must_remain"
+    object: "confidential in a trusted environment"
+    scope: {channel: "Measurement Protocol authentication", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXDKQ91SC05P9433RFNR8KTV"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXDKQ91SRZ5S45X5GP555522"
+    title: "Measurement Protocol accepts POST requests"
+    statement: "Google Analytics Measurement Protocol supports HTTP POST requests with a JSON request body."
+    type: "constraint"
+    subject: "Google Analytics Measurement Protocol"
+    predicate: "supports_request_method"
+    object: "HTTP POST with JSON body"
+    scope: {channel: "Measurement Protocol collection endpoint", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXDKQ91SC05P9433RFNR8KTV"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXDKQ91SA5R1MWX67HHFRTBX"
+    title: "Web and app requests use different device identifiers"
+    statement: "Measurement Protocol identifies a web device with client_id and an app installation with app_instance_id."
+    type: "definition_claim"
+    subject: "Measurement Protocol device identifiers"
+    predicate: "use"
+    object: ["client_id for web", "app_instance_id for app"]
+    scope: {channel: "Measurement Protocol payload", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXDKQ91SC05P9433RFNR8KTV"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXDKQ91STAE373XFK9EANVZJ"
+    title: "Measurement Protocol requests can contain 25 events"
+    statement: "A Measurement Protocol request can contain at most 25 events."
+    type: "constraint"
+    subject: "Measurement Protocol request"
+    predicate: "maximum_events"
+    object: 25
+    scope: {channel: "Measurement Protocol", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXDKQ91SC05P9433RFNR8KTV"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXDKQ91SJBH23B8Y1B436FYD"
+    title: "Measurement Protocol events can contain 25 parameters"
+    statement: "Each event in a Measurement Protocol request can contain at most 25 parameters."
+    type: "constraint"
+    subject: "Measurement Protocol event"
+    predicate: "maximum_parameters"
+    object: 25
+    scope: {channel: "Measurement Protocol", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXDKQ91SC05P9433RFNR8KTV"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXDKQ91SHDBHBTGAW45JNAAV"
+    title: "Measurement Protocol events can be backdated 72 hours"
+    statement: "Measurement Protocol events and user properties can be backdated up to 72 hours."
+    type: "constraint"
+    subject: "Measurement Protocol timestamp"
+    predicate: "maximum_backdating_window"
+    object: "72 hours"
+    scope: {channel: "Measurement Protocol", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXDKQ91SC05P9433RFNR8KTV"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXDKQ91SSRG6H9MVX3N9YAJ9"
+    title: "Strict validation rejects older timestamps"
+    statement: "ENFORCE_RECOMMENDATIONS rejects a Measurement Protocol event or user property whose timestamp is more than 72 hours old."
+    type: "calculation_rule"
+    subject: "ENFORCE_RECOMMENDATIONS validation"
+    predicate: "rejects"
+    object: "events and user properties older than 72 hours"
+    scope: {channel: "Measurement Protocol validation", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXDKQ91SC05P9433RFNR8KTV", "EVID-01KXDKQ91SRSNYX07BJK9GQ5SR"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXDKQ91S9XBZWSKW3PE1X5N5"
+    title: "Session parameters affect engagement reporting"
+    statement: "Including session_id and engagement_time_msec helps Measurement Protocol events contribute correctly to session, engagement and Realtime metrics."
+    type: "calculation_rule"
+    subject: "Measurement Protocol session parameters"
+    predicate: "support"
+    object: ["session metrics", "engagement metrics", "Realtime user counts"]
+    scope: {channel: "Google Analytics reporting", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXDKQ91SC05P9433RFNR8KTV"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXDKQ91TZ1W551QJR5353YHM"
+    title: "Validation server reports payload issues"
+    statement: "The Measurement Protocol validation server returns validationMessages describing invalid fields and validation codes without collecting the debug request as production data."
+    type: "capability"
+    subject: "Measurement Protocol validation server"
+    predicate: "returns"
+    object: "structured validation messages"
+    scope: {channel: "debug/mp/collect", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXDKQ91SRSNYX07BJK9GQ5SR"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
