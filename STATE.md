@@ -1,6 +1,6 @@
 ---
-current_phase: "Phase 6 Active"
-project_status: "research_in_progress"
+current_phase: "Phase 6 Validation"
+project_status: "validation_in_progress"
 completed:
   - "Google Play Console Store Performance research"
   - "Google Play Console Statistics research"
@@ -17,11 +17,15 @@ completed:
   - "GA4 BigQuery export dataset, table and nested-schema research"
   - "GA4 BigQuery SQL reconstruction for events, users, sessions, traffic sources and ecommerce"
   - "BigQuery retention, time travel, fail-safe, partitioning, clustering, governance and transformation research"
-current_task: "Create the BigQuery View and final Phase 6 report"
+  - "BigQuery Analytics Foundation View"
+  - "BigQuery Analytics Phase 6 Report"
+current_task: "Regenerate INDEX.jsonl and resolve all Phase 6 validation findings"
 next_tasks:
-  - "Create BigQuery View and Phase 6 report"
-  - "Regenerate INDEX.jsonl and run the complete validation suite"
-  - "Resolve validation findings, mark PR #7 ready and merge after green CI"
+  - "Regenerate INDEX.jsonl"
+  - "Run knowledge, links, Markdown frontmatter, pytest, Ruff and mypy validation"
+  - "Resolve validation findings and obtain green CI"
+  - "Mark PR #7 ready and merge"
+  - "Start Phase 7 Looker Studio research on a dedicated branch"
 blockers: []
 active_package_writers:
   - "knowledge/evidence/bigquery-architecture-access-billing.yaml"
@@ -32,6 +36,8 @@ active_package_writers:
   - "knowledge/facts/bigquery-ga4-sql-reconstruction.yaml"
   - "knowledge/evidence/bigquery-retention-governance-transformations.yaml"
   - "knowledge/facts/bigquery-retention-governance-transformations.yaml"
+  - "views/bigquery-analytics-foundation.md"
+  - "reports/bigquery-analytics-phase-6.md"
 known_risks:
   - "financial report schemas and fee programs can change"
   - "merchant context affects currencies and payout timing"
@@ -74,5 +80,5 @@ known_risks:
   - "time travel and fail-safe storage cost depends on the dataset storage billing model"
   - "expiration changes can delete existing partitions immediately"
   - "row-level security, materialized views and wildcard-table behavior have compatibility limits"
-last_updated: "2026-07-13"
+last_updated: "2026-07-14"
 ---
