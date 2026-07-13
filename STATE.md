@@ -1,5 +1,5 @@
 ---
-current_phase: "Phase 4 Complete"
+current_phase: "Phase 5 Complete"
 project_status: "ready_for_next_service"
 completed:
   - "Google Play Console Store Performance research"
@@ -12,9 +12,21 @@ completed:
   - "Google Search Console Analytics Research"
   - "Google AdMob Analytics Research"
   - "Firebase Analytics, Events, Integrations and Export Research"
-current_task: "Prepare Phase 5 Google Analytics 4 Research"
+  - "GA4 property, data-stream and core API foundation research"
+  - "GA4 reports, Explorations and reporting identity research"
+  - "GA4 attribution, consent, retention and thresholding research"
+  - "GA4 Measurement Protocol validation and collection-boundary research"
+  - "GA4 Firebase, Google Ads, Search Console and BigQuery integration research"
+  - "GA4 Reports, Explorations, Data API and BigQuery reporting-surface comparison research"
+  - "GA4 View and Phase 5 final report"
+  - "GA4 INDEX.jsonl regeneration and final validation"
+current_task: "Prepare Phase 6 BigQuery research"
 next_tasks:
-  - "Phase 5 Google Analytics 4 Property, Reporting, API, Attribution and Consent Research"
+  - "Research BigQuery service architecture, billing, datasets and permissions"
+  - "Research GA4 export schema, daily, intraday and streaming tables"
+  - "Research SQL reconstruction of events, users, sessions and ecommerce metrics"
+  - "Research retention, governance, cost controls and downstream transformations"
+  - "Create BigQuery Evidence, Facts, View and Phase 6 report"
 blockers: []
 active_package_writers: []
 known_risks:
@@ -37,7 +49,16 @@ known_risks:
   - "event, user-property, audience, attribution, retention, and export limits can change"
   - "Firebase product integrations may require SDK, project, account, and billing prerequisites"
   - "exact deferred deep-link attribution and source preservation from website through Google Play to first_open remain open"
-  - "consent-state effects on attribution and event completeness require GA4-level research"
+  - "consent-state effects on attribution and event completeness require property-specific implementation verification"
   - "impression-level AdMob revenue does not equal finalized AdMob earnings or payment"
-last_updated: "2026-07-12"
+  - "GA4 API Alpha and Beta surfaces can change or introduce breaking changes"
+  - "reporting identity, modeled data, thresholding and retention settings can materially change report outputs"
+  - "standard reports, Explorations, Data API and BigQuery export may not produce identical aggregates or freshness"
+  - "Measurement Protocol-only collection can produce partial reporting and should not be treated as a replacement for tagging"
+  - "Measurement Protocol limits, validation behavior and ingestion guidance can change"
+  - "Product-link permissions, limits, delays, audience behavior and unlinking effects can change"
+  - "Search Console and Google Ads linked data may have independent freshness, compatibility and retention boundaries"
+  - "BigQuery excludes report-layer modeling, data-driven attribution and other value additions"
+  - "late-arriving BigQuery events and intraday report processing can change recent-period comparisons"
+last_updated: "2026-07-13"
 ---

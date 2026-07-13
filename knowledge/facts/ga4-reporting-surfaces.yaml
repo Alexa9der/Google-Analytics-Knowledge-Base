@@ -1,0 +1,261 @@
+schema_version: "1.0"
+entity_type: "fact"
+domain: "google-analytics-4"
+topic: "reporting-surfaces"
+owner: "google-analytics-knowledge-project"
+records:
+  - id: "FACT-01KXE6T4Z4BFKJ0WQEMBAP052B"
+    title: "GA4 reporting surfaces use different data representations"
+    statement: "Reports, Explorations, the Data API and BigQuery can display different results because they use different data representations and processing layers."
+    type: "calculation_rule"
+    subject: "GA4 reporting surfaces"
+    predicate: "can_differ_because_of"
+    object: ["data representation", "processing layer", "modeling", "aggregation"]
+    scope: {channel: "GA4 reporting surfaces", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXE6T4Z31VVM8QSR0E1Z8JTY"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXE6T4Z40QWYY66H9A7R1CVS"
+    title: "Reports and Data API use report data"
+    statement: "The Data API accesses the same report data as the Google Analytics interface and respects the property's reporting identity."
+    type: "calculation_rule"
+    subject: "Google Analytics Data API"
+    predicate: "uses"
+    object: "the same report data and reporting identity as the Analytics interface"
+    scope: {channel: "Data API v1", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXE6T4Z4XNZV661D3FFSV3XZ"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXE6T4Z4PWQ9GQMQ1KFR6S8Y"
+    title: "BigQuery contains granular event and user data"
+    statement: "BigQuery export contains event-level and user-level data and excludes value additions that Analytics applies in standard reports and Explorations."
+    type: "definition_claim"
+    subject: "GA4 BigQuery export"
+    predicate: "contains"
+    object: "granular event and user data without report-layer value additions"
+    scope: {channel: "BigQuery Export", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXE6T4Z31VVM8QSR0E1Z8JTY"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN", "SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXE6T4Z4TFDX6NTFJ53MQH97"
+    title: "High cardinality can create an other row"
+    statement: "Reports, Explorations and Data API can condense rows into an other row when high-cardinality dimensions exceed aggregate-table row limits."
+    type: "constraint"
+    subject: "high-cardinality reporting"
+    predicate: "can_produce"
+    object: "an other row"
+    scope: {channel: "Reports, Explorations and Data API", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXE6T4Z31VVM8QSR0E1Z8JTY"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXE6T4Z4GWRWBZVSATHZQG5R"
+    title: "BigQuery does not create an other row"
+    statement: "BigQuery export does not condense high-cardinality values into an other row."
+    type: "constraint"
+    subject: "GA4 BigQuery export"
+    predicate: "does_not_create"
+    object: "an other row for high-cardinality dimensions"
+    scope: {channel: "BigQuery Export", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXE6T4Z31VVM8QSR0E1Z8JTY"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN", "SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXE6T4Z4YPW0AVD2W50C5N3N"
+    title: "Sampling can affect report-layer queries"
+    statement: "Reports, Explorations and Data API can use sampled event and user-level data when a query exceeds the relevant quota limit."
+    type: "constraint"
+    subject: "GA4 report-layer query"
+    predicate: "may_use"
+    object: "sampled data"
+    scope: {channel: "Reports, Explorations and Data API", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXE6T4Z31VVM8QSR0E1Z8JTY"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXE6T4Z4BRDHFDCAG9717W75"
+    title: "BigQuery export is not sampled"
+    statement: "GA4 BigQuery export is not sampled."
+    type: "constraint"
+    subject: "GA4 BigQuery export"
+    predicate: "sampling"
+    object: "none"
+    scope: {channel: "BigQuery Export", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXE6T4Z31VVM8QSR0E1Z8JTY"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN", "SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXE6T4Z4A569TV0DGMMWGZKG"
+    title: "Report surfaces include data-driven attribution"
+    statement: "Reports, Explorations and Data API can include data-driven attribution, while BigQuery export does not include that report-layer attribution result."
+    type: "calculation_rule"
+    subject: "GA4 attribution output"
+    predicate: "is_available_in"
+    object: ["Reports", "Explorations", "Data API"]
+    scope: {channel: "GA4 reporting surfaces", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXE6T4Z31VVM8QSR0E1Z8JTY"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXE6T4Z46A8FV009P7ATS6JW"
+    title: "Key-event modeling is absent from BigQuery"
+    statement: "Key-event modeling is included in Reports, Explorations and Data API but is not included in BigQuery export."
+    type: "calculation_rule"
+    subject: "key-event modeling"
+    predicate: "is_not_included_in"
+    object: "BigQuery export"
+    scope: {channel: "GA4 reporting surfaces", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXE6T4Z31VVM8QSR0E1Z8JTY"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN", "SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXE6T4Z4WQ2NJ0SCX6ESJ4D8"
+    title: "Behavioral modeling is not applied in BigQuery"
+    statement: "BigQuery contains cookieless pings but does not include behavioral modeling, so modeled user counts can differ from BigQuery event-level results."
+    type: "calculation_rule"
+    subject: "behavioral modeling"
+    predicate: "is_not_applied_in"
+    object: "BigQuery export"
+    scope: {channel: "Consent mode and BigQuery", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXE6T4Z31VVM8QSR0E1Z8JTY"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN", "SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXE6T4Z42VQ8YXYR367QM6A8"
+    title: "Reports and Explorations can differ by supported fields"
+    statement: "Reports and Explorations support different sets of dimensions and metrics, and unsupported fields are dropped when a report is opened in Explore."
+    type: "constraint"
+    subject: "Reports and Explorations"
+    predicate: "can_differ_by"
+    object: "supported dimensions and metrics"
+    scope: {channel: "Reports and Explore", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXE6T4Z4VCEY3P5SQ85XVVMZ"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXE6T4Z4B12SSKSG7YT174ZA"
+    title: "Reports and Explorations use different filter semantics"
+    statement: "Exploration filters are case-sensitive and support multiple match types, while the standard report search field uses a case-insensitive contains match."
+    type: "calculation_rule"
+    subject: "GA4 filtering"
+    predicate: "differs_between"
+    object: ["Reports", "Explorations"]
+    scope: {channel: "Reports and Explore", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXE6T4Z4VCEY3P5SQ85XVVMZ"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXE6T4Z4B5QQMEM68BDMW0MN"
+    title: "Exploration date ranges are limited by retention"
+    statement: "Exploration date ranges are limited by the property's user-level and event-level data-retention settings."
+    type: "constraint"
+    subject: "Exploration date range"
+    predicate: "is_limited_by"
+    object: "property data-retention settings"
+    scope: {channel: "Google Analytics Explore", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXE6T4Z4VCEY3P5SQ85XVVMZ"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXE6T4Z4GZNJRXRCJXR4GHDF"
+    title: "Recent report and API data can change"
+    statement: "GA4 report and API results can change during the first 24 to 48 hours while realtime, intraday and daily processing completes."
+    type: "temporal_state"
+    subject: "recent GA4 report and API data"
+    predicate: "can_change_for"
+    object: "24 to 48 hours"
+    scope: {channel: "Reports and Data API", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXE6T4Z4WF7WVPP3Z33Z9SKZ"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXE6T4Z455SQSS0HS3ET7PBP"
+    title: "Intraday data can have temporary attribution gaps"
+    statement: "Intraday report and API data can temporarily omit event-scoped traffic-source values, use paid-and-organic last click, and apply stricter cardinality limits until daily processing completes."
+    type: "temporal_state"
+    subject: "intraday GA4 data"
+    predicate: "can_temporarily_have"
+    object: ["traffic-source gaps", "interim attribution", "stricter cardinality limits"]
+    scope: {channel: "Reports and Data API", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXE6T4Z4WF7WVPP3Z33Z9SKZ"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXE6T4Z4JP0NSJCDPVD38RT3"
+    title: "BigQuery daily tables are updated for late events"
+    statement: "GA4 updates BigQuery daily event tables with late-arriving events for up to three days after the event date, and events arriving after that window are not recorded."
+    type: "temporal_state"
+    subject: "BigQuery daily event table"
+    predicate: "late_arrival_update_window"
+    object: "up to three days"
+    scope: {channel: "BigQuery Export", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXE6T4Z4QQCSQY5ND5MK0TTP"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN", "SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"

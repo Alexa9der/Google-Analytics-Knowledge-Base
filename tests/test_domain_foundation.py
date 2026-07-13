@@ -28,27 +28,30 @@ DEMO_IDS = {
 
 
 def _rows() -> list[dict[str, object]]:
+    """Build and parse the current canonical index rows for acceptance checks."""
     return [json.loads(line) for line in generate_index.build_index(ROOT).splitlines()]
 
 
 def test_production_entity_counts_and_no_demo_ids() -> None:
+    """Assert the expected post-Phase-5 production inventory and absence of demo IDs."""
     rows = _rows()
     counts = {
         entity_type: sum(row["entity_type"] == entity_type for row in rows)
         for entity_type in ("fact", "evidence", "concept", "service", "view", "report")
     }
     assert counts == {
-        "fact": 403,
-        "evidence": 161,
+        "fact": 486,
+        "evidence": 184,
         "concept": 41,
         "service": 7,
-        "view": 11,
-        "report": 10,
+        "view": 12,
+        "report": 11,
     }
     assert DEMO_IDS.isdisjoint({str(row["id"]) for row in rows})
 
 
 def test_research_roadmap_references_all_services_in_order() -> None:
+    """Assert that the roadmap contains every registered service in canonical order."""
     metadata, _ = validate_markdown_frontmatter.parse_front_matter(
         ROOT / "views" / "research-roadmap.md"
     )
@@ -59,6 +62,7 @@ def test_research_roadmap_references_all_services_in_order() -> None:
 
 
 def test_all_production_validators_pass() -> None:
+    """Assert that all canonical knowledge, link, and front-matter validators pass."""
     knowledge_errors = [
         issue for issue in validate_knowledge.validate_all(ROOT) if issue.severity == "error"
     ]

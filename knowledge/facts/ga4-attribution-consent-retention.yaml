@@ -1,0 +1,197 @@
+schema_version: "1.0"
+entity_type: "fact"
+domain: "google-analytics-4"
+topic: "attribution-consent-retention"
+owner: "google-analytics-knowledge-project"
+records:
+  - id: "FACT-01KXDE86G09FYYQ7HD451XFNSC"
+    title: "Attribution assigns credit"
+    statement: "Attribution assigns credit for key events to ads, clicks and other factors along a user's path."
+    type: "definition_claim"
+    subject: "attribution"
+    predicate: "assigns_credit_to"
+    object: "touchpoints along a user's path to a key event"
+    scope: {channel: "Google Analytics attribution", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXDE86FZH3X75TVQT9T70T4N"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXDE86G0B1BRBMWVPVB6WGQZ"
+    title: "GA4 attribution report models"
+    statement: "GA4 attribution reports provide data-driven attribution, paid and organic last click, and Google paid channels last click models."
+    type: "availability"
+    subject: "GA4 attribution report models"
+    predicate: "include"
+    object: ["data-driven attribution", "paid and organic last click", "Google paid channels last click"]
+    scope: {channel: "Advertising attribution reports", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXDE86FZH3X75TVQT9T70T4N"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXDE86G0HN71QRFF0C52F4DA"
+    title: "Direct traffic usually receives no attribution credit"
+    statement: "GA4 attribution models exclude direct visits from attribution credit unless the complete path to the key event consists only of direct visits."
+    type: "calculation_rule"
+    subject: "direct visits"
+    predicate: "receive_attribution_credit_when"
+    object: "the complete key-event path consists only of direct visits"
+    scope: {channel: "Google Analytics attribution", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXDE86FZH3X75TVQT9T70T4N"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXDE86G0GX815DGX2F8TJ725"
+    title: "GA4 attribution settings"
+    statement: "GA4 attribution settings include the reporting attribution model, channels eligible for credit and the key-event lookback window."
+    type: "availability"
+    subject: "GA4 attribution settings"
+    predicate: "include"
+    object: ["reporting attribution model", "channels eligible for credit", "key-event lookback window"]
+    scope: {channel: "Google Analytics Admin", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXDE86FZH3X75TVQT9T70T4N"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXDE86G0V8SM5NZCCJ6V3VKQ"
+    title: "Standard GA4 retention options"
+    statement: "A standard GA4 property can retain user-level and event-level data for 2 or 14 months."
+    type: "constraint"
+    subject: "standard GA4 property retention"
+    predicate: "supports"
+    object: ["2 months", "14 months"]
+    scope: {channel: "Data retention settings", plan: "standard", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXDE86FZPW708CHXJRNGGMWX"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXDE86G0X8DCEPQ91996FDFP"
+    title: "Retention does not affect standard aggregated reports"
+    statement: "The GA4 data-retention setting does not affect standard aggregated reports but does affect Explorations and funnel reports."
+    type: "calculation_rule"
+    subject: "GA4 data-retention setting"
+    predicate: "affects"
+    object: ["Explorations", "funnel reports"]
+    scope: {channel: "Google Analytics reporting", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXDE86FZPW708CHXJRNGGMWX"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXDE86G0PV1QG61ZA6Q4D8RT"
+    title: "Retention changes have a delay"
+    statement: "GA4 waits 24 hours before implementing a change to the data-retention period."
+    type: "temporal_state"
+    subject: "data-retention setting change"
+    predicate: "implementation_delay"
+    object: "24 hours"
+    scope: {channel: "Google Analytics Admin", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXDE86FZPW708CHXJRNGGMWX"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXDE86G073GEAK4YMD35T12N"
+    title: "Data thresholds are system-defined"
+    statement: "GA4 data thresholds are system-defined and cannot be adjusted by the property user."
+    type: "constraint"
+    subject: "GA4 data thresholds"
+    predicate: "are"
+    object: "system-defined and non-configurable"
+    scope: {channel: "Reports, Explorations and API", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXDE86FZKRDTVVSYFH6FEP5H"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXDE86G00CZDYH2231GGR1B6"
+    title: "Thresholds protect user privacy"
+    statement: "GA4 can withhold data in reports, Explorations and API responses when necessary to reduce the risk of inferring an individual user's identity or sensitive information."
+    type: "constraint"
+    subject: "GA4 thresholding"
+    predicate: "can_withhold"
+    object: "low-volume or sensitive report data"
+    scope: {channel: "Reports, Explorations and API", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXDE86FZKRDTVVSYFH6FEP5H"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXDE86G1DPVV65JBJ76X4P16"
+    title: "Google signals data is absent from BigQuery export"
+    statement: "Google Analytics does not export Google signals data to BigQuery."
+    type: "constraint"
+    subject: "GA4 BigQuery export"
+    predicate: "does_not_include"
+    object: "Google signals data"
+    scope: {channel: "BigQuery export", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXDE86FZKRDTVVSYFH6FEP5H"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN", "SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXDE86G1P4VCD0MNZ08QGPEK"
+    title: "Consent mode changes tag behavior"
+    statement: "Consent mode communicates consent states to Google tags and dynamically changes tag behavior to respect user choices."
+    type: "capability"
+    subject: "consent mode"
+    predicate: "changes"
+    object: "tag behavior based on consent state"
+    scope: {channel: "Websites and mobile apps", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXDE86FZBK3VY4AZZNB0W5RJ"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXDE86G10FZ02Z6Q50P5AF1Q"
+    title: "Denied analytics storage can produce cookieless pings"
+    statement: "With advanced consent mode, denied analytics storage can result in cookieless pings that GA4 uses for behavioral and conversion modeling."
+    type: "capability"
+    subject: "advanced consent mode with denied analytics storage"
+    predicate: "can_send"
+    object: "cookieless pings used for modeling"
+    scope: {channel: "Google Analytics consent mode", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXDE86FZBK3VY4AZZNB0W5RJ"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"

@@ -1,0 +1,133 @@
+schema_version: "1.0"
+entity_type: "fact"
+domain: "google-analytics-4"
+topic: "property-reporting-apis"
+owner: "google-analytics-knowledge-project"
+records:
+  - id: "FACT-01KXDD3E3KVGT85EHQ12QXBNXM"
+    title: "Google Analytics uses an event-based model"
+    statement: "Google Analytics uses event-based data for website and app measurement."
+    type: "definition_claim"
+    subject: "Google Analytics measurement model"
+    predicate: "uses"
+    object: "event-based website and app data"
+    scope: {channel: "Google Analytics", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXDD3E3KY3YMXJDX270PJ52E"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXDD3E3KE3CJTH0QPXGMM5NV"
+    title: "Google Analytics combines website and app data"
+    statement: "A Google Analytics property can collect both website and app data to support analysis of the customer journey."
+    type: "capability"
+    subject: "Google Analytics property"
+    predicate: "can_collect"
+    object: ["website data", "app data"]
+    scope: {channel: "Google Analytics property", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXDD3E3KY3YMXJDX270PJ52E"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXDD3E3KZ2DWZNWCXAX30HF4"
+    title: "Data streams are configured at property level"
+    statement: "Web and app data collection is configured through Data streams within a Google Analytics property."
+    type: "capability"
+    subject: "Google Analytics property"
+    predicate: "contains_configuration_for"
+    object: "web and app data streams"
+    scope: {channel: "Admin data collection configuration", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXDD3E3K86ASD5GYB1WEJBXM"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXDD3E3K7BZN9K0H71PP86EJ"
+    title: "Realtime can verify new collection"
+    statement: "The Realtime report can be used to verify that newly configured website data collection is receiving data."
+    type: "capability"
+    subject: "Realtime report"
+    predicate: "can_verify"
+    object: "new website data collection"
+    scope: {channel: "Google Analytics reporting", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXDD3E3K86ASD5GYB1WEJBXM"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXDD3E3KP9RT1RJNWB4FVEJK"
+    title: "Data API accesses report data"
+    statement: "The Google Analytics Data API provides programmatic access to Google Analytics report data."
+    type: "capability"
+    subject: "Google Analytics Data API"
+    predicate: "provides_access_to"
+    object: "Google Analytics report data"
+    scope: {channel: "Data API v1", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXDD3E3K5N9EXY4MKRRA5P4G"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXDD3E3KGH320YV6H1XMR7BJ"
+    title: "Data API respects reporting identity"
+    statement: "Google Analytics Data API report data respects the Reporting identity configured for the property."
+    type: "calculation_rule"
+    subject: "Google Analytics Data API report data"
+    predicate: "respects"
+    object: "property Reporting identity"
+    scope: {channel: "Data API v1", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXDD3E3K5N9EXY4MKRRA5P4G"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXDD3E3KG3FFQN23R5SB1B0A"
+    title: "Admin API accesses configuration data"
+    statement: "The Google Analytics Admin API provides programmatic access to Google Analytics configuration data."
+    type: "capability"
+    subject: "Google Analytics Admin API"
+    predicate: "provides_access_to"
+    object: "Google Analytics configuration data"
+    scope: {channel: "Admin API v1", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXDD3E3KX9Q3MTNWJVXPQ9PB"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXDD3E3KW3PEXP9AVMNXA12R"
+    title: "Admin API manages property configuration surfaces"
+    statement: "The Google Analytics Admin API can manage properties, data streams, retention settings, key events, custom definitions and supported product links."
+    type: "capability"
+    subject: "Google Analytics Admin API"
+    predicate: "can_manage"
+    object: ["properties", "data streams", "retention settings", "key events", "custom definitions", "supported product links"]
+    scope: {channel: "Admin API v1", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXDD3E3KX9Q3MTNWJVXPQ9PB"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
