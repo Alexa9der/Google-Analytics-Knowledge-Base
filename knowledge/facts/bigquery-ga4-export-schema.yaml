@@ -1,0 +1,261 @@
+schema_version: "1.0"
+entity_type: "fact"
+domain: "bigquery"
+topic: "ga4-export-schema"
+owner: "google-analytics-knowledge-project"
+records:
+  - id: "FACT-01KXEGYNBQ25QF7H687WZDXF2W"
+    title: "GA4 export dataset naming"
+    statement: "Each linked GA4 property exports into one BigQuery dataset named analytics_<property_id>."
+    type: "definition_claim"
+    subject: "GA4 BigQuery export dataset"
+    predicate: "is_named"
+    object: "analytics_<property_id>"
+    scope: {channel: "GA4 BigQuery export", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEGYNBPMBAXD5A905H621A1"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN", "SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEGYNBQ787Y11W6X18H4X4P"
+    title: "Daily export creates date-suffixed tables"
+    statement: "When Daily export is enabled, GA4 creates an events_YYYYMMDD table for each day with exported events."
+    type: "availability"
+    subject: "GA4 Daily BigQuery export"
+    predicate: "creates"
+    object: "events_YYYYMMDD"
+    scope: {channel: "Daily export", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEGYNBPMBAXD5A905H621A1"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN", "SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEGYNBQCQEWSZQQYVYK40RN"
+    title: "Streaming export creates intraday tables"
+    statement: "When Streaming export is enabled, GA4 continuously populates events_intraday_YYYYMMDD and deletes it after the complete daily table is available."
+    type: "temporal_state"
+    subject: "GA4 Streaming BigQuery export"
+    predicate: "uses"
+    object: "temporary events_intraday_YYYYMMDD table"
+    scope: {channel: "Streaming export", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEGYNBPMBAXD5A905H621A1"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN", "SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEGYNBQE08ASRMF7ED43A2M"
+    title: "Daily tables accept late events for three days"
+    statement: "GA4 updates a daily events table with late-arriving events for up to three days after the event date."
+    type: "temporal_state"
+    subject: "GA4 daily BigQuery table"
+    predicate: "late_arrival_update_window"
+    object: "up to three days"
+    scope: {channel: "Daily export", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEGYNBPMBAXD5A905H621A1"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN", "SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEGYNBQ64N0EC40HEHQSTE0"
+    title: "Events after the late-arrival window are excluded"
+    statement: "GA4 events that arrive more than three days after their event date are not recorded in the export."
+    type: "constraint"
+    subject: "late GA4 event"
+    predicate: "is_not_recorded_after"
+    object: "three-day late-arrival window"
+    scope: {channel: "GA4 BigQuery export", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEGYNBPMBAXD5A905H621A1"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN", "SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEGYNBQP66BT56MK67T4XWZ"
+    title: "Sandbox has no intraday export"
+    statement: "BigQuery sandbox does not provide GA4 intraday event import."
+    type: "constraint"
+    subject: "BigQuery sandbox GA4 export"
+    predicate: "does_not_include"
+    object: "intraday event import"
+    scope: {channel: "BigQuery sandbox", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEGYNBPMBAXD5A905H621A1"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN", "SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEGYNBQX444M2RB0EF476YZ"
+    title: "Event rows contain nested and repeated records"
+    statement: "GA4 export tables contain nested RECORD fields and repeated RECORD arrays, including event_params, user_properties and items."
+    type: "definition_claim"
+    subject: "GA4 BigQuery export schema"
+    predicate: "contains"
+    object: ["nested records", "repeated records"]
+    scope: {channel: "GA4 export schema", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEGYNBPMBAXD5A905H621A1"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN", "SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEGYNBRVJF5F9HTW2RW0PNH"
+    title: "event_params is implementation-specific"
+    statement: "The repeated event_params record stores one key-value entry per event parameter, and its available keys depend on the measurement implementation."
+    type: "definition_claim"
+    subject: "event_params"
+    predicate: "stores"
+    object: "implementation-specific event parameter key-value pairs"
+    scope: {channel: "GA4 export schema", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEGYNBPMBAXD5A905H621A1"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN", "SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEGYNBRRP57Q7FQPSR4C0QB"
+    title: "User identity fields are event-scoped in export rows"
+    statement: "GA4 export rows can include user_id, user_pseudo_id and user_first_touch_timestamp for the user associated with each event."
+    type: "availability"
+    subject: "GA4 export user fields"
+    predicate: "include"
+    object: ["user_id", "user_pseudo_id", "user_first_touch_timestamp"]
+    scope: {channel: "GA4 export schema", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEGYNBPMBAXD5A905H621A1"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN", "SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEGYNBRHWNV0VP68ZVQT4A8"
+    title: "Consent status is exported in privacy_info"
+    statement: "The privacy_info record exposes analytics storage, ads storage and transient-token states associated with the exported event."
+    type: "availability"
+    subject: "privacy_info"
+    predicate: "includes"
+    object: ["analytics_storage", "ads_storage", "uses_transient_token"]
+    scope: {channel: "GA4 export schema", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEGYNBPMBAXD5A905H621A1"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN", "SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEGYNBRS7MS99E9Y85DCR1N"
+    title: "Some user fields are absent from intraday tables"
+    statement: "is_active_user, user_ltv and first-acquisition traffic_source fields are not populated in GA4 intraday export tables."
+    type: "constraint"
+    subject: "GA4 intraday tables"
+    predicate: "do_not_populate"
+    object: ["is_active_user", "user_ltv", "traffic_source"]
+    scope: {channel: "Intraday export", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEGYNBPMBAXD5A905H621A1"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN", "SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEGYNBRNHVB6VF65C35VGKJ"
+    title: "Collected traffic source differs from session attribution"
+    statement: "collected_traffic_source contains traffic values present on the event, while session_traffic_source_last_click contains last-click attributed session traffic source data where available."
+    type: "definition_claim"
+    subject: "GA4 export traffic-source records"
+    predicate: "distinguish"
+    object: ["event-collected traffic source", "session last-click attribution"]
+    scope: {channel: "GA4 export schema", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEGYNBPMBAXD5A905H621A1"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN", "SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEGYNBRWYHSZJ6ZRB1H4041"
+    title: "Ecommerce data exists at event and item grain"
+    statement: "The GA4 export schema stores transaction-level ecommerce fields in ecommerce and product-level fields in the repeated items array."
+    type: "definition_claim"
+    subject: "GA4 ecommerce export"
+    predicate: "uses"
+    object: ["event-level ecommerce record", "repeated item-level records"]
+    scope: {channel: "GA4 ecommerce export", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEGYNBPMBAXD5A905H621A1"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN", "SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEGYNBRB85J09M7WE1GE465"
+    title: "Repeated fields require UNNEST for row-level analysis"
+    statement: "BigQuery SQL commonly uses UNNEST to query repeated GA4 fields such as event_params and items."
+    type: "capability"
+    subject: "BigQuery SQL"
+    predicate: "uses"
+    object: "UNNEST for repeated GA4 records"
+    scope: {channel: "GA4 BigQuery SQL", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEGYNBQH5YSJ1F6P823T62Y"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN", "SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEGYNBRPEPK1BT9CJTXRQ8W"
+    title: "Wildcard queries can select date ranges"
+    statement: "GA4 export tables can be queried across date-suffixed table names by using a wildcard and filtering _TABLE_SUFFIX."
+    type: "capability"
+    subject: "GA4 BigQuery wildcard query"
+    predicate: "supports"
+    object: "date-range table selection with _TABLE_SUFFIX"
+    scope: {channel: "GA4 BigQuery SQL", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEGYNBQH5YSJ1F6P823T62Y"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN", "SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEGYNBRY6G87Q4TK0GJ5G9G"
+    title: "Google provides a public GA4 ecommerce dataset"
+    statement: "Google provides a public GA4 ecommerce BigQuery dataset that can be used to practice event-level queries without private production data."
+    type: "availability"
+    subject: "public GA4 ecommerce BigQuery dataset"
+    predicate: "is_available_for"
+    object: "query practice and examples"
+    scope: {channel: "Google public BigQuery data", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEGYNBQB84D1AWQXFZ47400"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN", "SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
