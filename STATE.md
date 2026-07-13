@@ -15,9 +15,9 @@ completed:
   - "GA4 property, data-stream and core API foundation research"
   - "GA4 reports, Explorations and reporting identity research"
   - "GA4 attribution, consent, retention and thresholding research"
-current_task: "Research GA4 Measurement Protocol, product integrations, reporting-surface differences and cross-platform boundaries"
+  - "GA4 Measurement Protocol validation and collection-boundary research"
+current_task: "Research GA4 product integrations, reporting-surface differences and cross-platform boundaries"
 next_tasks:
-  - "Research Measurement Protocol validation and collection boundaries"
   - "Research GA4 links to Firebase, Google Ads, Search Console and BigQuery"
   - "Research differences among Reports, Explorations, Data API and BigQuery export"
   - "Create GA4 View and Phase 5 report"
@@ -30,6 +30,8 @@ active_package_writers:
   - "knowledge/facts/ga4-reports-explorations-identity.yaml"
   - "knowledge/evidence/ga4-attribution-consent-retention.yaml"
   - "knowledge/facts/ga4-attribution-consent-retention.yaml"
+  - "knowledge/evidence/ga4-measurement-protocol.yaml"
+  - "knowledge/facts/ga4-measurement-protocol.yaml"
 known_risks:
   - "financial report schemas and fee programs can change"
   - "merchant context affects currencies and payout timing"
@@ -55,5 +57,7 @@ known_risks:
   - "GA4 API Alpha and Beta surfaces can change or introduce breaking changes"
   - "reporting identity, modeled data, thresholding and retention settings can materially change report outputs"
   - "standard reports, Explorations, Data API and BigQuery export may not produce identical aggregates or freshness"
+  - "Measurement Protocol-only collection can produce partial reporting and should not be treated as a replacement for tagging"
+  - "Measurement Protocol limits, validation behavior and ingestion guidance can change"
 last_updated: "2026-07-13"
 ---
