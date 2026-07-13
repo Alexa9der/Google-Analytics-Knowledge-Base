@@ -1,23 +1,19 @@
-name: Phase 4 ID cleanup
+name: Phase 4 ID cleanup diagnostics
 
 on:
-  push:
+  pull_request:
     branches:
-      - agent/phase-4-id-cleanup
+      - main
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  regenerate-and-validate:
-    if: github.actor != 'github-actions[bot]'
+  diagnose:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out branch
+      - name: Check out pull request
         uses: actions/checkout@v4
-        with:
-          ref: agent/phase-4-id-cleanup
-          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -30,27 +26,46 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install -e ".[dev]"
 
+      - name: Run pytest with full diagnostics
+        id: pytest
+        continue-on-error: true
+        run: |
+          set -o pipefail
+          pytest -vv --tb=long 2>&1 | tee pytest.log
+
       - name: Regenerate index
         run: python scripts/generate_index.py
 
-      - name: Validate repository
+      - name: Run remaining validation
+        id: validation
+        continue-on-error: true
         run: |
-          pytest
-          ruff check .
-          mypy scripts
-          python scripts/validate_knowledge.py
-          python scripts/validate_links.py
-          python scripts/validate_markdown_frontmatter.py
-          python scripts/generate_index.py --check
+          set -o pipefail
+          {
+            ruff check .
+            mypy scripts
+            python scripts/validate_knowledge.py
+            python scripts/validate_links.py
+            python scripts/validate_markdown_frontmatter.py
+            python scripts/generate_index.py --check
+          } 2>&1 | tee validation.log
 
-      - name: Commit generated index
+      - name: Package diagnostics
+        if: always()
         run: |
-          if git diff --quiet -- INDEX.jsonl; then
-            echo "INDEX.jsonl is already current."
-            exit 0
-          fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add INDEX.jsonl
-          git commit -m "Regenerate index after Phase 4 ID migration"
-          git push
+          mkdir -p diagnostics
+          cp pytest.log diagnostics/pytest.log || true
+          cp validation.log diagnostics/validation.log || true
+          cp INDEX.jsonl diagnostics/INDEX.jsonl
+
+      - name: Upload diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: phase-4-id-cleanup-diagnostics
+          path: diagnostics
+          if-no-files-found: error
+
+      - name: Fail when checks failed
+        if: steps.pytest.outcome == 'failure' || steps.validation.outcome == 'failure'
+        run: exit 1
