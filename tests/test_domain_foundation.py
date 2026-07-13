@@ -40,7 +40,7 @@ def test_production_entity_counts_and_no_demo_ids() -> None:
         for entity_type in ("fact", "evidence", "concept", "service", "view", "report")
     }
     assert counts == {
-        "fact": 485,
+        "fact": 486,
         "evidence": 184,
         "concept": 41,
         "service": 7,
