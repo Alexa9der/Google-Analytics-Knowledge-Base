@@ -1,0 +1,357 @@
+schema_version: "1.0"
+entity_type: "fact"
+domain: "google-analytics-4"
+topic: "identity-users-sessions"
+owner: "google-analytics-knowledge-project"
+records:
+  - id: "FACT-01KXCZ9QN1XH600YMN9XY7BMBC"
+    title: "GA4 identity spaces"
+    statement: "Google Analytics 4 uses User-ID, device ID, and modeling as identity spaces for user reporting."
+    type: "availability"
+    subject: "GA4 reporting identity"
+    predicate: "uses_identity_spaces"
+    object: ["User-ID", "device ID", "modeling"]
+    scope: {channel: "Reporting identity", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXCZ9QN1VZK52B4HXWVFKW71"]
+    service_ids: ["SERVICE-01KXB0H9ZMT4ZVZPJ3X4B6DY9F"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXCZ9QN1B4HH664B2E5CFNNX"
+    title: "Web device ID source"
+    statement: "For websites, the GA4 device ID identity space uses the client ID."
+    type: "definition_claim"
+    subject: "web device ID"
+    predicate: "uses"
+    object: "client ID"
+    scope: {channel: "Web", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXCZ9QN1VZK52B4HXWVFKW71"]
+    service_ids: ["SERVICE-01KXB0H9ZMT4ZVZPJ3X4B6DY9F"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXCZ9QN1GB92PMXAZT91B12Q"
+    title: "App device ID source"
+    statement: "For apps, the GA4 device ID identity space uses the app-instance ID."
+    type: "definition_claim"
+    subject: "app device ID"
+    predicate: "uses"
+    object: "app-instance ID"
+    scope: {channel: "App", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXCZ9QN1VZK52B4HXWVFKW71", "EVID-01KXCZ9QN1QZGKP3JRTSYYMFXT"]
+    service_ids: ["SERVICE-01KXB0H9ZMT4ZVZPJ3X4B6DY9F"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXCZ9QN22067YEXH7P93PG9M"
+    title: "Blended reporting identity precedence"
+    statement: "Blended reporting identity evaluates User-ID first, device ID second, and modeling when no identifier is available."
+    type: "calculation_rule"
+    subject: "Blended reporting identity"
+    predicate: "precedence"
+    object: ["User-ID", "device ID", "modeling"]
+    scope: {channel: "Reporting identity", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXCZ9QN11KT28795581KYSBA"]
+    service_ids: ["SERVICE-01KXB0H9ZMT4ZVZPJ3X4B6DY9F"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXCZ9QN2RKB277JQR68K5JF3"
+    title: "Observed reporting identity precedence"
+    statement: "Observed reporting identity evaluates User-ID first and device ID second without modeling."
+    type: "calculation_rule"
+    subject: "Observed reporting identity"
+    predicate: "precedence"
+    object: ["User-ID", "device ID"]
+    scope: {channel: "Reporting identity", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXCZ9QN11KT28795581KYSBA"]
+    service_ids: ["SERVICE-01KXB0H9ZMT4ZVZPJ3X4B6DY9F"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXCZ9QN2NVHMSR0THZTPN2QV"
+    title: "Device-based reporting identity"
+    statement: "Device-based reporting identity uses only the device ID and ignores other collected identity spaces."
+    type: "calculation_rule"
+    subject: "Device-based reporting identity"
+    predicate: "uses_only"
+    object: "device ID"
+    scope: {channel: "Reporting identity", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXCZ9QN11KT28795581KYSBA"]
+    service_ids: ["SERVICE-01KXB0H9ZMT4ZVZPJ3X4B6DY9F"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXCZ9QN2853C4HC3RPATZ6FV"
+    title: "Reporting identity does not change collection"
+    statement: "Changing the GA4 reporting identity does not change data collection or processing and does not permanently alter collected data."
+    type: "constraint"
+    subject: "reporting identity selection"
+    predicate: "does_not_change"
+    object: "data collection or processing"
+    scope: {channel: "Reporting identity", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXCZ9QN11KT28795581KYSBA"]
+    service_ids: ["SERVICE-01KXB0H9ZMT4ZVZPJ3X4B6DY9F"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXCZ9QN2REXJAC20THWXTYEF"
+    title: "User-ID supports cross-platform association"
+    statement: "GA4 User-ID can associate a business-generated persistent identifier with activity across sessions, devices, and platforms."
+    type: "capability"
+    subject: "GA4 User-ID"
+    predicate: "associates_activity_across"
+    object: ["sessions", "devices", "platforms"]
+    scope: {channel: "User-ID", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXCZ9QN15Z5NTX76CG4KKMEK"]
+    service_ids: ["SERVICE-01KXB0H9ZMT4ZVZPJ3X4B6DY9F"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXCZ9QN2X2YM6M0HC0C0W8SP"
+    title: "User-ID must be supplied by the business"
+    statement: "GA4 does not generate User-ID; the business must create, assign, and consistently send a unique persistent ID for each user."
+    type: "constraint"
+    subject: "GA4 User-ID"
+    predicate: "must_be_supplied_by"
+    object: "the business"
+    scope: {channel: "User-ID", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXCZ9QN15Z5NTX76CG4KKMEK"]
+    service_ids: ["SERVICE-01KXB0H9ZMT4ZVZPJ3X4B6DY9F"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXCZ9QN2QQBXFYWXWSHMN924"
+    title: "User-ID is property-isolated"
+    statement: "User-ID data collected in one GA4 property cannot be shared or mixed with User-ID data from another property."
+    type: "constraint"
+    subject: "GA4 User-ID data"
+    predicate: "is_isolated_to"
+    object: "one property"
+    scope: {channel: "User-ID", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXCZ9QN1GVS5SZKDV3PA2BRM"]
+    service_ids: ["SERVICE-01KXB0H9ZMT4ZVZPJ3X4B6DY9F"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXCZ9QN2J25GW1FQASMKPD12"
+    title: "User-ID is not retroactive"
+    statement: "Data collected before User-ID implementation is not reprocessed and associated with User-ID."
+    type: "temporal_state"
+    subject: "GA4 User-ID implementation"
+    predicate: "does_not_reprocess"
+    object: "previously collected data"
+    scope: {channel: "User-ID", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXCZ9QN1GVS5SZKDV3PA2BRM"]
+    service_ids: ["SERVICE-01KXB0H9ZMT4ZVZPJ3X4B6DY9F"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXCZ9QN2TN3FYWKE8WQGB8NX"
+    title: "App-instance ID is generated per app instance"
+    statement: "Analytics automatically generates and assigns an app-instance ID to each app instance and uses it to compute user metrics."
+    type: "definition_claim"
+    subject: "app-instance ID"
+    predicate: "is_generated_for"
+    object: "each app instance"
+    scope: {channel: "App", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXCZ9QN1QZGKP3JRTSYYMFXT"]
+    service_ids: ["SERVICE-01KXB0H9ZMT4ZVZPJ3X4B6DY9F"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXCZ9QN2THHV8M2P944DGWA2"
+    title: "Total users definition"
+    statement: "Total users is the number of unique users who triggered any event in the selected date range."
+    type: "definition_claim"
+    subject: "Total users"
+    predicate: "counts"
+    object: "unique users who triggered any event"
+    scope: {channel: "Reports", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXCZ9QN1X1MT0X7BDPG711TK"]
+    service_ids: ["SERVICE-01KXB0H9ZMT4ZVZPJ3X4B6DY9F"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXCZ9QN284KXAKJ4FQ5G50SB"
+    title: "New users definition"
+    statement: "New users is the number of unique users who triggered first_visit or first_open in the selected date range."
+    type: "definition_claim"
+    subject: "New users"
+    predicate: "counts"
+    object: "unique first_visit or first_open users"
+    scope: {channel: "Reports", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXCZ9QN1X1MT0X7BDPG711TK"]
+    service_ids: ["SERVICE-01KXB0H9ZMT4ZVZPJ3X4B6DY9F"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXCZ9QN270NMCMBKP2HGZ2SX"
+    title: "Active users definition"
+    statement: "Active users is the number of unique users who engaged with a website or app in the selected date range."
+    type: "definition_claim"
+    subject: "Active users"
+    predicate: "counts"
+    object: "unique engaged users"
+    scope: {channel: "Reports", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXCZ9QN1X1MT0X7BDPG711TK"]
+    service_ids: ["SERVICE-01KXB0H9ZMT4ZVZPJ3X4B6DY9F"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXCZ9QN2XTVAQNPCVFC75PXH"
+    title: "Returning users definition"
+    statement: "Returning users is the number of unique users who initiated at least one previous session in the selected date range."
+    type: "definition_claim"
+    subject: "Returning users"
+    predicate: "counts"
+    object: "unique users with a previous session"
+    scope: {channel: "Reports", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXCZ9QN1X1MT0X7BDPG711TK"]
+    service_ids: ["SERVICE-01KXB0H9ZMT4ZVZPJ3X4B6DY9F"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXCZ9QN2CGTRTF0PQQT9WP66"
+    title: "Session definition"
+    statement: "A GA4 session is a period during which a user interacts with a website or app."
+    type: "definition_claim"
+    subject: "GA4 session"
+    predicate: "is"
+    object: "period of user interaction with a website or app"
+    scope: {channel: "Sessions", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXCZ9QN1MEM9TADCZY3V07ED"]
+    service_ids: ["SERVICE-01KXB0H9ZMT4ZVZPJ3X4B6DY9F"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXCZ9QN2ST3TQ1FENRZJP0V6"
+    title: "Default session inactivity timeout"
+    statement: "A GA4 session times out by default after 30 minutes of user inactivity."
+    type: "constraint"
+    subject: "GA4 session"
+    predicate: "default_inactivity_timeout"
+    object: "30 minutes"
+    scope: {channel: "Sessions", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXCZ9QN1MEM9TADCZY3V07ED"]
+    service_ids: ["SERVICE-01KXB0H9ZMT4ZVZPJ3X4B6DY9F"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXCZ9QN2DW9FPQT77F3ZHA8T"
+    title: "Session has no maximum duration"
+    statement: "GA4 does not impose a maximum duration on an active session."
+    type: "constraint"
+    subject: "GA4 session"
+    predicate: "maximum_duration"
+    object: null
+    scope: {channel: "Sessions", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXCZ9QN1MEM9TADCZY3V07ED"]
+    service_ids: ["SERVICE-01KXB0H9ZMT4ZVZPJ3X4B6DY9F"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXCZ9QN2G4CC3GSVMTHFNE4P"
+    title: "Engaged session criteria"
+    statement: "An engaged session lasts longer than 10 seconds, has at least one key event, or has at least two page or screen views."
+    type: "calculation_rule"
+    subject: "engaged session"
+    predicate: "meets_any"
+    object: ["duration over 10 seconds", "at least one key event", "at least two page or screen views"]
+    scope: {channel: "Engagement metrics", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXCZ9QN1RPB561GDZ2GWKVC4"]
+    service_ids: ["SERVICE-01KXB0H9ZMT4ZVZPJ3X4B6DY9F"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXCZ9QN22M301Q1ASXW3P67V"
+    title: "Engagement rate formula"
+    statement: "GA4 engagement rate is the percentage of sessions that are engaged sessions."
+    type: "calculation_rule"
+    subject: "engagement rate"
+    predicate: "formula"
+    object: "engaged sessions / sessions"
+    scope: {channel: "Engagement metrics", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXCZ9QN1RPB561GDZ2GWKVC4"]
+    service_ids: ["SERVICE-01KXB0H9ZMT4ZVZPJ3X4B6DY9F"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXCZ9QN2K5ZB9F3QXB7DNT6D"
+    title: "Bounce rate formula"
+    statement: "GA4 bounce rate is the percentage of sessions that were not engaged sessions."
+    type: "calculation_rule"
+    subject: "bounce rate"
+    predicate: "formula"
+    object: "non-engaged sessions / sessions"
+    scope: {channel: "Engagement metrics", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXCZ9QN1RPB561GDZ2GWKVC4"]
+    service_ids: ["SERVICE-01KXB0H9ZMT4ZVZPJ3X4B6DY9F"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
