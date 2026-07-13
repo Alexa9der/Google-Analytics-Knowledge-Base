@@ -33,15 +33,41 @@ jobs:
       - name: Regenerate index
         run: python scripts/generate_index.py
 
-      - name: Validate repository
+      - name: Run pytest diagnostics
+        id: pytest
+        continue-on-error: true
         run: |
-          pytest -vv --tb=long
-          ruff check .
-          mypy scripts
-          python scripts/validate_knowledge.py
-          python scripts/validate_links.py
-          python scripts/validate_markdown_frontmatter.py
-          python scripts/generate_index.py --check
+          set -o pipefail
+          pytest -vv --tb=long 2>&1 | tee pytest.log
+
+      - name: Run remaining validation
+        id: validation
+        continue-on-error: true
+        run: |
+          set -o pipefail
+          {
+            ruff check .
+            mypy scripts
+            python scripts/validate_knowledge.py
+            python scripts/validate_links.py
+            python scripts/validate_markdown_frontmatter.py
+            python scripts/generate_index.py --check
+          } 2>&1 | tee validation.log
+
+      - name: Upload diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: phase-5-finalization-diagnostics
+          path: |
+            pytest.log
+            validation.log
+            INDEX.jsonl
+          if-no-files-found: error
+
+      - name: Fail when checks failed
+        if: steps.pytest.outcome == 'failure' || steps.validation.outcome == 'failure'
+        run: exit 1
 
       - name: Commit generated index
         run: |
