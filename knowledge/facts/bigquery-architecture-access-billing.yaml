@@ -1,0 +1,197 @@
+schema_version: "1.0"
+entity_type: "fact"
+domain: "bigquery"
+topic: "architecture-access-billing"
+owner: "google-analytics-knowledge-project"
+records:
+  - id: "FACT-01KXEFF7S3EZ2TCPGHE81A9C5E"
+    title: "BigQuery is serverless and fully managed"
+    statement: "BigQuery is a fully managed serverless data platform that does not require users to provision or manually scale infrastructure."
+    type: "definition_claim"
+    subject: "BigQuery"
+    predicate: "is"
+    object: "a fully managed serverless data platform"
+    scope: {channel: "Google Cloud BigQuery", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEFF7S3TQTN9B5W6SVNVAPX"]
+    service_ids: ["SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEFF7S3BH16XQ0E2794F7S5"
+    title: "BigQuery separates storage and compute"
+    statement: "BigQuery uses independent storage and compute layers that can allocate resources separately."
+    type: "definition_claim"
+    subject: "BigQuery architecture"
+    predicate: "separates"
+    object: ["storage", "compute"]
+    scope: {channel: "BigQuery architecture", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEFF7S3TQTN9B5W6SVNVAPX"]
+    service_ids: ["SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEFF7S323SMNQ4Y237W8P66"
+    title: "BigQuery stores analytical data in columnar form"
+    statement: "BigQuery storage uses a columnar format optimized for analytical queries and presents data through tables, rows and columns."
+    type: "definition_claim"
+    subject: "BigQuery storage"
+    predicate: "uses"
+    object: "columnar analytical storage"
+    scope: {channel: "BigQuery storage", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEFF7S3TQTN9B5W6SVNVAPX"]
+    service_ids: ["SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEFF7S362V31VDK3QPY1V3R"
+    title: "Datasets belong to projects"
+    statement: "A BigQuery dataset is contained within a Google Cloud project and acts as the top-level container for tables and views."
+    type: "definition_claim"
+    subject: "BigQuery dataset"
+    predicate: "belongs_to"
+    object: "Google Cloud project"
+    scope: {channel: "BigQuery resource hierarchy", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEFF7S3M14GSMAFVAMZWE17"]
+    service_ids: ["SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEFF7S30KPQRGQCKEDQBCJ9"
+    title: "Tables and views require a dataset"
+    statement: "Every BigQuery table or view must belong to a dataset."
+    type: "constraint"
+    subject: "BigQuery table or view"
+    predicate: "requires"
+    object: "dataset membership"
+    scope: {channel: "BigQuery resource hierarchy", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEFF7S3M14GSMAFVAMZWE17"]
+    service_ids: ["SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEFF7S3K6QQHA5D0AKD7473"
+    title: "Dataset location is fixed after creation"
+    statement: "A BigQuery dataset location is selected at creation and cannot be changed in place afterward."
+    type: "constraint"
+    subject: "BigQuery dataset location"
+    predicate: "is_immutable_after"
+    object: "dataset creation"
+    scope: {channel: "BigQuery datasets", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEFF7S3M14GSMAFVAMZWE17"]
+    service_ids: ["SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEFF7S3BA062NG05ESSVMSM"
+    title: "Queried datasets must share a location"
+    statement: "All tables referenced by one BigQuery query must be stored in datasets in the same location."
+    type: "constraint"
+    subject: "BigQuery query"
+    predicate: "requires"
+    object: "same-location referenced datasets"
+    scope: {channel: "BigQuery query execution", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEFF7S3M14GSMAFVAMZWE17"]
+    service_ids: ["SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEFF7S37H0N17XFQTN1XN6K"
+    title: "BigQuery access uses IAM roles"
+    statement: "BigQuery grants permissions to users, groups and service accounts through predefined or custom IAM roles rather than assigning permissions directly."
+    type: "definition_claim"
+    subject: "BigQuery access control"
+    predicate: "uses"
+    object: "IAM roles"
+    scope: {channel: "BigQuery IAM", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEFF7S3RSY1CTEC3FY4EBPN"]
+    service_ids: ["SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEFF7S327S00R4N7ER2HY9Q"
+    title: "BigQuery IAM permissions inherit down the hierarchy"
+    statement: "BigQuery IAM roles granted on an organization, folder or project apply to descendant BigQuery resources within that hierarchy."
+    type: "calculation_rule"
+    subject: "BigQuery IAM role grant"
+    predicate: "inherits_to"
+    object: "descendant BigQuery resources"
+    scope: {channel: "BigQuery IAM", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEFF7S3RSY1CTEC3FY4EBPN"]
+    service_ids: ["SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEFF7S34QHVEG6ATEHZ9ZX3"
+    title: "BigQuery supports on-demand and capacity compute pricing"
+    statement: "BigQuery compute can be billed through on-demand query processing or through capacity-based slot reservations."
+    type: "availability"
+    subject: "BigQuery compute pricing models"
+    predicate: "include"
+    object: ["on-demand", "capacity-based reservations"]
+    scope: {channel: "BigQuery billing", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEFF7S3HPP6RCC3FREWJJJS"]
+    service_ids: ["SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEFF7S3DR7E2BXME64D4P25"
+    title: "Dry runs estimate processed bytes"
+    statement: "A BigQuery dry run validates a query and estimates the number of bytes it would process without executing the query."
+    type: "capability"
+    subject: "BigQuery dry run"
+    predicate: "estimates"
+    object: "query bytes processed"
+    scope: {channel: "BigQuery cost control", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEFF7S3HPP6RCC3FREWJJJS"]
+    service_ids: ["SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEFF7S3XTD4QRFCTE8KWWKR"
+    title: "Maximum bytes billed can stop costly queries"
+    statement: "When a query estimate exceeds the configured maximum bytes billed value, BigQuery fails the query before execution without charging for it."
+    type: "constraint"
+    subject: "maximum bytes billed setting"
+    predicate: "prevents"
+    object: "queries whose estimated bytes exceed the configured limit"
+    scope: {channel: "BigQuery on-demand cost control", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEFF7S3HPP6RCC3FREWJJJS"]
+    service_ids: ["SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
