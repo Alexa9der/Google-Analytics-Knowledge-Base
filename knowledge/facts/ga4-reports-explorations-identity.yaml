@@ -1,0 +1,165 @@
+schema_version: "1.0"
+entity_type: "fact"
+domain: "google-analytics-4"
+topic: "reports-explorations-identity"
+owner: "google-analytics-knowledge-project"
+records:
+  - id: "FACT-01KXDE16WS8Y159Y9C4ZJBM863"
+    title: "Reports use website and app data"
+    statement: "Google Analytics creates reports from data collected from websites and apps."
+    type: "capability"
+    subject: "Google Analytics reports"
+    predicate: "are_created_from"
+    object: ["website data", "app data"]
+    scope: {channel: "Google Analytics reports", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXDE16WR6JY4DHJANMT62C4T"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXDE16WSZHEJTSAVFJJQFB8W"
+    title: "Realtime precedes other reports"
+    statement: "Newly received data appears in the Realtime report before it appears in other Google Analytics reports."
+    type: "temporal_state"
+    subject: "newly received Analytics data"
+    predicate: "appears_first_in"
+    object: "Realtime report"
+    scope: {channel: "Google Analytics reporting", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXDE16WR6JY4DHJANMT62C4T"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXDE16WS84TRKZEDJHD45DC5"
+    title: "GA4 has overview and detail reports"
+    statement: "Google Analytics provides overview reports that summarize a topic and detail reports that provide more in-depth information."
+    type: "availability"
+    subject: "Google Analytics report types"
+    predicate: "include"
+    object: ["overview reports", "detail reports"]
+    scope: {channel: "Google Analytics reports", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXDE16WR6JY4DHJANMT62C4T"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXDE16WS4362G15PJ2DP6EVJ"
+    title: "Explorations goes beyond standard reports"
+    statement: "Explorations provides advanced analytical techniques that go beyond standard Google Analytics reports."
+    type: "capability"
+    subject: "Explorations"
+    predicate: "extends"
+    object: "standard report analysis"
+    scope: {channel: "Google Analytics Explore", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXDE16WSG40Y0W094BFZT8M6"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXDE16WSAHQTZXRPEX1ZFQQ8"
+    title: "Explorations supports ad hoc analysis"
+    statement: "Explorations supports ad hoc queries, drill-down analysis, filters, segments, audience creation, sharing and export."
+    type: "capability"
+    subject: "Explorations"
+    predicate: "supports"
+    object: ["ad hoc queries", "drill-down analysis", "filters", "segments", "audience creation", "sharing", "export"]
+    scope: {channel: "Google Analytics Explore", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXDE16WSG40Y0W094BFZT8M6"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXDE16WTZH1PCK9TVA430DTX"
+    title: "Explorations can be sampled"
+    statement: "An exploration can use sampled data when its query includes more than 10 million events."
+    type: "constraint"
+    subject: "Exploration query"
+    predicate: "may_be_sampled_above"
+    object: "10 million events"
+    scope: {channel: "Google Analytics Explore", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXDE16WSG40Y0W094BFZT8M6"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXDE16WTA1K8X43M0JXA59AG"
+    title: "Reports and Explorations can use thresholds"
+    statement: "Google Analytics reports and Explorations can apply data thresholds to protect user privacy."
+    type: "constraint"
+    subject: "Google Analytics reports and Explorations"
+    predicate: "can_apply"
+    object: "data thresholds"
+    scope: {channel: "Google Analytics reporting", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXDE16WSG40Y0W094BFZT8M6"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXDE16WT7ACAAH53QGXC8QFY"
+    title: "Reporting identity defines identity spaces"
+    statement: "A property's reporting identity is the set of identity spaces Google Analytics uses to unify and de-duplicate users in reports."
+    type: "definition_claim"
+    subject: "reporting identity"
+    predicate: "defines"
+    object: "identity spaces used for user unification and de-duplication"
+    scope: {channel: "Google Analytics reporting", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXDE16WS6PY1XA9ZSNP7F0VP"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXDE16WTY5ARDZKZHVPZ3G7V"
+    title: "Reporting identity options"
+    statement: "Google Analytics provides Blended, Observed and Device-based reporting identity options."
+    type: "availability"
+    subject: "reporting identity options"
+    predicate: "include"
+    object: ["Blended", "Observed", "Device-based"]
+    scope: {channel: "Google Analytics Admin", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXDE16WS6PY1XA9ZSNP7F0VP"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXDE16WT9ETDFZEDZ4QR6ZE4"
+    title: "Changing reporting identity is non-destructive"
+    statement: "Changing the reporting identity option does not change data collection or processing and does not permanently modify the underlying data."
+    type: "calculation_rule"
+    subject: "reporting identity option change"
+    predicate: "does_not_change"
+    object: ["data collection", "data processing", "underlying data"]
+    scope: {channel: "Google Analytics Admin", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXDE16WS6PY1XA9ZSNP7F0VP"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
