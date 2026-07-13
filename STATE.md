@@ -16,10 +16,10 @@ completed:
   - "GA4 reports, Explorations and reporting identity research"
   - "GA4 attribution, consent, retention and thresholding research"
   - "GA4 Measurement Protocol validation and collection-boundary research"
-current_task: "Research GA4 product integrations, reporting-surface differences and cross-platform boundaries"
+  - "GA4 Firebase, Google Ads, Search Console and BigQuery integration research"
+current_task: "Research differences among GA4 Reports, Explorations, Data API and BigQuery export"
 next_tasks:
-  - "Research GA4 links to Firebase, Google Ads, Search Console and BigQuery"
-  - "Research differences among Reports, Explorations, Data API and BigQuery export"
+  - "Research processing, identity, thresholding, sampling, freshness and export differences across GA4 reporting surfaces"
   - "Create GA4 View and Phase 5 report"
   - "Regenerate INDEX.jsonl and run the complete validation suite"
 blockers: []
@@ -32,6 +32,8 @@ active_package_writers:
   - "knowledge/facts/ga4-attribution-consent-retention.yaml"
   - "knowledge/evidence/ga4-measurement-protocol.yaml"
   - "knowledge/facts/ga4-measurement-protocol.yaml"
+  - "knowledge/evidence/ga4-product-integrations.yaml"
+  - "knowledge/facts/ga4-product-integrations.yaml"
 known_risks:
   - "financial report schemas and fee programs can change"
   - "merchant context affects currencies and payout timing"
@@ -59,5 +61,7 @@ known_risks:
   - "standard reports, Explorations, Data API and BigQuery export may not produce identical aggregates or freshness"
   - "Measurement Protocol-only collection can produce partial reporting and should not be treated as a replacement for tagging"
   - "Measurement Protocol limits, validation behavior and ingestion guidance can change"
+  - "Product-link permissions, limits, delays, audience behavior and unlinking effects can change"
+  - "Search Console and Google Ads linked data may have independent freshness, compatibility and retention boundaries"
 last_updated: "2026-07-13"
 ---
