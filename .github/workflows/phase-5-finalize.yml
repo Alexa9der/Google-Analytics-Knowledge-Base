@@ -54,29 +54,22 @@ jobs:
             python scripts/generate_index.py --check
           } 2>&1 | tee validation.log
 
-      - name: Upload diagnostics
+      - name: Commit diagnostics and generated index
         if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: phase-5-finalization-diagnostics
-          path: |
-            pytest.log
-            validation.log
-            INDEX.jsonl
-          if-no-files-found: error
+        run: |
+          mkdir -p diagnostics/phase-5
+          cp pytest.log diagnostics/phase-5/pytest.log || true
+          cp validation.log diagnostics/phase-5/validation.log || true
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add INDEX.jsonl diagnostics/phase-5/pytest.log diagnostics/phase-5/validation.log
+          if git diff --cached --quiet; then
+            echo "No diagnostic or index changes to commit."
+          else
+            git commit -m "Capture Phase 5 finalization diagnostics"
+            git push
+          fi
 
       - name: Fail when checks failed
         if: steps.pytest.outcome == 'failure' || steps.validation.outcome == 'failure'
         run: exit 1
-
-      - name: Commit generated index
-        run: |
-          if git diff --quiet -- INDEX.jsonl; then
-            echo "INDEX.jsonl is already current."
-            exit 0
-          fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add INDEX.jsonl
-          git commit -m "Regenerate index for Phase 5 GA4"
-          git push
