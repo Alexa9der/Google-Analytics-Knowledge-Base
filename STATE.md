@@ -1,6 +1,6 @@
 ---
 current_phase: "Phase 5 Active"
-project_status: "research_in_progress"
+project_status: "final_validation"
 completed:
   - "Google Play Console Store Performance research"
   - "Google Play Console Statistics research"
@@ -18,11 +18,12 @@ completed:
   - "GA4 Measurement Protocol validation and collection-boundary research"
   - "GA4 Firebase, Google Ads, Search Console and BigQuery integration research"
   - "GA4 Reports, Explorations, Data API and BigQuery reporting-surface comparison research"
-current_task: "Create the GA4 View and final Phase 5 report"
+  - "GA4 View and Phase 5 final report"
+current_task: "Regenerate INDEX.jsonl and complete the Phase 5 validation suite"
 next_tasks:
-  - "Create GA4 View and Phase 5 report"
-  - "Regenerate INDEX.jsonl and run the complete validation suite"
-  - "Resolve validation findings, mark PR #6 ready and merge after green CI"
+  - "Resolve final validation findings"
+  - "Remove temporary diagnostics workflow and files"
+  - "Mark PR #6 ready and merge after green CI"
 blockers: []
 active_package_writers:
   - "knowledge/evidence/ga4-property-reporting-apis.yaml"
@@ -37,6 +38,8 @@ active_package_writers:
   - "knowledge/facts/ga4-product-integrations.yaml"
   - "knowledge/evidence/ga4-reporting-surfaces.yaml"
   - "knowledge/facts/ga4-reporting-surfaces.yaml"
+  - "views/google-analytics-4-flow.md"
+  - "reports/google-analytics-4-phase-5.md"
 known_risks:
   - "financial report schemas and fee programs can change"
   - "merchant context affects currencies and payout timing"
