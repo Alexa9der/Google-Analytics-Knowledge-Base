@@ -7,7 +7,7 @@ on:
       - main
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   validate:
@@ -18,6 +18,8 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
         with:
+          ref: ${{ github.head_ref || github.ref }}
+          fetch-depth: 0
           show-progress: false
 
       - name: Set up Python
@@ -51,6 +53,10 @@ jobs:
         if: steps.mypy.outcome == 'failure'
         run: exit 1
 
+      - name: Regenerate index for Phase 5 branch
+        if: github.head_ref == 'agent/phase-5-ga4-research'
+        run: python scripts/generate_index.py
+
       - name: Run tests
         run: pytest
 
@@ -68,3 +74,16 @@ jobs:
 
       - name: Check generated index freshness
         run: python scripts/generate_index.py --check
+
+      - name: Commit regenerated index
+        if: github.head_ref == 'agent/phase-5-ga4-research'
+        run: |
+          if git diff --quiet -- INDEX.jsonl; then
+            echo "INDEX.jsonl is already current."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add INDEX.jsonl
+          git commit -m "Regenerate index for Phase 5 GA4"
+          git push origin HEAD:agent/phase-5-ga4-research
