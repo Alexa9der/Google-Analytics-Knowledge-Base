@@ -13,19 +13,22 @@ completed:
   - "Google AdMob Analytics Research"
   - "Firebase Analytics, Events, Integrations and Export Research"
   - "Google Analytics 4 property, reporting, APIs, attribution, consent, integrations and export research"
-current_task: "Research BigQuery architecture, resource hierarchy, IAM, billing, datasets, tables and GA4 export foundations"
+  - "BigQuery architecture, datasets, IAM, billing and cost-control foundation research"
+  - "GA4 BigQuery export dataset, table and nested-schema research"
+current_task: "Research SQL reconstruction of GA4 events, users, sessions, traffic sources, key events and ecommerce metrics"
 next_tasks:
-  - "Capture official Evidence for BigQuery projects, datasets, tables, locations and IAM"
-  - "Research analysis and storage billing models, sandbox and cost controls"
-  - "Research GA4 export dataset naming, daily, intraday and streaming tables"
-  - "Research nested and repeated schema fields and event-parameter extraction"
-  - "Research SQL reconstruction of events, users, sessions and ecommerce metrics"
+  - "Research canonical SQL patterns for event parameters and repeated fields"
+  - "Research user and session reconstruction from event-level rows"
+  - "Research source, medium and campaign reconstruction"
+  - "Research ecommerce, purchase revenue, refunds and item-grain metrics"
   - "Research retention, time travel, governance and downstream transformations"
   - "Create BigQuery View, Phase 6 report and regenerated INDEX.jsonl"
 blockers: []
 active_package_writers:
   - "knowledge/evidence/bigquery-architecture-access-billing.yaml"
   - "knowledge/facts/bigquery-architecture-access-billing.yaml"
+  - "knowledge/evidence/bigquery-ga4-export-schema.yaml"
+  - "knowledge/facts/bigquery-ga4-export-schema.yaml"
 known_risks:
   - "financial report schemas and fee programs can change"
   - "merchant context affects currencies and payout timing"
@@ -60,5 +63,7 @@ known_risks:
   - "BigQuery pricing, editions, free-tier allowances and quotas can change"
   - "dataset location, billing model and IAM inheritance choices can have long-lived governance and cost effects"
   - "GA4 export schemas can add fields and require backward-compatible SQL"
+  - "intraday tables omit some daily-only fields and must not be treated as complete daily tables"
+  - "session and acquisition metrics reconstructed in SQL can differ from GA4 reports unless identity, attribution and modeling rules are matched"
 last_updated: "2026-07-13"
 ---
