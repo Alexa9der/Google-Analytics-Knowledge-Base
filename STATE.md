@@ -1,6 +1,6 @@
 ---
-current_phase: "Phase 4 Complete"
-project_status: "ready_for_next_service"
+current_phase: "Phase 5 Active"
+project_status: "research_in_progress"
 completed:
   - "Google Play Console Store Performance research"
   - "Google Play Console Statistics research"
@@ -12,11 +12,19 @@ completed:
   - "Google Search Console Analytics Research"
   - "Google AdMob Analytics Research"
   - "Firebase Analytics, Events, Integrations and Export Research"
-current_task: "Prepare Phase 5 Google Analytics 4 Research"
+current_task: "Research Google Analytics 4 property, data streams, reporting, APIs, attribution, consent, retention, identity and integrations"
 next_tasks:
-  - "Phase 5 Google Analytics 4 Property, Reporting, API, Attribution and Consent Research"
+  - "Capture official Evidence for GA4 property and data-stream architecture"
+  - "Research standard reports, Explorations and reporting identity"
+  - "Research Data API, Admin API and Measurement Protocol boundaries"
+  - "Research attribution settings, key events and lookback behavior"
+  - "Research consent, retention, thresholding and privacy controls"
+  - "Research GA4 links to Firebase, Google Ads, Search Console and BigQuery"
+  - "Create GA4 Facts, View, Phase 5 report and regenerated Index"
 blockers: []
-active_package_writers: []
+active_package_writers:
+  - "knowledge/evidence/ga4-property-reporting-apis.yaml"
+  - "knowledge/facts/ga4-property-reporting-apis.yaml"
 known_risks:
   - "financial report schemas and fee programs can change"
   - "merchant context affects currencies and payout timing"
@@ -39,5 +47,8 @@ known_risks:
   - "exact deferred deep-link attribution and source preservation from website through Google Play to first_open remain open"
   - "consent-state effects on attribution and event completeness require GA4-level research"
   - "impression-level AdMob revenue does not equal finalized AdMob earnings or payment"
-last_updated: "2026-07-12"
+  - "GA4 API Alpha and Beta surfaces can change or introduce breaking changes"
+  - "reporting identity, modeled data, thresholding and retention settings can materially change report outputs"
+  - "standard reports, Explorations, Data API and BigQuery export may not produce identical aggregates or freshness"
+last_updated: "2026-07-13"
 ---
