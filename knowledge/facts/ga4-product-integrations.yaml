@@ -356,7 +356,7 @@ records:
     created_at: "2026-07-13"
     last_verified_at: "2026-07-13"
 
-  - id: "FACT-01KXE3CWPCZ2PXK0D2BEKYZ8VB"
+  - id: "FACT-01KXE3JJQ0HK0NSXC7Y2CRP0JB"
     title: "BigQuery data begins flowing within 24 hours"
     statement: "After a GA4 BigQuery link is completed, data should begin flowing to the BigQuery project within 24 hours."
     type: "temporal_state"
