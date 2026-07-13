@@ -16,14 +16,12 @@ completed:
   - "BigQuery architecture, datasets, IAM, billing and cost-control foundation research"
   - "GA4 BigQuery export dataset, table and nested-schema research"
   - "GA4 BigQuery SQL reconstruction for events, users, sessions, traffic sources and ecommerce"
-current_task: "Research BigQuery retention, time travel, governance, partitioning, clustering and downstream transformations"
+  - "BigQuery retention, time travel, fail-safe, partitioning, clustering, governance and transformation research"
+current_task: "Create the BigQuery View and final Phase 6 report"
 next_tasks:
-  - "Research table expiration, partition expiration and dataset defaults"
-  - "Research time travel, fail-safe and deletion recovery boundaries"
-  - "Research partition pruning, clustering and materialized transformations"
-  - "Research scheduled queries, views and downstream data marts"
   - "Create BigQuery View and Phase 6 report"
   - "Regenerate INDEX.jsonl and run the complete validation suite"
+  - "Resolve validation findings, mark PR #7 ready and merge after green CI"
 blockers: []
 active_package_writers:
   - "knowledge/evidence/bigquery-architecture-access-billing.yaml"
@@ -32,6 +30,8 @@ active_package_writers:
   - "knowledge/facts/bigquery-ga4-export-schema.yaml"
   - "knowledge/evidence/bigquery-ga4-sql-reconstruction.yaml"
   - "knowledge/facts/bigquery-ga4-sql-reconstruction.yaml"
+  - "knowledge/evidence/bigquery-retention-governance-transformations.yaml"
+  - "knowledge/facts/bigquery-retention-governance-transformations.yaml"
 known_risks:
   - "financial report schemas and fee programs can change"
   - "merchant context affects currencies and payout timing"
@@ -71,5 +71,8 @@ known_risks:
   - "user counts depend on the selected identity key and can differ from GA4 reporting identity"
   - "transaction counts require explicit deduplication rules when duplicate purchase events are possible"
   - "net revenue requires explicit refund treatment and currency-consistent fields"
+  - "time travel and fail-safe storage cost depends on the dataset storage billing model"
+  - "expiration changes can delete existing partitions immediately"
+  - "row-level security, materialized views and wildcard-table behavior have compatibility limits"
 last_updated: "2026-07-13"
 ---
