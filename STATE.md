@@ -17,11 +17,12 @@ completed:
   - "GA4 attribution, consent, retention and thresholding research"
   - "GA4 Measurement Protocol validation and collection-boundary research"
   - "GA4 Firebase, Google Ads, Search Console and BigQuery integration research"
-current_task: "Research differences among GA4 Reports, Explorations, Data API and BigQuery export"
+  - "GA4 Reports, Explorations, Data API and BigQuery reporting-surface comparison research"
+current_task: "Create the GA4 View and final Phase 5 report"
 next_tasks:
-  - "Research processing, identity, thresholding, sampling, freshness and export differences across GA4 reporting surfaces"
   - "Create GA4 View and Phase 5 report"
   - "Regenerate INDEX.jsonl and run the complete validation suite"
+  - "Resolve validation findings, mark PR #6 ready and merge after green CI"
 blockers: []
 active_package_writers:
   - "knowledge/evidence/ga4-property-reporting-apis.yaml"
@@ -34,6 +35,8 @@ active_package_writers:
   - "knowledge/facts/ga4-measurement-protocol.yaml"
   - "knowledge/evidence/ga4-product-integrations.yaml"
   - "knowledge/facts/ga4-product-integrations.yaml"
+  - "knowledge/evidence/ga4-reporting-surfaces.yaml"
+  - "knowledge/facts/ga4-reporting-surfaces.yaml"
 known_risks:
   - "financial report schemas and fee programs can change"
   - "merchant context affects currencies and payout timing"
@@ -63,5 +66,7 @@ known_risks:
   - "Measurement Protocol limits, validation behavior and ingestion guidance can change"
   - "Product-link permissions, limits, delays, audience behavior and unlinking effects can change"
   - "Search Console and Google Ads linked data may have independent freshness, compatibility and retention boundaries"
+  - "BigQuery excludes report-layer modeling, data-driven attribution and other value additions"
+  - "late-arriving BigQuery events and intraday report processing can change recent-period comparisons"
 last_updated: "2026-07-13"
 ---
