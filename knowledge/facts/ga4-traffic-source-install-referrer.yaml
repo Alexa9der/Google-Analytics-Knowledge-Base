@@ -1,0 +1,149 @@
+schema_version: "1.0"
+entity_type: "fact"
+domain: "google-analytics-4"
+topic: "traffic-source-install-referrer"
+owner: "google-analytics-knowledge-project"
+records:
+  - id: "FACT-01KXD1Q9B1XV67BQ93HQVB8V6A"
+    title: "Campaign data reaches GA4 through collection fields"
+    statement: "GA4 receives campaign and traffic-source values through SDK or tracking-code collection fields."
+    type: "capability"
+    subject: "GA4 campaign and traffic-source collection"
+    predicate: "receives_values_through"
+    object: "SDK or tracking-code collection fields"
+    scope: {channel: "Collection", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXD1Q9B0WJWVX5T8R3NHYQJ8"]
+    service_ids: ["SERVICE-01KXB0H9ZMT4ZVZPJ3X4B6DY9F"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXD1Q9B1RWFJ1ER23NRRKB27"
+    title: "Web UTM parameters map to campaign dimensions"
+    statement: "UTM parameters embedded in a web document location map to GA4 source, medium, campaign, campaign ID, and content dimensions during custom-campaign processing."
+    type: "calculation_rule"
+    subject: "web UTM parameters"
+    predicate: "map_to"
+    object: ["source", "medium", "campaign", "campaign ID", "content"]
+    scope: {channel: "Web collection and processing", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXD1Q9B0FTEJBX8M9C1K7RDS"]
+    service_ids: ["SERVICE-01KXB0H9ZMT4ZVZPJ3X4B6DY9F"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXD1Q9B17QS2PKJNDZM7MBFN"
+    title: "One campaign or source per session"
+    statement: "Each GA4 session is associated with one campaign or traffic source."
+    type: "calculation_rule"
+    subject: "GA4 session"
+    predicate: "is_associated_with"
+    object: "one campaign or traffic source"
+    scope: {channel: "Session attribution", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXD1Q9B0EYK4GATJ1B4ZP5D4"]
+    service_ids: ["SERVICE-01KXB0H9ZMT4ZVZPJ3X4B6DY9F"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXD1Q9B1HJM5DPS46W8HC6VV"
+    title: "Mid-session source does not start a session"
+    statement: "A campaign or traffic source encountered during an existing GA4 session does not start a new session."
+    type: "calculation_rule"
+    subject: "mid-session campaign or traffic source"
+    predicate: "does_not_start"
+    object: "new session"
+    scope: {channel: "Session attribution", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXD1Q9B0EYK4GATJ1B4ZP5D4"]
+    service_ids: ["SERVICE-01KXB0H9ZMT4ZVZPJ3X4B6DY9F"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXD1Q9B1FM00KV9WTW5D5EW1"
+    title: "Traffic-source dimensions have three scopes"
+    statement: "GA4 exposes traffic-source dimensions at user, session, and event scopes."
+    type: "availability"
+    subject: "GA4 traffic-source dimensions"
+    predicate: "support_scopes"
+    object: ["user", "session", "event"]
+    scope: {channel: "Reports and Reporting API", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXD1Q9B0CCWXE9SPWFGTAT5K"]
+    service_ids: ["SERVICE-01KXB0H9ZMT4ZVZPJ3X4B6DY9F"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXD1Q9B1KX0N58M08WH7D19J"
+    title: "Attribution assigns key-event credit"
+    statement: "GA4 attribution assigns key-event credit to eligible ads, clicks, and other touchpoints along a user's path."
+    type: "definition_claim"
+    subject: "GA4 attribution"
+    predicate: "assigns_credit_to"
+    object: "eligible user-path touchpoints"
+    scope: {channel: "Attribution", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXD1Q9B0V72BJM6B1R4H9N37"]
+    service_ids: ["SERVICE-01KXB0H9ZMT4ZVZPJ3X4B6DY9F"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXD1Q9B10MPS9Y6RTJ1GPEPY"
+    title: "Install Referrer API exposes Play referral content"
+    statement: "An installed Android app can use the Google Play Install Referrer API to retrieve referral content from Google Play."
+    type: "capability"
+    subject: "installed Android app"
+    predicate: "can_retrieve"
+    object: "Google Play referral content"
+    scope: {channel: "Android app and Google Play Store", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXD1Q9B0SB2BB5SR0M3HTV8P"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXD1Q9B1FM63R6EACEC9WH03"
+    title: "Install Referrer payload fields"
+    statement: "The Google Play Install Referrer API can return the installed package referrer URL, referrer-click timestamps, installation-begin timestamps, and first-installed app version."
+    type: "availability"
+    subject: "Google Play Install Referrer API response"
+    predicate: "can_include"
+    object: ["referrer URL", "referrer click timestamps", "installation begin timestamps", "first-installed app version"]
+    scope: {channel: "Android app and Google Play Store", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXD1Q9B0SB2BB5SR0M3HTV8P"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXD1Q9B1FB21JTQ2M45H66QW"
+    title: "Install Referrer is exposed by Play Store app"
+    statement: "The Google Play Install Referrer API is exposed by the Google Play Store app on the device."
+    type: "definition_claim"
+    subject: "Google Play Install Referrer API"
+    predicate: "is_exposed_by"
+    object: "Google Play Store app on device"
+    scope: {channel: "Android and Google Play", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXD1Q9B0Q4YH6VW1JTR9D9QK"]
+    service_ids: ["SERVICE-01KXB0H9ZM3Z8V674FKJP8T657"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
