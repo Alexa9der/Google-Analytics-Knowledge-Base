@@ -1,0 +1,373 @@
+schema_version: "1.0"
+entity_type: "fact"
+domain: "google-analytics-4"
+topic: "product-integrations"
+owner: "google-analytics-knowledge-project"
+records:
+  - id: "FACT-01KXE3CWP8J8373458HH3FQ0AQ"
+    title: "Firebase link is required for app measurement in Analytics"
+    statement: "Measuring Firebase app data in Google Analytics requires linking the Firebase project to a Google Analytics 4 property."
+    type: "constraint"
+    subject: "Firebase app measurement in Google Analytics"
+    predicate: "requires"
+    object: "Firebase project to GA4 property link"
+    scope: {channel: "Firebase and Google Analytics", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXE3BCBX6GGT4TWH52AB0KQ3"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXE3CWP89P5XASVFHVMTWEC5"
+    title: "One Firebase project links to one GA4 property"
+    statement: "A Firebase project can be linked to only one Google Analytics 4 property, and all apps in that Firebase project send data to that property."
+    type: "constraint"
+    subject: "Firebase project"
+    predicate: "maximum_linked_ga4_properties"
+    object: 1
+    scope: {channel: "Firebase and Google Analytics linking", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXE3BCBX6GGT4TWH52AB0KQ3"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXE3CWP91NHQVPPA3R2618CG"
+    title: "Firebase users receive linked Analytics roles"
+    statement: "Linking Firebase to Google Analytics automatically maps Firebase project users to linked-user groups and default roles in the Analytics property."
+    type: "capability"
+    subject: "Firebase to Google Analytics link"
+    predicate: "maps"
+    object: "Firebase project users to Analytics linked users and roles"
+    scope: {channel: "Access management", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXE3BCBX6GGT4TWH52AB0KQ3"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXE3CWP99Q97CKS5P74K8NRT"
+    title: "Enhanced audience integration is enabled by default"
+    statement: "Enhanced audience integration is enabled by default after linking Firebase and Google Analytics."
+    type: "availability"
+    subject: "enhanced audience integration"
+    predicate: "default_state"
+    object: "enabled"
+    scope: {channel: "Firebase and Google Analytics link", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXE3BCBX6GGT4TWH52AB0KQ3"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXE3CWP9ZRQJ93WTZR4N69S2"
+    title: "Enhanced integration exports advanced audiences to Firebase"
+    statement: "Enhanced audience integration can prepopulate Firebase audiences with up to 30 days of available data and export predictive, dynamically evaluated, and time-windowed audiences from Analytics to Firebase."
+    type: "capability"
+    subject: "enhanced audience integration"
+    predicate: "supports"
+    object: ["up to 30 days of audience prepopulation", "predictive audience export", "dynamic audience export", "time-windowed audience export"]
+    scope: {channel: "Firebase audiences", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXE3BCBX6GGT4TWH52AB0KQ3"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXE3CWPA5RJRSV2S0XXS1XTM"
+    title: "Unlinking Firebase stops app data flow to GA4"
+    statement: "Unlinking a Firebase project from a Google Analytics 4 property stops the project from sending data to GA4 and disables Analytics tracking for that project."
+    type: "temporal_state"
+    subject: "Firebase to GA4 unlinking"
+    predicate: "stops"
+    object: "future app data flow and Analytics tracking"
+    scope: {channel: "Firebase and Google Analytics", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXE3BCBX6GGT4TWH52AB0KQ3"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXE3CWPA00EZP5DCA9Z2CS4M"
+    title: "Google Ads link enables bidirectional data use"
+    statement: "Linking Google Ads and Google Analytics enables Google Ads data to appear in Analytics and Analytics key events and audiences to be used in Google Ads."
+    type: "capability"
+    subject: "Google Ads to Google Analytics link"
+    predicate: "enables"
+    object: ["Google Ads data in Analytics", "Analytics key events in Google Ads", "Analytics audiences in Google Ads"]
+    scope: {channel: "Google Ads and Google Analytics", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXE3BCBXKAGFK09MPEA0FTJG"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXE3CWPA8KXVG948NDED5WAD"
+    title: "GA4 supports up to 400 Google Ads links"
+    statement: "A Google Analytics property can have up to 400 Google Ads links, with a manager-account link counting as one link."
+    type: "constraint"
+    subject: "Google Analytics property"
+    predicate: "maximum_google_ads_links"
+    object: 400
+    scope: {channel: "Google Ads product links", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXE3BCBXKAGFK09MPEA0FTJG"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXE3CWPA1ZZS5YW0ZS4G3SGM"
+    title: "Google Ads linking requires permissions in both products"
+    statement: "Creating a Google Ads link requires Administrator or Editor access to the Analytics property and administrative access to the Google Ads account."
+    type: "constraint"
+    subject: "Google Ads to Google Analytics linking"
+    predicate: "requires_permissions"
+    object: ["Analytics property Administrator or Editor", "Google Ads administrative access"]
+    scope: {channel: "Product linking", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXE3BCBXKAGFK09MPEA0FTJG"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXE3CWPBHJ2K45H4NDYF3K6C"
+    title: "Google Ads data can take 48 hours to appear"
+    statement: "After creating a Google Ads link, Google Ads data can take up to 48 hours to appear in Google Analytics reports."
+    type: "temporal_state"
+    subject: "linked Google Ads data"
+    predicate: "maximum_report_delay"
+    object: "48 hours"
+    scope: {channel: "Google Analytics reports", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXE3BCBXKAGFK09MPEA0FTJG"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXE3CWPBW0E4R3F5A5XJT1Y1"
+    title: "Unlinking Google Ads stops future integrated use"
+    statement: "Deleting a Google Ads link stops future product data flow, audience accumulation, and Analytics key-event imports into the unlinked Google Ads account."
+    type: "temporal_state"
+    subject: "Google Ads unlinking"
+    predicate: "stops"
+    object: ["future product data flow", "new audience accumulation", "Analytics key-event imports"]
+    scope: {channel: "Google Ads and Google Analytics", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXE3BCBXKAGFK09MPEA0FTJG"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXE3CWPB1FA5E95W0CHZQ2T7"
+    title: "Historical Google Ads dimensions can remain after unlinking"
+    statement: "Historical Google Ads dimensions collected before unlinking remain available in Analytics, while new linked dimensions and metrics can become not set or unavailable."
+    type: "temporal_state"
+    subject: "Google Ads dimensions after unlinking"
+    predicate: "retain"
+    object: "historical linked values collected before unlinking"
+    scope: {channel: "Google Analytics reports", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXE3BCBXKAGFK09MPEA0FTJG"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXE3CWPBZTM2K674Z3GXCW3A"
+    title: "Search Console links a web stream to a website property"
+    statement: "The Search Console integration links one Google Analytics web data stream with one Search Console website property."
+    type: "definition_claim"
+    subject: "Search Console integration"
+    predicate: "links"
+    object: "GA4 web data stream to Search Console website property"
+    scope: {channel: "Search Console product link", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXE3BCBXZBDYTMFSQ1APBAA8"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXE3CWPBMXWJEF0W1XPT88HP"
+    title: "Search Console integration creates two GA4 reports"
+    statement: "A Search Console link makes Google Organic Search Queries and Google Organic Search Traffic reports available in the Analytics property."
+    type: "availability"
+    subject: "Search Console integration reports"
+    predicate: "include"
+    object: ["Google Organic Search Queries", "Google Organic Search Traffic"]
+    scope: {channel: "Google Analytics reports", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXE3BCBXZBDYTMFSQ1APBAA8"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXE3CWPC9EX1S5WE7FJ3HQHP"
+    title: "Search Console data in GA4 is limited to 16 months"
+    statement: "Search Console reports in Google Analytics include at most 16 months of Search Console data."
+    type: "constraint"
+    subject: "Search Console data in Google Analytics"
+    predicate: "maximum_history"
+    object: "16 months"
+    scope: {channel: "Search Console reports in GA4", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXE3BCBXZBDYTMFSQ1APBAA8"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXE3CWPCSRCX2SZQAYMT310Q"
+    title: "Search Console data has a 48-hour delay"
+    statement: "Search Console data is available in Search Console and in linked Google Analytics reports about 48 hours after collection."
+    type: "temporal_state"
+    subject: "Search Console data availability"
+    predicate: "delay"
+    object: "about 48 hours"
+    scope: {channel: "Search Console and Google Analytics", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXE3BCBXZBDYTMFSQ1APBAA8"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXE3CWPC0NVH23T3PBWT96BX"
+    title: "Search Console metrics have limited dimension compatibility"
+    statement: "Search Console metrics in GA4 are compatible only with Search Console dimensions and the Analytics dimensions Landing page, Device, and Country."
+    type: "constraint"
+    subject: "Search Console metrics in GA4"
+    predicate: "compatible_dimensions"
+    object: ["Search Console dimensions", "Landing page", "Device", "Country"]
+    scope: {channel: "Search Console reports in GA4", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXE3BCBXZBDYTMFSQ1APBAA8"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXE3CWPC6XDFZD872YD8DR3M"
+    title: "Search Console links are one-to-one"
+    statement: "A GA4 web data stream can link to only one Search Console property, a Search Console property can link to only one GA4 web stream, and a GA4 property can have only one linked Search Console data stream."
+    type: "constraint"
+    subject: "Search Console link"
+    predicate: "cardinality"
+    object: "one-to-one between a GA4 web stream and a Search Console property"
+    scope: {channel: "Search Console product link", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXE3BCBXZBDYTMFSQ1APBAA8"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXE3CWPCZ2PXK0D2BEKYZ8VB"
+    title: "Search Console linking requires Editor and verified-owner access"
+    statement: "Creating a Search Console link requires the Editor role on the Analytics property and verified-owner status for the Search Console property."
+    type: "constraint"
+    subject: "Search Console to GA4 linking"
+    predicate: "requires_permissions"
+    object: ["Analytics property Editor", "Search Console verified owner"]
+    scope: {channel: "Product linking", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXE3BCBXZBDYTMFSQ1APBAA8"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXE3CWPC3H27S4NJRS2P90MG"
+    title: "BigQuery export supports stream and event filtering"
+    statement: "A GA4 BigQuery link can select which data streams to export and exclude specified events from the export."
+    type: "capability"
+    subject: "GA4 BigQuery link"
+    predicate: "supports"
+    object: ["data-stream selection", "event exclusion"]
+    scope: {channel: "BigQuery Export configuration", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXE3BCBXYMQWT30HKMST4XZQ"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN", "SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXE3CWPCV1YHWGZYDPJW8XD7"
+    title: "BigQuery export supports daily and streaming modes"
+    statement: "GA4 can export data to BigQuery through Daily and Streaming export modes, while Analytics 360 can additionally use Fresh Daily export."
+    type: "availability"
+    subject: "GA4 BigQuery export modes"
+    predicate: "include"
+    object: ["Daily", "Streaming", "Fresh Daily for Analytics 360"]
+    scope: {channel: "BigQuery Export", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXE3BCBXYMQWT30HKMST4XZQ"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN", "SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXE3CWPCQ5ATME8N3GWQMME8"
+    title: "Standard daily BigQuery export is limited to one million events"
+    statement: "A standard GA4 property can export at most one million events per day through the Daily BigQuery export, while the Streaming export has no event-count limit."
+    type: "constraint"
+    subject: "standard GA4 BigQuery export"
+    predicate: "daily_event_limit"
+    object: "1 million events for Daily export; no event-count limit for Streaming export"
+    scope: {channel: "BigQuery Export", plan: "standard", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXE3BCBXYMQWT30HKMST4XZQ"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN", "SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXE3CWPCZ2PXK0D2BEKYZ8VB"
+    title: "BigQuery data begins flowing within 24 hours"
+    statement: "After a GA4 BigQuery link is completed, data should begin flowing to the BigQuery project within 24 hours."
+    type: "temporal_state"
+    subject: "GA4 BigQuery export"
+    predicate: "initial_flow_delay"
+    object: "within 24 hours"
+    scope: {channel: "BigQuery Export", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXE3BCBXYMQWT30HKMST4XZQ"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN", "SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
