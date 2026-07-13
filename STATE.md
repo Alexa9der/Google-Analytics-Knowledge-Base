@@ -1,6 +1,6 @@
 ---
-current_phase: "Phase 5 Complete"
-project_status: "ready_for_next_service"
+current_phase: "Phase 6 Active"
+project_status: "research_in_progress"
 completed:
   - "Google Play Console Store Performance research"
   - "Google Play Console Statistics research"
@@ -12,23 +12,20 @@ completed:
   - "Google Search Console Analytics Research"
   - "Google AdMob Analytics Research"
   - "Firebase Analytics, Events, Integrations and Export Research"
-  - "GA4 property, data-stream and core API foundation research"
-  - "GA4 reports, Explorations and reporting identity research"
-  - "GA4 attribution, consent, retention and thresholding research"
-  - "GA4 Measurement Protocol validation and collection-boundary research"
-  - "GA4 Firebase, Google Ads, Search Console and BigQuery integration research"
-  - "GA4 Reports, Explorations, Data API and BigQuery reporting-surface comparison research"
-  - "GA4 View and Phase 5 final report"
-  - "GA4 INDEX.jsonl regeneration and final validation"
-current_task: "Prepare Phase 6 BigQuery research"
+  - "Google Analytics 4 property, reporting, APIs, attribution, consent, integrations and export research"
+current_task: "Research BigQuery architecture, resource hierarchy, IAM, billing, datasets, tables and GA4 export foundations"
 next_tasks:
-  - "Research BigQuery service architecture, billing, datasets and permissions"
-  - "Research GA4 export schema, daily, intraday and streaming tables"
+  - "Capture official Evidence for BigQuery projects, datasets, tables, locations and IAM"
+  - "Research analysis and storage billing models, sandbox and cost controls"
+  - "Research GA4 export dataset naming, daily, intraday and streaming tables"
+  - "Research nested and repeated schema fields and event-parameter extraction"
   - "Research SQL reconstruction of events, users, sessions and ecommerce metrics"
-  - "Research retention, governance, cost controls and downstream transformations"
-  - "Create BigQuery Evidence, Facts, View and Phase 6 report"
+  - "Research retention, time travel, governance and downstream transformations"
+  - "Create BigQuery View, Phase 6 report and regenerated INDEX.jsonl"
 blockers: []
-active_package_writers: []
+active_package_writers:
+  - "knowledge/evidence/bigquery-architecture-access-billing.yaml"
+  - "knowledge/facts/bigquery-architecture-access-billing.yaml"
 known_risks:
   - "financial report schemas and fee programs can change"
   - "merchant context affects currencies and payout timing"
@@ -60,5 +57,8 @@ known_risks:
   - "Search Console and Google Ads linked data may have independent freshness, compatibility and retention boundaries"
   - "BigQuery excludes report-layer modeling, data-driven attribution and other value additions"
   - "late-arriving BigQuery events and intraday report processing can change recent-period comparisons"
+  - "BigQuery pricing, editions, free-tier allowances and quotas can change"
+  - "dataset location, billing model and IAM inheritance choices can have long-lived governance and cost effects"
+  - "GA4 export schemas can add fields and require backward-compatible SQL"
 last_updated: "2026-07-13"
 ---
