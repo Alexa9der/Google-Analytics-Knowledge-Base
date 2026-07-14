@@ -25,10 +25,11 @@ completed:
   - "Data Studio sharing, roles, reusable-source governance, embedding, publishing, version history and audit logging research"
   - "Looker Studio Reporting and Governance View"
   - "Looker Studio Analytics Phase 7 Report"
-current_task: "Regenerate INDEX.jsonl and run the complete Phase 7 validation suite"
+current_task: "Regenerate INDEX.jsonl and resolve Phase 7 validation findings"
 next_tasks:
-  - "Regenerate INDEX.jsonl and run the complete validation suite"
-  - "Resolve validation findings, mark PR #8 ready and merge after green CI"
+  - "Regenerate INDEX.jsonl using scripts/generate_index.py"
+  - "Resolve complete validation-suite findings"
+  - "Mark PR #8 ready and merge after green CI"
   - "Start the next roadmap phase after Phase 7 merge"
 blockers: []
 active_package_writers:
