@@ -20,19 +20,19 @@ completed:
   - "BigQuery Analytics Foundation View"
   - "BigQuery Analytics Phase 6 Report"
   - "Phase 6 index regeneration, green CI and PR #7 merge"
-current_task: "Research Looker Studio architecture, connectors, data sources and credentials"
+  - "Data Studio architecture, reports, data sources, connectors and credentials research"
+current_task: "Research calculated fields, blending, filters and controls"
 next_tasks:
-  - "Research Looker Studio product architecture and report/data-source boundaries"
-  - "Research Google and partner connectors"
-  - "Research owner and viewer credentials and data access"
   - "Research calculated fields, blending, filters and controls"
   - "Research sharing, governance, embedding and report lifecycle"
-  - "Create Looker Studio View and Phase 7 report"
+  - "Create Data Studio View and Phase 7 report"
   - "Regenerate INDEX.jsonl and run the complete validation suite"
 blockers: []
 active_package_writers:
   - "knowledge/evidence/looker-studio-architecture-connectors.yaml"
   - "knowledge/facts/looker-studio-architecture-connectors.yaml"
+  - "knowledge/evidence/looker-studio-modeling-interactivity.yaml"
+  - "knowledge/facts/looker-studio-modeling-interactivity.yaml"
 known_risks:
   - "financial report schemas and fee programs can change"
   - "merchant context affects currencies and payout timing"
@@ -75,6 +75,7 @@ known_risks:
   - "time travel and fail-safe storage cost depends on the dataset storage billing model"
   - "expiration changes can delete existing partitions immediately"
   - "row-level security, materialized views and wildcard-table behavior have compatibility limits"
-  - "Looker Studio connector behavior, quotas, credentials, field compatibility and product UI can change"
+  - "Data Studio connector behavior, quotas, credentials, field compatibility, naming and product UI can change"
+  - "community connectors are third-party software and can have separate pricing, authorization, support and security boundaries"
 last_updated: "2026-07-14"
 ---
