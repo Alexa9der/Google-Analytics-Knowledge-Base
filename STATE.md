@@ -1,6 +1,6 @@
 ---
-current_phase: "Phase 6 Validation"
-project_status: "validation_in_progress"
+current_phase: "Phase 6 Complete"
+project_status: "phase_complete"
 completed:
   - "Google Play Console Store Performance research"
   - "Google Play Console Statistics research"
@@ -19,13 +19,15 @@ completed:
   - "BigQuery retention, time travel, fail-safe, partitioning, clustering, governance and transformation research"
   - "BigQuery Analytics Foundation View"
   - "BigQuery Analytics Phase 6 Report"
-current_task: "Regenerate INDEX.jsonl and resolve all Phase 6 validation findings"
+  - "Phase 6 index regeneration and complete validation"
+current_task: "Merge PR #7 and start Phase 7 Looker Studio research"
 next_tasks:
-  - "Regenerate INDEX.jsonl"
-  - "Run knowledge, links, Markdown frontmatter, pytest, Ruff and mypy validation"
-  - "Resolve validation findings and obtain green CI"
   - "Mark PR #7 ready and merge"
-  - "Start Phase 7 Looker Studio research on a dedicated branch"
+  - "Create a dedicated Phase 7 Looker Studio branch"
+  - "Research Looker Studio architecture, connectors, data sources and credentials"
+  - "Research calculated fields, blending, filters, controls and report governance"
+  - "Create Looker Studio View and Phase 7 report"
+  - "Regenerate INDEX.jsonl and run the complete validation suite"
 blockers: []
 active_package_writers:
   - "knowledge/evidence/bigquery-architecture-access-billing.yaml"
@@ -80,5 +82,6 @@ known_risks:
   - "time travel and fail-safe storage cost depends on the dataset storage billing model"
   - "expiration changes can delete existing partitions immediately"
   - "row-level security, materialized views and wildcard-table behavior have compatibility limits"
+  - "Looker Studio connector behavior, quotas, credentials, field compatibility and product UI can change"
 last_updated: "2026-07-14"
 ---
