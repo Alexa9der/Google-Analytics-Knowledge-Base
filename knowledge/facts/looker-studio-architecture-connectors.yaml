@@ -1,0 +1,229 @@
+schema_version: "1.0"
+entity_type: "fact"
+domain: "looker-studio"
+topic: "architecture-connectors"
+owner: "google-analytics-knowledge-project"
+records:
+  - id: "FACT-01KXF42THT7V7DE5VMS003MAQN"
+    title: "A report presents insights derived from data"
+    statement: "A Data Studio report is an asset that presents information and insights derived from connected data."
+    type: "definition_claim"
+    subject: "Data Studio report"
+    predicate: "is"
+    object: "an asset presenting data-derived information and insights"
+    scope: {channel: "Data Studio reports", verified_on: "2026-07-14"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXF42THS08JT6VY06NGF8MXW"]
+    service_ids: ["SERVICE-01KXB0H9ZMFN9JW1GNN614Q1BJ"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-14"
+    last_verified_at: "2026-07-14"
+
+  - id: "FACT-01KXF42THTZJMW2R6N42N8RTRK"
+    title: "Reports can contain multiple component types"
+    statement: "A Data Studio report can contain multiple pages, charts, controls, text areas, shapes and images."
+    type: "capability"
+    subject: "Data Studio report"
+    predicate: "can_contain"
+    object: ["pages", "charts", "controls", "text areas", "shapes", "images"]
+    scope: {channel: "Data Studio reports", verified_on: "2026-07-14"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXF42THS08JT6VY06NGF8MXW"]
+    service_ids: ["SERVICE-01KXB0H9ZMFN9JW1GNN614Q1BJ"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-14"
+    last_verified_at: "2026-07-14"
+
+  - id: "FACT-01KXF42THT2RGTV4EE3WAGB4BP"
+    title: "A data source connects datasets to report components"
+    statement: "A Data Studio data source acts as a conduit between data in an external platform and the charts and controls in a report."
+    type: "definition_claim"
+    subject: "Data Studio data source"
+    predicate: "connects"
+    object: "external data to report charts and controls"
+    scope: {channel: "Data Studio data sources", verified_on: "2026-07-14"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXF42THSX6DP96P68PSMPX1E"]
+    service_ids: ["SERVICE-01KXB0H9ZMFN9JW1GNN614Q1BJ"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-14"
+    last_verified_at: "2026-07-14"
+
+  - id: "FACT-01KXF42THT3370VJG893ATCB0Z"
+    title: "Data sources define the report field schema"
+    statement: "A Data Studio data source provides the field schema that report editors use to build reports and is the layer where data types, parameters and calculated fields can be modeled."
+    type: "capability"
+    subject: "Data Studio data source"
+    predicate: "provides"
+    object: "report field schema and modeling layer"
+    scope: {channel: "Data Studio data modeling", verified_on: "2026-07-14"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXF42THSX6DP96P68PSMPX1E"]
+    service_ids: ["SERVICE-01KXB0H9ZMFN9JW1GNN614Q1BJ"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-14"
+    last_verified_at: "2026-07-14"
+
+  - id: "FACT-01KXF42THT7C21G3B6D9JYZASB"
+    title: "Connectors fetch data for data sources"
+    statement: "A Data Studio data source uses a connector to fetch data from a specific platform, system or product."
+    type: "definition_claim"
+    subject: "Data Studio connector"
+    predicate: "fetches"
+    object: "data for a Data Studio data source"
+    scope: {channel: "Data Studio connectors", verified_on: "2026-07-14"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXF42THSX6DP96P68PSMPX1E", "EVID-01KXF42THT63QYXVK9GJQR62X7"]
+    service_ids: ["SERVICE-01KXB0H9ZMFN9JW1GNN614Q1BJ"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-14"
+    last_verified_at: "2026-07-14"
+
+  - id: "FACT-01KXF42THTKJW3GVZH4MT9DZR3"
+    title: "Most data sources maintain live connections"
+    statement: "Most Data Studio data sources keep data in the underlying dataset and fetch it as needed rather than permanently importing it into Data Studio."
+    type: "temporal_state"
+    subject: "most Data Studio data sources"
+    predicate: "maintain"
+    object: "a live connection to the underlying dataset"
+    scope: {channel: "Data Studio data retrieval", verified_on: "2026-07-14"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXF42THSX6DP96P68PSMPX1E"]
+    service_ids: ["SERVICE-01KXB0H9ZMFN9JW1GNN614Q1BJ"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-14"
+    last_verified_at: "2026-07-14"
+
+  - id: "FACT-01KXF42THTTEN8JJ8JKQ6H0ZZS"
+    title: "Extracted data sources store static snapshots"
+    statement: "The Extract data connector creates a static snapshot that is stored in Data Studio and can be updated later."
+    type: "capability"
+    subject: "Extract data connector"
+    predicate: "creates"
+    object: "an updatable static data snapshot"
+    scope: {channel: "Data Studio extracted data", verified_on: "2026-07-14"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXF42THSX6DP96P68PSMPX1E"]
+    service_ids: ["SERVICE-01KXB0H9ZMFN9JW1GNN614Q1BJ"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-14"
+    last_verified_at: "2026-07-14"
+
+  - id: "FACT-01KXF42THT4KGH1MNPTYD0YB1Z"
+    title: "Embedded data sources travel with reports"
+    statement: "A data source created while editing a report is embedded in that report and is shared or copied together with the report."
+    type: "calculation_rule"
+    subject: "embedded Data Studio data source"
+    predicate: "is_shared_or_copied_with"
+    object: "its report"
+    scope: {channel: "Data Studio embedded data sources", verified_on: "2026-07-14"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXF42THSX6DP96P68PSMPX1E"]
+    service_ids: ["SERVICE-01KXB0H9ZMFN9JW1GNN614Q1BJ"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-14"
+    last_verified_at: "2026-07-14"
+
+  - id: "FACT-01KXF42THTTS4HWPGWFX1ADSNT"
+    title: "Reusable data sources support multiple reports"
+    statement: "A data source created from the Data Studio home page is reusable across different reports and can provide a consistent shared data model."
+    type: "capability"
+    subject: "reusable Data Studio data source"
+    predicate: "can_support"
+    object: "multiple reports with a consistent data model"
+    scope: {channel: "Data Studio reusable data sources", verified_on: "2026-07-14"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXF42THSX6DP96P68PSMPX1E"]
+    service_ids: ["SERVICE-01KXB0H9ZMFN9JW1GNN614Q1BJ"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-14"
+    last_verified_at: "2026-07-14"
+
+  - id: "FACT-01KXF42THTYXHD9B6RAPDD580B"
+    title: "Google provides connectors across several source categories"
+    statement: "Google-provided Data Studio connectors cover business intelligence, databases, Cloud storage, spreadsheets, uploaded or extracted data and Google Marketing Platform products."
+    type: "availability"
+    subject: "Google-provided Data Studio connectors"
+    predicate: "cover"
+    object: ["business intelligence", "databases", "Cloud storage", "spreadsheets", "uploaded data", "extracted data", "Google Marketing Platform products"]
+    scope: {channel: "Data Studio connector catalog", verified_on: "2026-07-14"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXF42THT63QYXVK9GJQR62X7"]
+    service_ids: ["SERVICE-01KXB0H9ZMFN9JW1GNN614Q1BJ"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-14"
+    last_verified_at: "2026-07-14"
+
+  - id: "FACT-01KXF42THT1J5QFQDW2YKZ8Q3Q"
+    title: "Community connectors are third-party integrations"
+    statement: "Community connectors are built by third-party developers to connect Data Studio to additional internet-accessible data sources."
+    type: "definition_claim"
+    subject: "Data Studio community connector"
+    predicate: "is"
+    object: "a third-party data integration"
+    scope: {channel: "Data Studio community connectors", verified_on: "2026-07-14"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXF42THTD25YFDFMV70KWREX"]
+    service_ids: ["SERVICE-01KXB0H9ZMFN9JW1GNN614Q1BJ"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-14"
+    last_verified_at: "2026-07-14"
+
+  - id: "FACT-01KXF42THTDRB05QMJXFBFE9KS"
+    title: "Owner credentials authorize through the data source owner"
+    statement: "Owner's credentials use the data source owner's credentials and let report viewers see data without having their own access to the underlying dataset."
+    type: "calculation_rule"
+    subject: "Data Studio owner's credentials"
+    predicate: "authorize_through"
+    object: "the data source owner"
+    scope: {channel: "Data Studio data credentials", verified_on: "2026-07-14"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXF42THT2Z2YSZG6D9S7KSMD"]
+    service_ids: ["SERVICE-01KXB0H9ZMFN9JW1GNN614Q1BJ"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-14"
+    last_verified_at: "2026-07-14"
+
+  - id: "FACT-01KXF42THT2ZW0AJVM9MA7KW23"
+    title: "Viewer credentials require dataset access"
+    statement: "Viewer's credentials require each person viewing data through the data source to have their own access to the underlying dataset."
+    type: "constraint"
+    subject: "Data Studio viewer's credentials"
+    predicate: "require"
+    object: "the viewer's own underlying dataset access"
+    scope: {channel: "Data Studio data credentials", verified_on: "2026-07-14"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXF42THT2Z2YSZG6D9S7KSMD"]
+    service_ids: ["SERVICE-01KXB0H9ZMFN9JW1GNN614Q1BJ"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-14"
+    last_verified_at: "2026-07-14"
+
+  - id: "FACT-01KXF42THVHSEMZC9FYDJJYCMV"
+    title: "Service account credentials represent a non-human identity"
+    statement: "Service account credentials use a special Google account that represents a non-human user for authentication and authorization to data."
+    type: "definition_claim"
+    subject: "Data Studio service account credentials"
+    predicate: "represent"
+    object: "a non-human Google account identity"
+    scope: {channel: "Data Studio data credentials", verified_on: "2026-07-14"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXF42THT2Z2YSZG6D9S7KSMD"]
+    service_ids: ["SERVICE-01KXB0H9ZMFN9JW1GNN614Q1BJ"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-14"
+    last_verified_at: "2026-07-14"

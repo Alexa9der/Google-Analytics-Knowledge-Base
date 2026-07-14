@@ -8,7 +8,7 @@
     "id": {"type": "string", "pattern": "^FACT-[0-7][0-9A-HJKMNP-TV-Z]{25}$"},
     "title": {"type": "string", "minLength": 1, "maxLength": 160},
     "statement": {"type": "string", "minLength": 1, "maxLength": 800},
-    "type": {"enum": ["definition_claim", "capability", "constraint", "measurement", "relationship", "temporal_state", "observation", "availability", "policy", "calculation_rule"]},
+    "type": {"enum": ["definition_claim", "capability", "constraint", "measurement", "relationship", "temporal_state", "observation", "availability", "policy", "calculation_rule", "implementation_detail"]},
     "subject": {"type": "string", "minLength": 1},
     "predicate": {"type": "string", "pattern": "^[a-z][a-z0-9_]*$"},
     "object": {"type": ["string", "number", "boolean", "object", "array"]},
@@ -65,4 +65,3 @@
   },
   "additionalProperties": false
 }
-

@@ -1,0 +1,261 @@
+schema_version: "1.0"
+entity_type: "fact"
+domain: "looker-studio"
+topic: "modeling-interactivity"
+owner: "google-analytics-knowledge-project"
+records:
+  - id: "FACT-01KXF7A3S6QG684GPCBTZKYA7Y"
+    title: "Calculated fields derive new metrics and dimensions"
+    statement: "A Data Studio calculated field is a formula that creates a new metric or dimension from one or more existing fields."
+    type: "definition_claim"
+    subject: "Data Studio calculated field"
+    predicate: "derives"
+    object: "a metric or dimension from existing fields"
+    scope: {channel: "Data Studio calculated fields", verified_on: "2026-07-14"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXF7A3S62ZXQBXTCCV1X2KVH"]
+    service_ids: ["SERVICE-01KXB0H9ZMFN9JW1GNN614Q1BJ"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-14"
+    last_verified_at: "2026-07-14"
+
+  - id: "FACT-01KXF7A3S6ZN821S4RMPDH4RYH"
+    title: "Calculated fields have two scopes"
+    statement: "Data Studio supports calculated fields created in a data source and calculated fields created for a specific chart."
+    type: "capability"
+    subject: "Data Studio calculated fields"
+    predicate: "support"
+    object: ["data-source scope", "chart-specific scope"]
+    scope: {channel: "Data Studio calculated fields", verified_on: "2026-07-14"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXF7A3S62ZXQBXTCCV1X2KVH"]
+    service_ids: ["SERVICE-01KXB0H9ZMFN9JW1GNN614Q1BJ"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-14"
+    last_verified_at: "2026-07-14"
+
+  - id: "FACT-01KXF7A3S6RQPGBBF7MS1CWDBE"
+    title: "Data-source calculated fields are reusable"
+    statement: "A calculated field created in a data source is available to any report that uses that data source and can be used in charts, controls, filters and other calculated fields."
+    type: "capability"
+    subject: "data-source calculated field"
+    predicate: "is_reusable_in"
+    object: "reports and components using the data source"
+    scope: {channel: "Data Studio calculated fields", verified_on: "2026-07-14"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXF7A3S62ZXQBXTCCV1X2KVH"]
+    service_ids: ["SERVICE-01KXB0H9ZMFN9JW1GNN614Q1BJ"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-14"
+    last_verified_at: "2026-07-14"
+
+  - id: "FACT-01KXF7A3S6CQF1FE0VXWV9GKDB"
+    title: "Data-source calculated fields do not work on blends"
+    statement: "A calculated field created in a data source cannot be used with blended data."
+    type: "constraint"
+    subject: "data-source calculated field"
+    predicate: "cannot_use"
+    object: "blended data"
+    scope: {channel: "Data Studio calculated fields", verified_on: "2026-07-14"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXF7A3S62ZXQBXTCCV1X2KVH"]
+    service_ids: ["SERVICE-01KXB0H9ZMFN9JW1GNN614Q1BJ"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-14"
+    last_verified_at: "2026-07-14"
+
+  - id: "FACT-01KXF7A3S6T5WQFGRE58W8003T"
+    title: "Chart-specific calculated fields remain local"
+    statement: "A chart-specific calculated field exists only in the chart where it was created and is not added to the chart's data source."
+    type: "constraint"
+    subject: "chart-specific calculated field"
+    predicate: "is_scoped_to"
+    object: "one chart"
+    scope: {channel: "Data Studio calculated fields", verified_on: "2026-07-14"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXF7A3S62ZXQBXTCCV1X2KVH"]
+    service_ids: ["SERVICE-01KXB0H9ZMFN9JW1GNN614Q1BJ"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-14"
+    last_verified_at: "2026-07-14"
+
+  - id: "FACT-01KXF7A3S6KABMKDJ5R06BP44B"
+    title: "Chart-specific calculated fields support blended data"
+    statement: "A chart-specific calculated field can be created from blended data, but it cannot reference another chart-specific calculated field."
+    type: "constraint"
+    subject: "chart-specific calculated field"
+    predicate: "supports_with_limit"
+    object: "blended data without references to other chart-specific calculated fields"
+    scope: {channel: "Data Studio calculated fields", verified_on: "2026-07-14"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXF7A3S62ZXQBXTCCV1X2KVH"]
+    service_ids: ["SERVICE-01KXB0H9ZMFN9JW1GNN614Q1BJ"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-14"
+    last_verified_at: "2026-07-14"
+
+  - id: "FACT-01KXF7A3S6GWXRWXWXA41RNGAB"
+    title: "A blend combines up to five data sources"
+    statement: "A Data Studio blend can provide charts, tables and controls with data combined from up to five data sources."
+    type: "capability"
+    subject: "Data Studio blend"
+    predicate: "combines"
+    object: "up to five data sources"
+    scope: {channel: "Data Studio blends", verified_on: "2026-07-14"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXF7A3S6AK0V75TT6Z7BM125"]
+    service_ids: ["SERVICE-01KXB0H9ZMFN9JW1GNN614Q1BJ"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-14"
+    last_verified_at: "2026-07-14"
+
+  - id: "FACT-01KXF7A3S6C0KZ81NZ9DV465KK"
+    title: "Blends are embedded report resources"
+    statement: "A Data Studio blend is always embedded in the report where it is created and cannot be reused independently across reports."
+    type: "constraint"
+    subject: "Data Studio blend"
+    predicate: "is_embedded_in"
+    object: "its report"
+    scope: {channel: "Data Studio blends", verified_on: "2026-07-14"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXF7A3S6AK0V75TT6Z7BM125"]
+    service_ids: ["SERVICE-01KXB0H9ZMFN9JW1GNN614Q1BJ"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-14"
+    last_verified_at: "2026-07-14"
+
+  - id: "FACT-01KXF7A3S6JS0Y007Q18FNK36W"
+    title: "Blends inherit freshness and credentials"
+    statement: "A Data Studio blend has no independent data-freshness or credential settings and inherits those settings from its underlying data sources."
+    type: "relationship"
+    subject: "Data Studio blend"
+    predicate: "inherits"
+    object: ["data freshness", "credentials"]
+    scope: {channel: "Data Studio blends", verified_on: "2026-07-14"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXF7A3S6AK0V75TT6Z7BM125"]
+    service_ids: ["SERVICE-01KXB0H9ZMFN9JW1GNN614Q1BJ"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-14"
+    last_verified_at: "2026-07-14"
+
+  - id: "FACT-01KXF7A3S67WFG09ZGX400K8FY"
+    title: "Blend tables are aggregated before joins"
+    statement: "Before joining blend tables, Data Studio groups and aggregates each table by its selected dimensions, so missing unique identifiers can collapse identical rows and change the resulting row count."
+    type: "calculation_rule"
+    subject: "Data Studio blend execution"
+    predicate: "preaggregates"
+    object: "each table before the join"
+    scope: {channel: "Data Studio blends", verified_on: "2026-07-14"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXF7A3S6AK0V75TT6Z7BM125"]
+    service_ids: ["SERVICE-01KXB0H9ZMFN9JW1GNN614Q1BJ"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-14"
+    last_verified_at: "2026-07-14"
+
+  - id: "FACT-01KXF7A3S6SVWBT4PNHW195543"
+    title: "Blend join conditions support equality only"
+    statement: "Data Studio blend join conditions support equality between fields but not inequality or ordering comparisons."
+    type: "constraint"
+    subject: "Data Studio blend join condition"
+    predicate: "supports_only"
+    object: "field equality"
+    scope: {channel: "Data Studio blends", verified_on: "2026-07-14"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXF7A3S6AK0V75TT6Z7BM125"]
+    service_ids: ["SERVICE-01KXB0H9ZMFN9JW1GNN614Q1BJ"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-14"
+    last_verified_at: "2026-07-14"
+
+  - id: "FACT-01KXF7A3S62WHG9J5C13J7TGBA"
+    title: "Filter properties reduce displayed data"
+    statement: "A Data Studio filter property includes or excludes records shown to viewers without transforming the underlying data."
+    type: "definition_claim"
+    subject: "Data Studio filter property"
+    predicate: "reduces"
+    object: "displayed records without transforming source data"
+    scope: {channel: "Data Studio filters", verified_on: "2026-07-14"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXF7A3S654SAZDWARABR4E38"]
+    service_ids: ["SERVICE-01KXB0H9ZMFN9JW1GNN614Q1BJ"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-14"
+    last_verified_at: "2026-07-14"
+
+  - id: "FACT-01KXF7A3S632WSB1XAW95QJX67"
+    title: "Filter properties support hierarchical scopes"
+    statement: "Filter properties can apply to a chart, control, page or entire report, with inheritance ordered from report level to page level to chart or control level."
+    type: "relationship"
+    subject: "Data Studio filter property"
+    predicate: "inherits_by_scope"
+    object: ["report", "page", "chart or control"]
+    scope: {channel: "Data Studio filters", verified_on: "2026-07-14"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXF7A3S654SAZDWARABR4E38"]
+    service_ids: ["SERVICE-01KXB0H9ZMFN9JW1GNN614Q1BJ"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-14"
+    last_verified_at: "2026-07-14"
+
+  - id: "FACT-01KXF7A3S6QYTNHP945QC65XVF"
+    title: "Controls provide viewer interaction"
+    statement: "Data Studio controls let report viewers filter data, provide parameter input, set a timeframe or change the dataset used by a data source."
+    type: "capability"
+    subject: "Data Studio control"
+    predicate: "allows"
+    object: ["filtering", "parameter input", "timeframe selection", "dataset selection"]
+    scope: {channel: "Data Studio controls", verified_on: "2026-07-14"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXF7A3S67HRHT6ZH29B4P1EC"]
+    service_ids: ["SERVICE-01KXB0H9ZMFN9JW1GNN614Q1BJ"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-14"
+    last_verified_at: "2026-07-14"
+
+  - id: "FACT-01KXF7A3S6P1WH24BNP9ZB0CSV"
+    title: "Control filtering depends on field IDs"
+    statement: "Data Studio filter controls match fields by internal field ID rather than display name, so controls do not automatically filter different flexible-schema data sources unless their field IDs are unified."
+    type: "constraint"
+    subject: "Data Studio filter control"
+    predicate: "matches_by"
+    object: "internal field ID"
+    scope: {channel: "Data Studio controls", verified_on: "2026-07-14"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXF7A3S67HRHT6ZH29B4P1EC"]
+    service_ids: ["SERVICE-01KXB0H9ZMFN9JW1GNN614Q1BJ"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-14"
+    last_verified_at: "2026-07-14"
+
+  - id: "FACT-01KXF7A3S6Q2W8S58Z9500S3KK"
+    title: "Cross-filtering turns chart interaction into filters"
+    statement: "When chart cross-filtering is enabled, selecting dimension values or brushing a supported time-series area applies that interaction as a filter to other report charts."
+    type: "capability"
+    subject: "Data Studio chart cross-filtering"
+    predicate: "converts"
+    object: "chart interactions into report filters"
+    scope: {channel: "Data Studio chart interactions", verified_on: "2026-07-14"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXF7A3S6W1W8B5FN5YR0VV48"]
+    service_ids: ["SERVICE-01KXB0H9ZMFN9JW1GNN614Q1BJ"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-14"
+    last_verified_at: "2026-07-14"

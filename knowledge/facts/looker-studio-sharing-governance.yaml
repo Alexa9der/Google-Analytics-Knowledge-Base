@@ -1,0 +1,309 @@
+schema_version: "1.0"
+entity_type: "fact"
+domain: "looker-studio"
+topic: "sharing-governance"
+owner: "google-analytics-knowledge-project"
+records:
+  - id: "FACT-01KXFAT5BD3G62M863T8Q5XQRA"
+    title: "Asset access uses IAM roles"
+    statement: "Access to Data Studio reports and data sources is managed by assigning predefined IAM roles to users."
+    type: "relationship"
+    subject: "Data Studio asset access"
+    predicate: "is_managed_by"
+    object: "predefined IAM roles"
+    scope: {channel: "Data Studio sharing", verified_on: "2026-07-14"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXFAT5BCBCZE532WMZ6E5YT0"]
+    service_ids: ["SERVICE-01KXB0H9ZMFN9JW1GNN614Q1BJ"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-14"
+    last_verified_at: "2026-07-14"
+
+  - id: "FACT-01KXFAT5BDCEXFGDDSCAYC5W23"
+    title: "Asset roles do not grant data access"
+    statement: "Data Studio report and data-source roles govern asset actions, while data credentials govern whether a user can see the underlying data."
+    type: "constraint"
+    subject: "Data Studio asset roles"
+    predicate: "do_not_govern"
+    object: "underlying data visibility"
+    scope: {channel: "Data Studio sharing", verified_on: "2026-07-14"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXFAT5BCBCZE532WMZ6E5YT0"]
+    service_ids: ["SERVICE-01KXB0H9ZMFN9JW1GNN614Q1BJ"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-14"
+    last_verified_at: "2026-07-14"
+
+  - id: "FACT-01KXFAT5BD0CMJAXEKAF15X07K"
+    title: "Viewer role permits viewing and interaction"
+    statement: "The Data Studio Viewer role can view reports, interact with controls and inspect a data-source schema."
+    type: "capability"
+    subject: "Data Studio Viewer role"
+    predicate: "allows"
+    object: ["report viewing", "control interaction", "schema viewing"]
+    scope: {channel: "Data Studio sharing", verified_on: "2026-07-14"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXFAT5BCBCZE532WMZ6E5YT0"]
+    service_ids: ["SERVICE-01KXB0H9ZMFN9JW1GNN614Q1BJ"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-14"
+    last_verified_at: "2026-07-14"
+
+  - id: "FACT-01KXFAT5BD5PRTN96DXKDH27SR"
+    title: "Editor role permits modification and sharing"
+    statement: "The Data Studio Editor role includes Viewer capabilities and can modify and share reports and data sources."
+    type: "capability"
+    subject: "Data Studio Editor role"
+    predicate: "allows"
+    object: ["asset modification", "asset sharing"]
+    scope: {channel: "Data Studio sharing", verified_on: "2026-07-14"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXFAT5BCBCZE532WMZ6E5YT0"]
+    service_ids: ["SERVICE-01KXB0H9ZMFN9JW1GNN614Q1BJ"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-14"
+    last_verified_at: "2026-07-14"
+
+  - id: "FACT-01KXFAT5BD01R4640Q4ZHWTNFE"
+    title: "Owner role permits deletion and ownership transfer"
+    statement: "The Data Studio Owner role includes Editor capabilities and can delete an asset or make another user its owner."
+    type: "capability"
+    subject: "Data Studio Owner role"
+    predicate: "allows"
+    object: ["asset deletion", "ownership transfer"]
+    scope: {channel: "Data Studio sharing", verified_on: "2026-07-14"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXFAT5BCBCZE532WMZ6E5YT0"]
+    service_ids: ["SERVICE-01KXB0H9ZMFN9JW1GNN614Q1BJ"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-14"
+    last_verified_at: "2026-07-14"
+
+  - id: "FACT-01KXFAT5BDNJD9MYM531NRTF6T"
+    title: "Reusable data-source sharing does not grant dataset access"
+    statement: "Sharing a reusable Data Studio data source never grants access to its underlying dataset."
+    type: "constraint"
+    subject: "reusable data-source sharing"
+    predicate: "does_not_grant"
+    object: "underlying dataset access"
+    scope: {channel: "Data Studio data-source sharing", verified_on: "2026-07-14"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXFAT5BCBS0H1M1M4GHMCNE4"]
+    service_ids: ["SERVICE-01KXB0H9ZMFN9JW1GNN614Q1BJ"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-14"
+    last_verified_at: "2026-07-14"
+
+  - id: "FACT-01KXFAT5BDPKR4J8Z8VHRZ7BW7"
+    title: "Reusable data-source viewers can inspect schema"
+    statement: "View permission on a reusable Data Studio data source permits schema inspection but not schema modification."
+    type: "constraint"
+    subject: "reusable data-source Viewer permission"
+    predicate: "permits_only"
+    object: "schema inspection"
+    scope: {channel: "Data Studio data-source sharing", verified_on: "2026-07-14"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXFAT5BCBS0H1M1M4GHMCNE4"]
+    service_ids: ["SERVICE-01KXB0H9ZMFN9JW1GNN614Q1BJ"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-14"
+    last_verified_at: "2026-07-14"
+
+  - id: "FACT-01KXFAT5BDS2QPHDFDXQFGE1PP"
+    title: "Reusable data-source editors can change schema"
+    statement: "Edit permission on a reusable Data Studio data source permits schema changes such as renaming fields, changing types and aggregations, and adding calculated fields."
+    type: "capability"
+    subject: "reusable data-source Editor permission"
+    predicate: "allows"
+    object: "schema modification"
+    scope: {channel: "Data Studio data-source sharing", verified_on: "2026-07-14"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXFAT5BCBS0H1M1M4GHMCNE4"]
+    service_ids: ["SERVICE-01KXB0H9ZMFN9JW1GNN614Q1BJ"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-14"
+    last_verified_at: "2026-07-14"
+
+  - id: "FACT-01KXFAT5BDV443926K5EEMFMNS"
+    title: "Only the owner edits a reusable connection"
+    statement: "Only the owner of a reusable Data Studio data source can edit its data connection."
+    type: "constraint"
+    subject: "reusable data-source connection"
+    predicate: "is_editable_by"
+    object: "data-source owner only"
+    scope: {channel: "Data Studio data-source sharing", verified_on: "2026-07-14"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXFAT5BCBS0H1M1M4GHMCNE4"]
+    service_ids: ["SERVICE-01KXB0H9ZMFN9JW1GNN614Q1BJ"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-14"
+    last_verified_at: "2026-07-14"
+
+  - id: "FACT-01KXFAT5BDERVD1EJ12CANSTMV"
+    title: "Embedding supports public and private reports"
+    statement: "Data Studio can embed both public reports and access-restricted reports in iframe- or oEmbed-capable sites."
+    type: "capability"
+    subject: "Data Studio report embedding"
+    predicate: "supports"
+    object: ["public reports", "access-restricted reports"]
+    scope: {channel: "Data Studio embedding", verified_on: "2026-07-14"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXFAT5BDMZF84G3W6JCYR189"]
+    service_ids: ["SERVICE-01KXB0H9ZMFN9JW1GNN614Q1BJ"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-14"
+    last_verified_at: "2026-07-14"
+
+  - id: "FACT-01KXFAT5BD02PA33Y2NX7KKXJQ"
+    title: "Private embeds preserve report access restrictions"
+    statement: "An embedded private Data Studio report is visible only to authorized users, who must be signed in to a Google account."
+    type: "constraint"
+    subject: "private embedded report"
+    predicate: "is_visible_to"
+    object: "authorized signed-in users"
+    scope: {channel: "Data Studio embedding", verified_on: "2026-07-14"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXFAT5BDMZF84G3W6JCYR189"]
+    service_ids: ["SERVICE-01KXB0H9ZMFN9JW1GNN614Q1BJ"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-14"
+    last_verified_at: "2026-07-14"
+
+  - id: "FACT-01KXFAT5BDZ1V6EE26GTMD8XK8"
+    title: "Embedded reports run in interactive view mode"
+    statement: "Embedded Data Studio reports run in view mode with working filters and controls, but viewers cannot edit, copy or share them from the embed."
+    type: "constraint"
+    subject: "embedded Data Studio report"
+    predicate: "operates_as"
+    object: "interactive view mode without edit, copy or share actions"
+    scope: {channel: "Data Studio embedding", verified_on: "2026-07-14"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXFAT5BDMZF84G3W6JCYR189"]
+    service_ids: ["SERVICE-01KXB0H9ZMFN9JW1GNN614Q1BJ"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-14"
+    last_verified_at: "2026-07-14"
+
+  - id: "FACT-01KXFAT5BD8K2BS9JWCZMZG5Z9"
+    title: "Report publishing separates draft and viewer versions"
+    statement: "When report publishing is enabled, editors work on a draft while viewers continue to see the current published version until a new version is published."
+    type: "relationship"
+    subject: "Data Studio report publishing"
+    predicate: "separates"
+    object: ["editor draft", "viewer published version"]
+    scope: {channel: "Data Studio publishing", verified_on: "2026-07-14"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXFAT5BDGMTPCP2TXCKCC2CE"]
+    service_ids: ["SERVICE-01KXB0H9ZMFN9JW1GNN614Q1BJ"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-14"
+    last_verified_at: "2026-07-14"
+
+  - id: "FACT-01KXFAT5BDT9N1VYJ0YG55ZMAW"
+    title: "Publishing tracks current draft and published versions"
+    statement: "A manually published Data Studio report keeps a current draft version and a current published version in version history."
+    type: "relationship"
+    subject: "published Data Studio report"
+    predicate: "maintains"
+    object: ["current draft version", "current published version"]
+    scope: {channel: "Data Studio publishing", verified_on: "2026-07-14"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXFAT5BDGMTPCP2TXCKCC2CE"]
+    service_ids: ["SERVICE-01KXB0H9ZMFN9JW1GNN614Q1BJ"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-14"
+    last_verified_at: "2026-07-14"
+
+  - id: "FACT-01KXFAT5BDDD96PTA43SPBSNPN"
+    title: "Reusable source changes bypass report publishing"
+    statement: "Edits to reusable Data Studio data sources can appear in both draft and published report versions without waiting for the report to be republished."
+    type: "constraint"
+    subject: "reusable data-source change"
+    predicate: "bypasses"
+    object: "report publishing boundary"
+    scope: {channel: "Data Studio publishing", verified_on: "2026-07-14"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXFAT5BDGMTPCP2TXCKCC2CE"]
+    service_ids: ["SERVICE-01KXB0H9ZMFN9JW1GNN614Q1BJ"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-14"
+    last_verified_at: "2026-07-14"
+
+  - id: "FACT-01KXFAT5BD6K3NA7KH16NJY8A5"
+    title: "Reusable and embedded sources have different version histories"
+    statement: "Reusable Data Studio data sources maintain version history independently, while embedded data-source history is tied to the parent report and restored with that report."
+    type: "relationship"
+    subject: "Data Studio data-source version history"
+    predicate: "differs_by"
+    object: ["reusable source", "embedded source"]
+    scope: {channel: "Data Studio version history", verified_on: "2026-07-14"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXFAT5BDRA81ZNJA6HRQS71N"]
+    service_ids: ["SERVICE-01KXB0H9ZMFN9JW1GNN614Q1BJ"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-14"
+    last_verified_at: "2026-07-14"
+
+  - id: "FACT-01KXFAT5BDEG2WQ3SP009W7RD2"
+    title: "Version history records editor attribution"
+    statement: "Data Studio version history records when a revision was created and identifies the editor responsible for it."
+    type: "capability"
+    subject: "Data Studio version history"
+    predicate: "records"
+    object: ["revision time", "responsible editor"]
+    scope: {channel: "Data Studio version history", verified_on: "2026-07-14"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXFAT5BDRA81ZNJA6HRQS71N"]
+    service_ids: ["SERVICE-01KXB0H9ZMFN9JW1GNN614Q1BJ"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-14"
+    last_verified_at: "2026-07-14"
+
+  - id: "FACT-01KXFAT5BD14YAP5ZT9BG8Y4NA"
+    title: "Pro audit logs use the Data Studio service name"
+    statement: "Data Studio Pro Cloud Audit Logs use the service name datastudio.googleapis.com."
+    type: "implementation_detail"
+    subject: "Data Studio Pro audit logs"
+    predicate: "use_service_name"
+    object: "datastudio.googleapis.com"
+    scope: {channel: "Data Studio Pro audit logging", verified_on: "2026-07-14"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXFAT5BD1VHKZ5JGNNEYYBN1"]
+    service_ids: ["SERVICE-01KXB0H9ZMFN9JW1GNN614Q1BJ"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-14"
+    last_verified_at: "2026-07-14"
+
+  - id: "FACT-01KXFAT5BDEEEPP935HDK2WT0X"
+    title: "Pro audit methods map to Cloud Audit Log categories"
+    statement: "Data Studio Pro methods requiring ADMIN_WRITE permissions generate Admin Activity logs, while ADMIN_READ, DATA_READ and DATA_WRITE methods generate Data Access logs."
+    type: "relationship"
+    subject: "Data Studio Pro audit method"
+    predicate: "maps_to"
+    object: ["Admin Activity", "Data Access"]
+    scope: {channel: "Data Studio Pro audit logging", verified_on: "2026-07-14"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXFAT5BD1VHKZ5JGNNEYYBN1"]
+    service_ids: ["SERVICE-01KXB0H9ZMFN9JW1GNN614Q1BJ"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-14"
+    last_verified_at: "2026-07-14"
