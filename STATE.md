@@ -1,6 +1,6 @@
 ---
-current_phase: "Phase 8 Active"
-project_status: "synthesis_in_progress"
+current_phase: "Phase 8 Validation"
+project_status: "validation_in_progress"
 completed:
   - "Google Play Console Store Performance research"
   - "Google Play Console Statistics research"
@@ -29,17 +29,20 @@ completed:
   - "Phase 7 index regeneration, strict validation, green CI and PR #8 merge"
   - "Cross-service Google Analytics ecosystem integration map"
   - "Cross-service marketing attribution funnel"
+  - "Phase 8 identity, attribution, freshness, retention and reconciliation gap analysis"
+  - "Governed /fb short-link redirect architecture"
+  - "Google Analytics Ecosystem Phase 8 Report"
   - "Phase 8 production inventory test update"
-current_task: "Identify identity, attribution, freshness, retention and reconciliation gaps and create the Phase 8 synthesis report"
+current_task: "Regenerate INDEX.jsonl and resolve final Phase 8 validation findings"
 next_tasks:
-  - "Define architecture options for short-link redirects such as /fb"
-  - "Create the Phase 8 synthesis and architecture Report"
-  - "Review all cross-service IDs and front matter"
-  - "Regenerate INDEX.jsonl and complete validation"
+  - "Review all cross-service IDs and Markdown front matter"
+  - "Regenerate INDEX.jsonl using scripts/generate_index.py"
+  - "Complete the full validation suite"
   - "Obtain green CI, mark PR #9 ready and merge"
+  - "Set the repository to roadmap-complete maintenance state"
 blockers: []
 active_package_writers:
-  - "reports/google-analytics-ecosystem-phase-8.md"
+  - "INDEX.jsonl"
 known_risks:
   - "cross-service metric names can represent different scopes, identities, attribution models and processing layers"
   - "website, store, app, purchase and advertising-revenue stages do not share one universal user or transaction identifier"
