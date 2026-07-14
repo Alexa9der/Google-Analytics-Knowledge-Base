@@ -25,10 +25,12 @@ completed:
   - "Data Studio sharing, roles, reusable-source governance, embedding, publishing, version history and audit logging research"
   - "Looker Studio Reporting and Governance View"
   - "Looker Studio Analytics Phase 7 Report"
-current_task: "Regenerate INDEX.jsonl and resolve Phase 7 validation findings"
+  - "Phase 7 inventory and fact-schema validation fixes"
+current_task: "Generate and commit Phase 7 INDEX.jsonl, restore strict validation, and obtain green CI"
 next_tasks:
-  - "Regenerate INDEX.jsonl using scripts/generate_index.py"
-  - "Resolve complete validation-suite findings"
+  - "Commit generated INDEX.jsonl from the validation artifact"
+  - "Restore validate.yml to strict index freshness checking"
+  - "Resolve remaining validation-suite findings"
   - "Mark PR #8 ready and merge after green CI"
   - "Start the next roadmap phase after Phase 7 merge"
 blockers: []
