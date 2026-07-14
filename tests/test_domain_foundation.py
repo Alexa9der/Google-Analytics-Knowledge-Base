@@ -33,15 +33,15 @@ def _rows() -> list[dict[str, object]]:
 
 
 def test_production_entity_counts_and_no_demo_ids() -> None:
-    """Assert the expected post-Phase-6 production inventory and absence of demo IDs."""
+    """Assert the current Phase 7 production inventory and absence of demo IDs."""
     rows = _rows()
     counts = {
         entity_type: sum(row["entity_type"] == entity_type for row in rows)
         for entity_type in ("fact", "evidence", "concept", "service", "view", "report")
     }
     assert counts == {
-        "fact": 551,
-        "evidence": 208,
+        "fact": 600,
+        "evidence": 224,
         "concept": 41,
         "service": 7,
         "view": 13,
