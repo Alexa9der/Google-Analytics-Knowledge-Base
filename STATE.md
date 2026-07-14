@@ -1,6 +1,6 @@
 ---
 current_phase: "Phase 8 Active"
-project_status: "research_in_progress"
+project_status: "synthesis_in_progress"
 completed:
   - "Google Play Console Store Performance research"
   - "Google Play Console Statistics research"
@@ -27,18 +27,18 @@ completed:
   - "Looker Studio Analytics Phase 7 Report"
   - "Phase 7 inventory and fact-schema validation fixes"
   - "Phase 7 index regeneration, strict validation, green CI and PR #8 merge"
-current_task: "Synthesize the cross-service integration map and end-to-end marketing attribution funnel"
+  - "Cross-service Google Analytics ecosystem integration map"
+  - "Cross-service marketing attribution funnel"
+  - "Phase 8 production inventory test update"
+current_task: "Identify identity, attribution, freshness, retention and reconciliation gaps and create the Phase 8 synthesis report"
 next_tasks:
-  - "Map confirmed integrations and explicit non-integrations across all seven services"
-  - "Define the source-click to website, Google Play, app activity, purchase and advertising-revenue funnel"
-  - "Identify identity, attribution, freshness, retention and reconciliation gaps"
-  - "Create cross-service integration and funnel Views"
-  - "Create Phase 8 synthesis and architecture Reports"
+  - "Define architecture options for short-link redirects such as /fb"
+  - "Create the Phase 8 synthesis and architecture Report"
+  - "Review all cross-service IDs and front matter"
   - "Regenerate INDEX.jsonl and complete validation"
+  - "Obtain green CI, mark PR #9 ready and merge"
 blockers: []
 active_package_writers:
-  - "views/google-analytics-ecosystem-integration-map.md"
-  - "views/marketing-attribution-funnel.md"
   - "reports/google-analytics-ecosystem-phase-8.md"
 known_risks:
   - "cross-service metric names can represent different scopes, identities, attribution models and processing layers"
@@ -46,5 +46,6 @@ known_risks:
   - "reporting, API and export surfaces can differ in freshness, retention, privacy filtering, modeling and aggregation"
   - "product links do not imply complete bidirectional data movement or historical backfill"
   - "short-link redirects can lose client-side analytics unless measurement occurs before or during the redirect"
+  - "aggregate bridge tables can create false precision when matching windows, dimensions or attribution rules are incompatible"
 last_updated: "2026-07-14"
 ---
