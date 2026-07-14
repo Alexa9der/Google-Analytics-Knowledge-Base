@@ -21,9 +21,9 @@ completed:
   - "BigQuery Analytics Phase 6 Report"
   - "Phase 6 index regeneration, green CI and PR #7 merge"
   - "Data Studio architecture, reports, data sources, connectors and credentials research"
-current_task: "Research calculated fields, blending, filters and controls"
+  - "Data Studio calculated fields, blends, filters, controls and cross-filtering research"
+current_task: "Research sharing, governance, embedding and report lifecycle"
 next_tasks:
-  - "Research calculated fields, blending, filters and controls"
   - "Research sharing, governance, embedding and report lifecycle"
   - "Create Data Studio View and Phase 7 report"
   - "Regenerate INDEX.jsonl and run the complete validation suite"
@@ -33,6 +33,8 @@ active_package_writers:
   - "knowledge/facts/looker-studio-architecture-connectors.yaml"
   - "knowledge/evidence/looker-studio-modeling-interactivity.yaml"
   - "knowledge/facts/looker-studio-modeling-interactivity.yaml"
+  - "knowledge/evidence/looker-studio-sharing-governance.yaml"
+  - "knowledge/facts/looker-studio-sharing-governance.yaml"
 known_risks:
   - "financial report schemas and fee programs can change"
   - "merchant context affects currencies and payout timing"
@@ -77,5 +79,7 @@ known_risks:
   - "row-level security, materialized views and wildcard-table behavior have compatibility limits"
   - "Data Studio connector behavior, quotas, credentials, field compatibility, naming and product UI can change"
   - "community connectors are third-party software and can have separate pricing, authorization, support and security boundaries"
+  - "blend results can differ from direct SQL joins because Data Studio aggregates blend tables before joining them"
+  - "cross-data-source controls depend on connector field IDs and may require manual field-ID unification"
 last_updated: "2026-07-14"
 ---
