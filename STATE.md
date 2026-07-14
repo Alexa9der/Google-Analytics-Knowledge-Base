@@ -1,6 +1,6 @@
 ---
-current_phase: "Phase 8 Validation"
-project_status: "validation_in_progress"
+current_phase: "Roadmap Complete"
+project_status: "maintenance"
 completed:
   - "Google Play Console Store Performance research"
   - "Google Play Console Statistics research"
@@ -33,16 +33,16 @@ completed:
   - "Governed /fb short-link redirect architecture"
   - "Google Analytics Ecosystem Phase 8 Report"
   - "Phase 8 production inventory test update"
-current_task: "Regenerate INDEX.jsonl and resolve final Phase 8 validation findings"
+  - "Phase 8 index regeneration and full validation"
+current_task: "Maintain source freshness, schema integrity, links, generated index and validated cross-service contracts"
 next_tasks:
-  - "Review all cross-service IDs and Markdown front matter"
-  - "Regenerate INDEX.jsonl using scripts/generate_index.py"
-  - "Complete the full validation suite"
-  - "Obtain green CI, mark PR #9 ready and merge"
-  - "Set the repository to roadmap-complete maintenance state"
+  - "Monitor official Google documentation for material product changes"
+  - "Refresh affected Evidence and Facts when official behavior changes"
+  - "Regenerate INDEX.jsonl after every canonical entity change"
+  - "Keep validation tests and schemas aligned with the production inventory"
+  - "Add new roadmap phases only through an explicit research scope"
 blockers: []
-active_package_writers:
-  - "INDEX.jsonl"
+active_package_writers: []
 known_risks:
   - "cross-service metric names can represent different scopes, identities, attribution models and processing layers"
   - "website, store, app, purchase and advertising-revenue stages do not share one universal user or transaction identifier"
