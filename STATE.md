@@ -22,11 +22,12 @@ completed:
   - "Phase 6 index regeneration, green CI and PR #7 merge"
   - "Data Studio architecture, reports, data sources, connectors and credentials research"
   - "Data Studio calculated fields, blends, filters, controls and cross-filtering research"
-current_task: "Research sharing, governance, embedding and report lifecycle"
+  - "Data Studio sharing, roles, reusable-source governance, embedding, publishing, version history and audit logging research"
+current_task: "Create Data Studio View and Phase 7 report"
 next_tasks:
-  - "Research sharing, governance, embedding and report lifecycle"
   - "Create Data Studio View and Phase 7 report"
   - "Regenerate INDEX.jsonl and run the complete validation suite"
+  - "Resolve validation findings, mark PR #8 ready and merge after green CI"
 blockers: []
 active_package_writers:
   - "knowledge/evidence/looker-studio-architecture-connectors.yaml"
@@ -81,5 +82,9 @@ known_risks:
   - "community connectors are third-party software and can have separate pricing, authorization, support and security boundaries"
   - "blend results can differ from direct SQL joins because Data Studio aggregates blend tables before joining them"
   - "cross-data-source controls depend on connector field IDs and may require manual field-ID unification"
+  - "asset IAM roles and data credentials are separate access boundaries"
+  - "reusable data-source changes can bypass the report-publishing boundary"
+  - "embedded reports preserve sharing restrictions and do not provide edit, copy or share actions"
+  - "Data Studio Pro audit logging is a paid-product governance boundary"
 last_updated: "2026-07-14"
 ---
