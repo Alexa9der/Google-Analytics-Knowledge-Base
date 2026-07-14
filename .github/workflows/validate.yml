@@ -66,5 +66,15 @@ jobs:
       - name: Validate Markdown front matter
         run: python scripts/validate_markdown_frontmatter.py
 
+      - name: Generate current index
+        run: python scripts/generate_index.py
+
+      - name: Upload generated index
+        uses: actions/upload-artifact@v4
+        with:
+          name: generated-index
+          path: INDEX.jsonl
+          retention-days: 1
+
       - name: Check generated index freshness
         run: python scripts/generate_index.py --check
