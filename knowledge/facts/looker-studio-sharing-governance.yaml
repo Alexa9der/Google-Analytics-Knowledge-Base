@@ -23,7 +23,7 @@ records:
   - id: "FACT-01KXFAT5BDCEXFGDDSCAYC5W23"
     title: "Asset roles do not grant data access"
     statement: "Data Studio report and data-source roles govern asset actions, while data credentials govern whether a user can see the underlying data."
-    type: "boundary"
+    type: "constraint"
     subject: "Data Studio asset roles"
     predicate: "do_not_govern"
     object: "underlying data visibility"
@@ -199,7 +199,7 @@ records:
   - id: "FACT-01KXFAT5BD8K2BS9JWCZMZG5Z9"
     title: "Report publishing separates draft and viewer versions"
     statement: "When report publishing is enabled, editors work on a draft while viewers continue to see the current published version until a new version is published."
-    type: "lifecycle_rule"
+    type: "relationship"
     subject: "Data Studio report publishing"
     predicate: "separates"
     object: ["editor draft", "viewer published version"]
@@ -215,7 +215,7 @@ records:
   - id: "FACT-01KXFAT5BDT9N1VYJ0YG55ZMAW"
     title: "Publishing tracks current draft and published versions"
     statement: "A manually published Data Studio report keeps a current draft version and a current published version in version history."
-    type: "lifecycle_rule"
+    type: "relationship"
     subject: "published Data Studio report"
     predicate: "maintains"
     object: ["current draft version", "current published version"]
@@ -247,7 +247,7 @@ records:
   - id: "FACT-01KXFAT5BD6K3NA7KH16NJY8A5"
     title: "Reusable and embedded sources have different version histories"
     statement: "Reusable Data Studio data sources maintain version history independently, while embedded data-source history is tied to the parent report and restored with that report."
-    type: "lifecycle_rule"
+    type: "relationship"
     subject: "Data Studio data-source version history"
     predicate: "differs_by"
     object: ["reusable source", "embedded source"]
@@ -295,7 +295,7 @@ records:
   - id: "FACT-01KXFAT5BDEEEPP935HDK2WT0X"
     title: "Pro audit methods map to Cloud Audit Log categories"
     statement: "Data Studio Pro methods requiring ADMIN_WRITE permissions generate Admin Activity logs, while ADMIN_READ, DATA_READ and DATA_WRITE methods generate Data Access logs."
-    type: "classification_rule"
+    type: "relationship"
     subject: "Data Studio Pro audit method"
     predicate: "maps_to"
     object: ["Admin Activity", "Data Access"]
