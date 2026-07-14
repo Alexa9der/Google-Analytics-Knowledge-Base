@@ -1,6 +1,6 @@
 ---
-current_phase: "Phase 9 Active"
-project_status: "documentation_validation"
+current_phase: "Roadmap Complete"
+project_status: "maintenance"
 completed:
   - "Google Play Console research and consolidation"
   - "Google Search Console analytics research and consolidation"
@@ -20,20 +20,20 @@ completed:
   - "Architecture decision log"
   - "Repository glossary"
   - "README and AGENTS entry-point refresh"
-current_task: "Validate Phase 9 engineering documentation, review consistency, run CI and merge"
+  - "Phase 9 Repository Intelligence completion"
+current_task: "Maintain the completed knowledge base and use it as the reference for website and application analytics implementation"
 next_tasks:
-  - "Run the complete validation suite"
-  - "Resolve documentation, link or style findings"
-  - "Confirm INDEX.jsonl remains current"
-  - "Mark the Phase 9 PR ready and merge after green CI"
-  - "Return the repository to maintenance mode"
+  - "Define a separate implementation scope for website analytics"
+  - "Define a separate implementation scope for application analytics"
+  - "Map business goals to events, key events, user properties and reporting outputs"
+  - "Keep canonical knowledge, source freshness and validation integrity maintained"
 blockers: []
 active_package_writers: []
 known_risks:
   - "root engineering documents can drift if future architectural changes are not updated consistently"
   - "roadmap candidates must not be interpreted as approved active research"
   - "AI agents can over-load context unless they follow the index-first navigation policy"
-  - "documentation-only changes must not accidentally modify generated INDEX.jsonl"
   - "mutable product claims still require periodic official-source re-verification"
+  - "website and application implementation must be separated from canonical research unless an explicit implementation phase is approved"
 last_updated: "2026-07-14"
 ---
