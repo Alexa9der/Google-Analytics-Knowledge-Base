@@ -33,19 +33,19 @@ def _rows() -> list[dict[str, object]]:
 
 
 def test_production_entity_counts_and_no_demo_ids() -> None:
-    """Assert the expected post-Phase-5 production inventory and absence of demo IDs."""
+    """Assert the expected post-Phase-6 production inventory and absence of demo IDs."""
     rows = _rows()
     counts = {
         entity_type: sum(row["entity_type"] == entity_type for row in rows)
         for entity_type in ("fact", "evidence", "concept", "service", "view", "report")
     }
     assert counts == {
-        "fact": 486,
-        "evidence": 184,
+        "fact": 551,
+        "evidence": 208,
         "concept": 41,
         "service": 7,
-        "view": 12,
-        "report": 11,
+        "view": 13,
+        "report": 12,
     }
     assert DEMO_IDS.isdisjoint({str(row["id"]) for row in rows})
 

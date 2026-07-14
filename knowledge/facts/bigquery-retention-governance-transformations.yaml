@@ -1,0 +1,309 @@
+schema_version: "1.0"
+entity_type: "fact"
+domain: "bigquery"
+topic: "retention-governance-transformations"
+owner: "google-analytics-knowledge-project"
+records:
+  - id: "FACT-01KXEK8HMTD5TCYB99RWZ4J3V8"
+    title: "Time travel defaults to seven days"
+    statement: "BigQuery time travel provides access to changed or deleted data for the previous seven days by default."
+    type: "temporal_state"
+    subject: "BigQuery time travel"
+    predicate: "default_window"
+    object: "7 days"
+    scope: {channel: "BigQuery storage retention", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEK8HMRRQYB6EC8XK4DYV2W"]
+    service_ids: ["SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEK8HMTG7ANV8X29TFCF95M"
+    title: "Time travel window is configurable"
+    statement: "The BigQuery time travel window can be configured from two to seven days at project or dataset level."
+    type: "constraint"
+    subject: "BigQuery time travel window"
+    predicate: "allowed_range"
+    object: "2 to 7 days"
+    scope: {channel: "BigQuery retention settings", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEK8HMRRQYB6EC8XK4DYV2W"]
+    service_ids: ["SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEK8HMTEKVC2MCWDPBW80AA"
+    title: "Fail-safe adds seven days"
+    statement: "After the time travel window, deleted BigQuery data enters a non-configurable seven-day fail-safe period for emergency recovery."
+    type: "temporal_state"
+    subject: "BigQuery fail-safe"
+    predicate: "retention_period"
+    object: "7 days after time travel"
+    scope: {channel: "BigQuery storage retention", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEK8HMRRQYB6EC8XK4DYV2W"]
+    service_ids: ["SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEK8HMTZ6DXJV5JX1BME7XJ"
+    title: "Fail-safe is not self-service queryable"
+    statement: "Users cannot query or directly recover fail-safe data; emergency recovery requires Cloud Customer Care."
+    type: "constraint"
+    subject: "BigQuery fail-safe data"
+    predicate: "requires_recovery_through"
+    object: "Cloud Customer Care"
+    scope: {channel: "BigQuery recovery", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEK8HMRRQYB6EC8XK4DYV2W"]
+    service_ids: ["SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEK8HMTWQJ8ASVYAZPFRBD4"
+    title: "Snapshots preserve data beyond time travel"
+    statement: "A BigQuery table snapshot can preserve a read-only point-in-time table state beyond the time travel window."
+    type: "capability"
+    subject: "BigQuery table snapshot"
+    predicate: "can_preserve"
+    object: "point-in-time table data beyond time travel"
+    scope: {channel: "BigQuery snapshots", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEK8HMT7NHZDS87G0F36MZJ"]
+    service_ids: ["SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEK8HMT20EJ8WNQ5VW5H91N"
+    title: "Snapshots are read-only"
+    statement: "BigQuery table snapshots are read-only, but a standard writable table can be restored from a snapshot."
+    type: "constraint"
+    subject: "BigQuery table snapshot"
+    predicate: "is"
+    object: "read-only restore source"
+    scope: {channel: "BigQuery snapshots", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEK8HMT7NHZDS87G0F36MZJ"]
+    service_ids: ["SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEK8HMTD0NRMR6P1MNR6D2D"
+    title: "Dataset defaults can expire partitions"
+    statement: "A dataset can define a default partition expiration that applies unless a table-level partition expiration overrides it."
+    type: "calculation_rule"
+    subject: "BigQuery partition expiration"
+    predicate: "inherits_from"
+    object: "dataset default unless overridden"
+    scope: {channel: "BigQuery partition retention", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEK8HMRV7JZMD3C7JWZ0TVM"]
+    service_ids: ["SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEK8HMTCVW7N12NY3Q89JD4"
+    title: "Table expiration overrides partition expiration"
+    statement: "When both are configured, table expiration takes precedence over partition expiration and deletes the entire table first."
+    type: "calculation_rule"
+    subject: "BigQuery expiration precedence"
+    predicate: "prioritizes"
+    object: "table expiration over partition expiration"
+    scope: {channel: "BigQuery retention", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEK8HMRV7JZMD3C7JWZ0TVM"]
+    service_ids: ["SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEK8HMT5WME58RKVNT3EJPY"
+    title: "Expired partitions still enter recovery retention"
+    statement: "Deleted partition data remains subject to BigQuery time travel and fail-safe retention after partition expiration."
+    type: "temporal_state"
+    subject: "expired BigQuery partition data"
+    predicate: "enters"
+    object: ["time travel", "fail-safe"]
+    scope: {channel: "BigQuery partition retention", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEK8HMRV7JZMD3C7JWZ0TVM"]
+    service_ids: ["SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEK8HMTKR5DS7JHK31WRX8P"
+    title: "Partition filters enable pruning"
+    statement: "A qualifying filter on a partitioning column lets BigQuery skip non-matching partitions through partition pruning."
+    type: "capability"
+    subject: "BigQuery partition filter"
+    predicate: "enables"
+    object: "partition pruning"
+    scope: {channel: "BigQuery query optimization", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEK8HMS7RSF70T6RNYW6Q4V"]
+    service_ids: ["SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEK8HMTMM6NCNA2F21WMJZG"
+    title: "Clustering enables block pruning"
+    statement: "Filters on clustered columns let BigQuery prune storage blocks and scan only relevant blocks."
+    type: "capability"
+    subject: "BigQuery clustering"
+    predicate: "enables"
+    object: "block pruning"
+    scope: {channel: "BigQuery query optimization", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEK8HMSHBJQMCN7BS8NE9GC"]
+    service_ids: ["SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEK8HMT46SBAG6Y28QZ8V1N"
+    title: "Partitioning and clustering can be combined"
+    statement: "BigQuery can combine partitioning with clustering for more granular query pruning and cost optimization."
+    type: "capability"
+    subject: "BigQuery table design"
+    predicate: "can_combine"
+    object: ["partitioning", "clustering"]
+    scope: {channel: "BigQuery query optimization", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEK8HMSHBJQMCN7BS8NE9GC"]
+    service_ids: ["SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEK8HMTB26495TQXF0NS0ED"
+    title: "Scheduled queries run GoogleSQL"
+    statement: "BigQuery scheduled queries execute valid GoogleSQL on a defined schedule and can use @run_time and @run_date parameters."
+    type: "capability"
+    subject: "BigQuery scheduled query"
+    predicate: "supports"
+    object: ["GoogleSQL", "@run_time", "@run_date"]
+    scope: {channel: "BigQuery transformations", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEK8HMSBDQESFX5J0A17NQV"]
+    service_ids: ["SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEK8HMTW35NKVY2EMQC6DQD"
+    title: "Logical views rerun their query"
+    statement: "A BigQuery logical view is a virtual table whose defining query runs each time the view is queried."
+    type: "definition_claim"
+    subject: "BigQuery logical view"
+    predicate: "is"
+    object: "a virtual table evaluated at query time"
+    scope: {channel: "BigQuery views", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEK8HMSSPMQWPA96Q4H41HQ"]
+    service_ids: ["SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEK8HMT8DZ5YJXBH61WFC6Z"
+    title: "Materialized views persist derived results"
+    statement: "BigQuery materialized views persist derived results and can reduce the cost of frequently repeated supported queries."
+    type: "capability"
+    subject: "BigQuery materialized view"
+    predicate: "can_reduce"
+    object: "repeated query cost"
+    scope: {channel: "BigQuery materialized views", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEK8HMS0T3VN3Q9PTXKBKMG"]
+    service_ids: ["SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEK8HMTQ1K0DSZW20KY3EXX"
+    title: "Materialized views can update incrementally"
+    statement: "Supported BigQuery materialized views can read only changes since the previous refresh instead of recomputing the full result."
+    type: "capability"
+    subject: "incremental materialized view"
+    predicate: "can_process"
+    object: "changes since the last refresh"
+    scope: {channel: "BigQuery materialized views", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEK8HMS0T3VN3Q9PTXKBKMG"]
+    service_ids: ["SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEK8HMTG06PQ3G1VDPGDGVK"
+    title: "Row-level security filters visible rows"
+    statement: "BigQuery row access policies restrict which rows a principal can query based on policy filter expressions."
+    type: "capability"
+    subject: "BigQuery row-level security"
+    predicate: "restricts"
+    object: "visible rows by principal and filter expression"
+    scope: {channel: "BigQuery governance", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEK8HMSJEQH29MD0N8YPQPC"]
+    service_ids: ["SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEK8HMT3NY5FGY6MTG7VSHN"
+    title: "Column-level security uses policy tags"
+    statement: "BigQuery column-level access control protects columns with policy tags and requires both dataset access and policy-tag permission."
+    type: "calculation_rule"
+    subject: "BigQuery column-level security"
+    predicate: "requires"
+    object: ["dataset permission", "policy-tag permission"]
+    scope: {channel: "BigQuery governance", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEK8HMT1HQWA13MV0QF7HQ0"]
+    service_ids: ["SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEK8HMT7K49B6Q16W6Y4YN7"
+    title: "BigQuery emits administrative and data-access audit logs"
+    statement: "BigQuery generates Admin Activity and Data Access audit logs for supported administrative, read and write operations."
+    type: "capability"
+    subject: "BigQuery audit logging"
+    predicate: "records"
+    object: ["administrative activity", "data reads", "data writes"]
+    scope: {channel: "Cloud Audit Logs", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEK8HMT6H75X6Q3ZYQ1MJX3"]
+    service_ids: ["SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"

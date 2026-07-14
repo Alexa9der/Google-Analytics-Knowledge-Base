@@ -1,0 +1,293 @@
+schema_version: "1.0"
+entity_type: "fact"
+domain: "bigquery"
+topic: "ga4-sql-reconstruction"
+owner: "google-analytics-knowledge-project"
+records:
+  - id: "FACT-01KXEJ170CSXY2WMRFXGB10M7F"
+    title: "Date ranges use _TABLE_SUFFIX"
+    statement: "GA4 date-suffixed export tables can be limited to a date range by filtering the _TABLE_SUFFIX pseudo column."
+    type: "capability"
+    subject: "GA4 BigQuery wildcard query"
+    predicate: "filters_by"
+    object: "_TABLE_SUFFIX"
+    scope: {channel: "GA4 BigQuery SQL", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEJ170BGQP93N4VXR1X0B3B"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN", "SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEJ170CR284GRHDYZR7VR4V"
+    title: "Event counts use event rows"
+    statement: "A BigQuery event count is commonly reconstructed by counting exported rows grouped by event_date and event_name."
+    type: "calculation_rule"
+    subject: "GA4 BigQuery event count"
+    predicate: "is_calculated_by"
+    object: "counting event rows"
+    scope: {channel: "GA4 BigQuery SQL", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEJ170BGQP93N4VXR1X0B3B"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN", "SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEJ170CS126HM462EYHF8AB"
+    title: "User counts depend on the chosen identifier"
+    statement: "GA4 BigQuery user counts can use distinct user_id when consistently collected or distinct user_pseudo_id when User-ID is unavailable or incomplete."
+    type: "calculation_rule"
+    subject: "GA4 BigQuery user count"
+    predicate: "depends_on"
+    object: ["user_id completeness", "user_pseudo_id"]
+    scope: {channel: "GA4 BigQuery SQL", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEJ170BGQP93N4VXR1X0B3B"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN", "SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEJ170CP7QCZ1SYF9296204"
+    title: "New users use first_visit or first_open"
+    statement: "New users in GA4 BigQuery can be reconstructed from distinct users with first_visit or first_open events in the analysis period."
+    type: "calculation_rule"
+    subject: "GA4 BigQuery new users"
+    predicate: "are_identified_by"
+    object: ["first_visit", "first_open"]
+    scope: {channel: "GA4 BigQuery SQL", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEJ170BGQP93N4VXR1X0B3B"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN", "SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEJ170C06DCT33YPZYKAW7F"
+    title: "Returning users are derived from active minus new users"
+    statement: "A basic BigQuery returning-user calculation subtracts users with first_visit or first_open from active users in the selected period."
+    type: "calculation_rule"
+    subject: "GA4 BigQuery returning users"
+    predicate: "are_calculated_as"
+    object: "active users minus new users"
+    scope: {channel: "GA4 BigQuery SQL", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEJ170BGQP93N4VXR1X0B3B"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN", "SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEJ170CSSWCC6J7THKNBPA7"
+    title: "Event parameters require typed extraction"
+    statement: "A GA4 event parameter must be selected by key from UNNEST(event_params) and read from its matching typed value field."
+    type: "calculation_rule"
+    subject: "GA4 event parameter extraction"
+    predicate: "requires"
+    object: ["UNNEST(event_params)", "parameter key filter", "typed value field"]
+    scope: {channel: "GA4 BigQuery SQL", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEJ170BGQP93N4VXR1X0B3B"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN", "SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEJ170C91ZWE7P28KEZSSR0"
+    title: "COALESCE handles numeric parameter types"
+    statement: "Numeric GA4 parameter values can be reconstructed across int_value, float_value and double_value by using COALESCE."
+    type: "capability"
+    subject: "GA4 numeric parameter extraction"
+    predicate: "can_use"
+    object: "COALESCE across numeric value fields"
+    scope: {channel: "GA4 BigQuery SQL", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEJ170BGQP93N4VXR1X0B3B", "EVID-01KXEJ170BV2BPWAGD1GX390WQ"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN", "SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEJ170CD9FSDKYJNWTP50Y0"
+    title: "Session reconstruction combines user and session identifiers"
+    statement: "A GA4 session is commonly reconstructed in BigQuery by combining user_pseudo_id with the ga_session_id event parameter."
+    type: "calculation_rule"
+    subject: "GA4 BigQuery session key"
+    predicate: "combines"
+    object: ["user_pseudo_id", "ga_session_id"]
+    scope: {channel: "GA4 BigQuery SQL", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEJ170BV2BPWAGD1GX390WQ"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN", "SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEJ170CR2RZ390FKYSNTMT2"
+    title: "Session spend groups purchases by user and session"
+    statement: "Purchase-session spend can be reconstructed by summing purchase values grouped by user_pseudo_id and ga_session_id."
+    type: "calculation_rule"
+    subject: "GA4 BigQuery purchase-session spend"
+    predicate: "is_calculated_by"
+    object: "sum of purchase values by user and session"
+    scope: {channel: "GA4 BigQuery SQL", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEJ170BV2BPWAGD1GX390WQ"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN", "SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEJ170C2MGQ96Y4VE3RYDMZ"
+    title: "Temporary functions can standardize parameter access"
+    statement: "BigQuery temporary functions can centralize repeated GA4 event-parameter extraction logic for string and integer values."
+    type: "capability"
+    subject: "BigQuery temporary functions"
+    predicate: "can_standardize"
+    object: "GA4 parameter extraction"
+    scope: {channel: "GA4 BigQuery SQL", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEJ170BGQP93N4VXR1X0B3B"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN", "SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEJ170C446KD4Q5AW165RF8"
+    title: "Event order can require batch fields"
+    statement: "For events sent in the same batch, reliable ordering can use user identifiers together with batch_page_id, batch_ordering_id and batch_event_index."
+    type: "calculation_rule"
+    subject: "GA4 exported event ordering"
+    predicate: "can_use"
+    object: ["batch_page_id", "batch_ordering_id", "batch_event_index"]
+    scope: {channel: "GA4 BigQuery SQL", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEJ170BGQP93N4VXR1X0B3B"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN", "SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEJ170CMYR5M94CNZMETG3N"
+    title: "Purchase events identify purchasers"
+    statement: "Purchasers can be identified from users with purchase or in_app_purchase events in the selected period."
+    type: "calculation_rule"
+    subject: "GA4 BigQuery purchaser identification"
+    predicate: "uses"
+    object: ["purchase", "in_app_purchase"]
+    scope: {channel: "GA4 BigQuery SQL", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEJ170BGQP93N4VXR1X0B3B"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN", "SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEJ170CP12BJRY2P8DZQTGB"
+    title: "Transaction metrics should use transaction_id"
+    statement: "Distinct ecommerce transactions should be reconstructed with ecommerce.transaction_id rather than by counting purchase rows when duplicate purchase events are possible."
+    type: "calculation_rule"
+    subject: "GA4 BigQuery transaction count"
+    predicate: "should_use"
+    object: "distinct ecommerce.transaction_id"
+    scope: {channel: "GA4 BigQuery ecommerce SQL", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEJ170BZJHXXEB7GS9M92K9"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN", "SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEJ170CGS8CJXEW40G4XT9E"
+    title: "Purchase and refund values use different fields"
+    statement: "Purchase revenue is exported in ecommerce.purchase_revenue, while refunds are exported separately in ecommerce.refund_value."
+    type: "definition_claim"
+    subject: "GA4 ecommerce value fields"
+    predicate: "separate"
+    object: ["purchase revenue", "refund value"]
+    scope: {channel: "GA4 BigQuery ecommerce schema", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEJ170BZJHXXEB7GS9M92K9"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN", "SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEJ170C616C7ZX6S2Z7DETC"
+    title: "Net revenue requires an explicit refund rule"
+    statement: "A BigQuery net-revenue metric requires an explicit calculation that subtracts refund values from purchase revenue because the export stores them separately."
+    type: "calculation_rule"
+    subject: "GA4 BigQuery net revenue"
+    predicate: "requires"
+    object: "purchase revenue minus refund value"
+    scope: {channel: "GA4 BigQuery ecommerce SQL", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEJ170BZJHXXEB7GS9M92K9"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN", "SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEJ170CZ7VE7QNT50XZMS2G"
+    title: "Item metrics require UNNEST(items)"
+    statement: "Item-level ecommerce analysis requires expanding the repeated items array with UNNEST(items)."
+    type: "calculation_rule"
+    subject: "GA4 BigQuery item analysis"
+    predicate: "requires"
+    object: "UNNEST(items)"
+    scope: {channel: "GA4 BigQuery ecommerce SQL", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEJ170BGQP93N4VXR1X0B3B", "EVID-01KXEJ170BV2BPWAGD1GX390WQ"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN", "SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEJ170CJZ48ZVDXVS9JND26"
+    title: "Session traffic source should use session attribution fields"
+    statement: "When available, session-level source, medium and campaign reconstruction should use session_traffic_source_last_click rather than event-collected traffic fields."
+    type: "calculation_rule"
+    subject: "GA4 BigQuery session acquisition"
+    predicate: "should_use"
+    object: "session_traffic_source_last_click"
+    scope: {channel: "GA4 BigQuery traffic-source SQL", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEJ170BZJHXXEB7GS9M92K9"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN", "SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
+
+  - id: "FACT-01KXEJ170C7MPVE3NJHW0ZEYAV"
+    title: "Google Ads joins can use gclid"
+    statement: "Additional Google Ads click data can be joined to GA4 export rows by matching collected_traffic_source.gclid with the transferred Google Ads ClickStats gclid."
+    type: "capability"
+    subject: "GA4 and Google Ads BigQuery join"
+    predicate: "can_match_on"
+    object: "gclid"
+    scope: {channel: "BigQuery Data Transfer Service", verified_on: "2026-07-13"}
+    status: "confirmed"
+    confidence: "high"
+    evidence_ids: ["EVID-01KXEJ170BYRG16Y18R71KWBDX"]
+    service_ids: ["SERVICE-01KXB0H9ZMDHP3XY94QKJ681CN", "SERVICE-01KXB0H9ZMCS60TJAYENWG55H2"]
+    owner: "google-analytics-knowledge-project"
+    created_at: "2026-07-13"
+    last_verified_at: "2026-07-13"
