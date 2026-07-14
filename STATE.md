@@ -1,6 +1,6 @@
 ---
-current_phase: "Phase 7 Validation"
-project_status: "validation_in_progress"
+current_phase: "Phase 7 Complete"
+project_status: "phase_complete"
 completed:
   - "Google Play Console Store Performance research"
   - "Google Play Console Statistics research"
@@ -26,13 +26,13 @@ completed:
   - "Looker Studio Reporting and Governance View"
   - "Looker Studio Analytics Phase 7 Report"
   - "Phase 7 inventory and fact-schema validation fixes"
-current_task: "Generate and commit Phase 7 INDEX.jsonl, restore strict validation, and obtain green CI"
+  - "Phase 7 index regeneration and strict read-only validation restoration"
+current_task: "Obtain final green CI, mark PR #8 ready, merge, and start the next roadmap phase"
 next_tasks:
-  - "Commit generated INDEX.jsonl from the validation artifact"
-  - "Restore validate.yml to strict index freshness checking"
-  - "Resolve remaining validation-suite findings"
-  - "Mark PR #8 ready and merge after green CI"
-  - "Start the next roadmap phase after Phase 7 merge"
+  - "Confirm the final strict validation workflow is green"
+  - "Mark PR #8 ready and merge"
+  - "Create the next roadmap phase branch"
+  - "Update STATE.md for the next active phase"
 blockers: []
 active_package_writers:
   - "knowledge/evidence/looker-studio-architecture-connectors.yaml"
