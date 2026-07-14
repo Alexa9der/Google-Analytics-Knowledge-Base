@@ -7,7 +7,7 @@ on:
       - main
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   validate:
@@ -19,6 +19,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           show-progress: false
+          ref: ${{ github.head_ref || github.ref_name }}
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -69,12 +70,19 @@ jobs:
       - name: Generate current index
         run: python scripts/generate_index.py
 
-      - name: Upload generated index
-        uses: actions/upload-artifact@v4
-        with:
-          name: generated-index
-          path: INDEX.jsonl
-          retention-days: 1
+      - name: Commit generated index
+        if: github.event_name == 'pull_request'
+        shell: bash
+        run: |
+          if git diff --quiet -- INDEX.jsonl; then
+            echo "INDEX.jsonl is already current."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add INDEX.jsonl
+          git commit -m "Regenerate Phase 7 knowledge index"
+          git push origin "HEAD:${{ github.head_ref }}"
 
       - name: Check generated index freshness
         run: python scripts/generate_index.py --check
